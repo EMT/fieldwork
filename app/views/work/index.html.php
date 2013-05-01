@@ -6,7 +6,7 @@
 	<div class="grid grid-tight grid-index">
 		
 		<div class="grid-item col-2-1">
-			<a class="fade-transition" href="/work/big-pedal">
+			<a class="fade-transition" href="/work/clarence-fredericks">
 				<img src="/img/work/cf.jpg" alt="" />
 				<div class="item-details top-left">
 					<div>
@@ -18,7 +18,7 @@
 		</div>
 		
 		<div class="grid-item col-2-1">
-			<a class="fade-transition" href="/work/carbon-coop">
+			<a class="fade-transition" href="/work/fieldwork">
 				<img src="/img/work/fieldwork.jpg" alt="" />
 				<div class="item-details bottom-left">
 					<div>
@@ -30,7 +30,7 @@
 		</div>
 		
 		<div class="grid-item col-2-1">
-			<a class="fade-transition" href="/work/sewsew">
+			<a class="fade-transition" href="/work/big-pedal">
 				<img src="/img/work/bigpedal.jpg" alt="" />
 				<div class="item-details bottom-right">
 					<div>
@@ -42,7 +42,7 @@
 		</div>
 		
 		<div class="grid-item col-2-1 col-half col-half-right">
-			<a class="fade-transition" href="/work/clarence-fredericks">
+			<a class="fade-transition" href="/work/carbon-coop">
 				<img src="/img/work/carboncoop.jpg" alt="" />
 				<div class="item-details bottom">
 					<div>
@@ -54,7 +54,7 @@
 		</div>
 		
 		<div class="grid-item col-2-1 col-half col-half-left">
-			<a class="fade-transition" href="/work/mini-bugs">
+			<a class="fade-transition" href="/work/sewsew">
 				<img src="/img/work/sewsew.jpg" alt="" />
 				<div class="item-details bottom">
 					<div>
@@ -66,7 +66,7 @@
 		</div>
 		
 		<div class="grid-item col-2-1">
-			<a class="fade-transition" href="/work/fieldwork">
+			<a class="fade-transition" href="/work/mini-bugs">
 				<img src="/img/work/minibugs.jpg" alt="" />
 				<div class="item-details top-left">
 					<div>

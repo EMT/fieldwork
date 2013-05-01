@@ -401,7 +401,7 @@ function flickr() {
 /* 	var url = 'http://api.flickr.com/services/feeds/groups_pool.gne?id=2172335@N24&lang=en-us&format=json'; */
 	var url = 'http://api.flickr.com/services/feeds/groups_pool.gne?id=2172335@N24&lang=en-us&format=json&jsoncallback=?';
 	$.getJSON(url, function(data) {
-		$('<a href="' + data.items[0].link + '"><img src="' + data.items[0].media.m.replace('_m.jpg', '_z.jpg') + '" alt="' + data.items[0].media + '" /></a>').appendTo('#flickr');
+		$('<a href="' + data.items[0].link + '"><img src="' + data.items[0].media.m.replace('_m.jpg', '_z.jpg') + '" alt="' + data.items[0].media + '" /><div class="home-grid-details"><h3>' + data.items[0].title + '</h3></div></a>').appendTo('#flickr');
 	});
 /*
 	$.get(url, '', function(data) {
