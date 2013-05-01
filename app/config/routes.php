@@ -46,7 +46,10 @@ Router::connect('/', 'Pages::view');
  * Connect the rest of `PagesController`'s URLs. This will route URLs like `/pages/about` to
  * `PagesController`, rendering `/views/pages/about.html.php` as a static page.
  */
-Router::connect('/pages/{:args}', 'Pages::view');
+Router::connect('/contact', array('Pages::view', 'args' => array('contact')));
+Router::connect('/us', array('Pages::view', 'args' => array('us')));
+Router::connect('/work', 'Work::index');
+Router::connect('/work/{:args}.{:type}', 'Work::view');
 Router::connect('/work/{:args}', 'Work::view');
 
 /**

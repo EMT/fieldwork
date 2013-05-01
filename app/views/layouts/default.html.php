@@ -17,13 +17,16 @@
 	<link rel="stylesheet" href="/css/style.css">
 	<script src="/js/modernizr.js"></script>
 </head>
-<body class="work">
+<body class="<?= $body_classes; ?>">
 
 	
 	<?= $this->_render('element', 'header'); ?>
 	
+	<div id="main">
 
-	<?php echo $this->content(); ?>	
+		<?php echo $this->content(); ?>	
+	
+	</div>
 	
 	
 	<?= $this->_render('element', 'index'); ?>

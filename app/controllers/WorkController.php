@@ -12,7 +12,12 @@ namespace app\controllers;
  * This controller is used for serving static pages by name, which are located in the `/views/work`
  * folder. Pages are wrapped by the work_wrapper.html.php template
  */
-class WorkController extends \lithium\action\Controller {
+class WorkController extends \app\extensions\action\Controller {
+
+	
+	public function index() {
+		
+	}
 
 
 	public function view() {
@@ -24,7 +29,8 @@ class WorkController extends \lithium\action\Controller {
 			'carbon-coop',
 			'sewsew',
 			'clarence-fredericks',
-			'mini-bugs'
+			'mini-bugs',
+			'fieldwork'
 		);
 		foreach($pages as $key => $page) {
 			if ($page === $path) {
@@ -32,10 +38,17 @@ class WorkController extends \lithium\action\Controller {
 			}
 		}
 		
-		$options['template'] = 'work_wrapper';
-		$options['data'] = array(
-			'partial' => $path,
-		) + compact('pages', 'this_page');
+		if ($this->request->type === 'part') {
+			$options['template'] = '_' . $path;
+			$options['data'] = compact('pages', 'this_page');
+		}
+		else {
+			$options['template'] = 'work_wrapper';
+			$options['data'] = array(
+				'partial' => $path,
+			) + compact('pages', 'this_page');
+		}
+		
 		return $this->render($options);
 	}
 	

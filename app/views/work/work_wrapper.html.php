@@ -1,13 +1,20 @@
 
-<div class="content-wrapper">
+<div id="slider">
 
-	<?= $this->_render('element', $partial); ?>
+	<div id="content-wrapper" data-urls='<?php echo json_encode($pages); ?>'>
+	
+		<?= $this->_render('element', $partial); ?>
+		
+	</div>
 	
 </div>
 
-<?php if (!empty($pages[$this_page - 1])) { ?>
-	<a href="<?= $pages[$this_page - 1]; ?>" class="slider-nav" id="slider-prev">Previous</a>
-<?php } ?>
-<?php if (!empty($pages[$this_page + 1])) { ?>
-	<a href="<?= $pages[$this_page + 1]; ?>" class="slider-nav" id="slider-next">Next</a>
-<?php } ?>
+<div id="slider-nav">
+	<?php if (!empty($pages[$this_page - 1])) { ?>
+		<a href="<?= $pages[$this_page - 1]; ?>" class="slider-nav" id="slider-prev">Previous</a>
+	<?php } ?>
+	
+	<?php if (!empty($pages[$this_page + 1])) { ?>
+		<a href="<?= $pages[$this_page + 1]; ?>" class="slider-nav" id="slider-next">Next</a>
+	<?php } ?>
+</div>
