@@ -301,8 +301,14 @@ body {
 }
 
 
+.text-list {
+	list-style: none;
+}
+
+
 p a,
-h2 a {
+h2 a,
+.text-list a {
 	color: rgb(150,150,150);
 	text-decoration: none;
 	display: inline-block;
@@ -310,7 +316,8 @@ h2 a {
 	-webkit-transition: all .3s ease-out;
 }
 p a:hover,
-h2 a:hover {
+h2 a:hover,
+.text-list a:hover {
 	color: rgb(23,77,89);
 	border-bottom: 1px solid rgba(23,77,89,0.7);
 }

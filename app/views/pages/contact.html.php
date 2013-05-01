@@ -71,10 +71,10 @@
 		
 		<h3>Extra Curricular</h3>
 		<p>We’re always making things, and getting involved with projects we believe in. Here are some of our other bits and pieces.</p>
-		<ul>
+		<ul class="text-list">
 			<li><a href="http://volumes.madebyfieldwork.com">Volumes</a> (coming soon, stay tuned)</li>
-			<li><a href="">Things We Find</a> – the visual loveliness we find</li>
-			<li><a href="">Good for Nothing</a> – smart people solving hard problems</li>
+			<li><a href="http://thingswefind.com">Things We Find</a> – the visual loveliness we find</li>
+			<li><a href="http://goodfornothing.com">Good for Nothing</a> – smart people solving hard problems</li>
 		</ul>
 		
 		<h3>Visiting</h3>
