@@ -1,4 +1,4 @@
-#app/resources/tmp/cache/templates/*
+app/resources/tmp/cache/templates/*
 app/webroot/css/optimized
 app/webroot/js/optimized
 

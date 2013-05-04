@@ -151,14 +151,14 @@ $(function(){
 					bottom: 'auto',
 					height: 'auto',
 					display: 'block'
-				}).height();
+				}).height() + $('header').height();
 				$('#index').css({
 					top: 0,
-					height: '100%',
+					bottom: $('#footer').outerHeight() - 1,
 					display: 'none'
 				});
-				var viewport_h = $(window).height() - $('header').height();
-				var h = Math.max(index_h, viewport_h);
+				var viewport_h = $(window).height();
+				var h = Math.max(index_h, viewport_h) - ($('#main').outerHeight(true) - $('#main').height());
 				content_h = $('#main').height();
 				$('#main').css({height: h});
 				$('body').addClass('index-open');

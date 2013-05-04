@@ -6,7 +6,7 @@
 	<h1>Fieldwork</h1>
 	
 	
-	<p class="centered-intro runner">We build things with you, collaboratively, to enhance the work that you do. Combining the excitement and knowledge that you have about your work, with the excitement and knowledge that we have about ours.</p>
+	<p class="centered-intro runner">From digital platforms to brand identities, we work with you, collaboratively, to make things that help your organisation do great work.</p>
 	
 	
 	<figure id="machine"></figure>
