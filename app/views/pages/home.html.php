@@ -39,8 +39,8 @@
 					<a href="/work/big-pedal">
 						<img src="/img/work/bigpedal.jpg" alt="Carbon Coop" />
 						<div class="home-grid-details">
-							<h3>Carbon Coop</h3>
-							<p>A new model for making homes more energy efficient</p>
+							<h3>Big Pedal</h3>
+							<p>A nation-wide cycle to school event generating millions of journeys by bike</p>
 						</div>
 					</a>
 				</div>
@@ -50,8 +50,8 @@
 					<a href="/work/clarence-fredericks">
 						<img src="/img/work/cf.jpg" alt="Carbon Coop" />
 						<div class="home-grid-details">
-							<h3>Carbon Coop</h3>
-							<p>A new model for making homes more energy efficient</p>
+							<h3>Clarence &amp; Fredericks</h3>
+							<p>Say hello to Barry the Budgie</p>
 						</div>
 					</a>
 				</div>
