@@ -12,9 +12,9 @@
 			Follow us <a href="http://twitter.com/madebyfieldwork">@madebyfieldwork</a></p>
 		
 		<section>
-			<h3>New Business</h3>
+			<h3>Start a Project</h3>
 			<div class="section-content">
-				<p>Like to know how we can help your business? Get in touch, we’d love to hear from you. Something less cheesey than this, I ripped it off another studio’s website.</p>
+				<p>Do you have a project in mind? Something you think we might be able to help with? Let’s talk.</p>
 				<p><a href="">andy@madebyfieldwork.com</a></p>
 			</div>
 		</section>
@@ -22,7 +22,7 @@
 		<section>
 			<h3>General Enquiries</h3>
 			<div class="section-content">
-				<p>We love getting mail, if you just want to say hello or ask us something, maybe you want us to ask you something. </p>
+				<p>Just want to say hello, ask a question, tell us a joke, or arrange to pop in for tea and cake? Get in touch. We love getting mail from folks like you.</p>
 				<p><a href="">hello@madebyfieldwork.com</a></p>
 			</div>
 		</section>
