@@ -83,7 +83,9 @@ $(function(){
 			var url = $(this).attr('href');
 			if (stateHandler.supported()) {
 				$.when(slider.loadItem(url)).done(function() {
-					stateHandler.push(url, $('#item-' + url + ' h1').text(), slider.findItemByUrl(url).index);
+					stateHandler.push(url, 
+						$('#item-' + url + ' h1').text() + ' – Fieldwork', 
+						slider.findItemByUrl(url).index);
 					slider.previousItem();
 				});
 			}
@@ -97,7 +99,9 @@ $(function(){
 			var url = $(this).attr('href');
 			if (stateHandler.supported()) {
 				$.when(slider.loadItem(url)).done(function() {
-					stateHandler.push(url, $('#item-' + url + ' h1').text(), slider.findItemByUrl(url).index);
+					stateHandler.push(url, 
+						$('#item-' + url + ' h1').text() + ' – Fieldwork', 
+						slider.findItemByUrl(url).index);
 					slider.nextItem();
 				});
 			}
@@ -360,6 +364,7 @@ var stateHandler = {
 			item_index: item_index,
 			slug: slug
 		}, null, slug);
+		document.title = title;
 	},
 	
 	onPop: function(callback) {
@@ -467,7 +472,7 @@ function flickr() {
  * 
  * Open source under the BSD License. 
  * 
- * Copyright ��� 2008 George McGinley Smith
+ * Copyright Ã‚Â© 2008 George McGinley Smith
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without modification, 

@@ -1,13 +1,13 @@
 
 
-<?php $this->title('Clarence & Fredericks – Fieldwork'); ?>
+<?php $this->title('Clarence &amp; Fredericks – Fieldwork'); ?>
 
 
 <article class="content-item" id="item-<?= $pages[$this_page]; ?>">
 
 	<div class="content-inner">
 
-		<h1>Clarence & Fredericks</h1>
+		<h1>Clarence &amp; Fredericks</h1>
 		
 		<figure class="hero">					
 			<img src="/img/work/clarence-fredericks/cf-header.jpg" alt="" />
