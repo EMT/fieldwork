@@ -6,7 +6,7 @@
 		<h1>Carbon Coop</h1>
 		
 		<figure class="hero">					
-			<img src="/img/work/carbon-coop/cc-19.jpg" alt="" />
+			<img src="/img/work/carbon-coop/header.jpg" alt="" />
 		</figure>
 		
 		<div class="intro">
@@ -37,6 +37,9 @@
 			<figure class="col-2-1">
 				<img src="/img/work/carbon-coop/cc-18.png" alt="" />
 			</figure>
+			<figure class="col-2-1">
+				<img src="/img/work/carbon-coop/cc-20.jpg" alt="" />
+			</figure>
 		</div>
 		
 		<figure class="full-width grid">
@@ -56,7 +59,22 @@
 			<figure class="col-2-1">
 				<img src="/img/work/carbon-coop/cc-9.jpg" alt="" />
 			</figure>
+			<figure class="col-2-1">
+				<img src="/img/work/carbon-coop/cc-13.jpg" alt="" />
+			</figure>
 		</div>
+		
+		<figure class="full-width grid">
+			<img src="/img/work/carbon-coop/cc-web1.jpg" alt="" />
+		</figure>
+		
+		<figure class="full-width grid">
+			<img src="/img/work/carbon-coop/cc-web2.jpg" alt="" />
+		</figure>
+		
+		<figure class="full-width grid">
+			<img src="/img/work/carbon-coop/cc-web3.jpg" alt="" />
+		</figure>
 		
 		<figure class="full-width grid">
 			<img src="/img/work/carbon-coop/cc-8.jpg" alt="" />
@@ -64,24 +82,19 @@
 		
 		<div class="grid">
 			<figure class="col-2-1">
-				<img src="/img/work/carbon-coop/cc-7.jpg" alt="" />
-			</figure>
-			<figure class="col-2-1">
 				<img src="/img/work/carbon-coop/cc-10.jpg" alt="" />
 			</figure>
-		</div>
-		
-		<div class="grid">
 			<figure class="col-2-1">
 				<img src="/img/work/carbon-coop/cc-5.jpg" alt="" />
-			</figure>
-			<figure class="col-2-1">
-				<img src="/img/work/carbon-coop/cc-6.jpg" alt="" />
 			</figure>
 		</div>
 		
 		<figure class="full-width grid">
 			<img src="/img/work/carbon-coop/cc-11.jpg" alt="" />
+		</figure>
+		
+		<figure class="full-width grid">
+			<img src="/img/work/carbon-coop/cc-19.jpg" alt="" />
 		</figure>
 		
 		

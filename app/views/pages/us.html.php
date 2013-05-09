@@ -14,28 +14,21 @@
 	
 		<section class="col-3-1">
 			<h3>Us</h3>
-			<p>If you were to visit our studio right now, you’d probably find us hacking away at something. Making stuff with pixels or wires or paper, or just about anything we can get our hands on and tinker with. This is what we love doing, and we pour that energy and excitement into every project we undertake.</p>
-			<p>We’re experienced makers, drawn together by a mutual desire to produce things that help organisations further their work.</p>
-			<p>Fieldwork is the creative partnership of designer and art director, Loz Ives, and web developer and maker of digital things, Andy Gott.</p>
+			<p>If you were to visit our studio right now, you’d probably find us tinkering away with something. Making stuff with pixels or wires or paper, or just about anything we can get our hands on. This is what we love doing, and we pour that energy and excitement into every project we undertake.</p>
+			<p>Fieldwork was founded in 2012 by Loz Ives and Andy Gott, a pair of experienced makers, drawn together by a mutual desire to produce things that help organisations further their work.</p>
 		</section>
 		
 		<section class="col-3-1">
 			<h3>Our Approach</h3>
-			<p>We build things with you, collaboratively, to support and enhance the work that you do. Combining the experience and knowledge that you have about your work, with the experience and knowledge that we have about ours, we make things that have a real impact.</p>
-			<p>When it comes to exploring the possibilities and having new ideas, making stuff is more effective than thinking about it. We start sketching and prototyping at the very beginning.</p>
+			<p>We build things with you, collaboratively, to support and enhance the work that you do. Combining your knowledge of your organisation and it’s work with our experience and process, we make things that have a real impact.</p>
+			<p>When it comes to exploring the possibilities and having new ideas, making things is more effective than thinking about things. We start sketching and prototyping at the very beginning.</p>
 		</section>
 		
-<!--
-		<section class="col-3-1">
-			<h3>Extra-curricular activities</h3>
-			<p>We build things with you, collaboratively, to enhance the work that you do. Combining the excitement and knowledge that you have about your work, with the excitement and knowledge that we have about ours, we make things that have real effect.</p>
-			<p>When it comes to exploring the possibilities and having new ideas, making stuff is more effective than thinking about it. We start sketching and prototyping at the very beginning.</p>
-		</section>
--->
 		
 		<section class="col-3-1">
 			<h3>Things we’re good at</h3>
-			<p>Digital Design, Planning, Art Direction, Branding & Identity, Consultancy, Curation, Environmental Design, Event Design, Interactive, Print Design, Packaging, Signage, Website Design</p>
+			<p>We’re a small team with a strong network of talented collaborators. This allows us to adapt according to specific requirements for a wide variety of projects.</p>
+			<p>We specialise in digital and web products, and branding projects.</p>
 		</section>
 		
 	</div>

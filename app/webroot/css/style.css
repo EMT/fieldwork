@@ -220,28 +220,37 @@ td { vertical-align: top; }
 
 
 @font-face{
-font-family:"Neuzeit S LT W01 Book";
-src:url("../fonts/840b8bdf-7d26-449a-9620-8cb6663f18cc.eot?#iefix");
-src:url("../fonts/be8d3917-a4cf-4d8f-b767-4e84bcbe300c.svg#be8d3917-a4cf-4d8f-b767-4e84bcbe300c") format("svg"),url("../fonts/840b8bdf-7d26-449a-9620-8cb6663f18cc.eot?#iefix") format("eot"),url("../fonts/77aaeb7b-86f4-47a1-8196-74a660dd0919.woff") format("woff"),url("../fonts/efdf74e6-bfd4-466d-93fd-4f8f4d55b80c.ttf") format("truetype");
+	font-family: "Neuzeit S LT W01 Book";
+	src: url("../fonts/840b8bdf-7d26-449a-9620-8cb6663f18cc.eot?#iefix");
+	src: url("../fonts/be8d3917-a4cf-4d8f-b767-4e84bcbe300c.svg#be8d3917-a4cf-4d8f-b767-4e84bcbe300c") format("svg"),
+		 url("../fonts/840b8bdf-7d26-449a-9620-8cb6663f18cc.eot?#iefix") format("eot"),
+		 url("../fonts/77aaeb7b-86f4-47a1-8196-74a660dd0919.woff") format("woff"),
+		 url("../fonts/efdf74e6-bfd4-466d-93fd-4f8f4d55b80c.ttf") format("truetype");
 }
 @font-face{
-font-family:"NeuzeitSLTW01-BookHeavy";
-src:url("../fonts/74c31844-4217-4fe8-82f7-88a5075de2e8.eot?#iefix");
-src:url("../fonts/74a8e701-bffc-464e-a60b-63169debd492.svg#74a8e701-bffc-464e-a60b-63169debd492") format("svg"),url("../fonts/74c31844-4217-4fe8-82f7-88a5075de2e8.eot?#iefix") format("eot"),url("../fonts/a1476bae-b118-4e9d-b711-c84091d9bc16.woff") format("woff"),url("../fonts/096111d9-3ba2-4828-ae9a-29fb4e03c0b1.ttf") format("truetype");
+	font-family: "NeuzeitSLTW01-BookHeavy";
+	src: url("../fonts/74c31844-4217-4fe8-82f7-88a5075de2e8.eot?#iefix");
+	src: url("../fonts/74a8e701-bffc-464e-a60b-63169debd492.svg#74a8e701-bffc-464e-a60b-63169debd492") format("svg"),
+		 url("../fonts/74c31844-4217-4fe8-82f7-88a5075de2e8.eot?#iefix") format("eot"),
+		 url("../fonts/a1476bae-b118-4e9d-b711-c84091d9bc16.woff") format("woff"),
+		 url("../fonts/096111d9-3ba2-4828-ae9a-29fb4e03c0b1.ttf") format("truetype");
 }
 @font-face{
-font-family:"TypewriterEliteW01-Regu";
-src:url("../fonts/f5ca33dd-e1b6-4655-8aa0-7576c296f885.eot?#iefix");
-src:url("../fonts/f5ca33dd-e1b6-4655-8aa0-7576c296f885.eot?#iefix") format("eot"),url("../fonts/c6430c2c-ffa0-4e78-944c-d4a32e777428.woff") format("woff"),url("../fonts/2fceaeee-6fbc-436d-8d93-a589c21045cb.ttf") format("truetype"),url("../fonts/a3e59987-5cc8-44f5-a67c-1e18a83002a2.svg#a3e59987-5cc8-44f5-a67c-1e18a83002a2") format("svg");
+	font-family: "TypewriterEliteW01-Regu";
+	src: url("../fonts/f5ca33dd-e1b6-4655-8aa0-7576c296f885.eot?#iefix");
+	src: url("../fonts/a3e59987-5cc8-44f5-a67c-1e18a83002a2.svg#a3e59987-5cc8-44f5-a67c-1e18a83002a2") format("svg"),
+		 url("../fonts/f5ca33dd-e1b6-4655-8aa0-7576c296f885.eot?#iefix") format("eot"),
+		 url("../fonts/c6430c2c-ffa0-4e78-944c-d4a32e777428.woff") format("woff"),
+		 url("../fonts/2fceaeee-6fbc-436d-8d93-a589c21045cb.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "SSSocial";
   src: url('../fonts/ss-social-regular.eot');
-  src: url('../fonts/ss-social-regular.eot?#iefix') format('embedded-opentype'),
+  src: url('../fonts/ss-social-regular.svg#SSSocialRegular') format('svg'),
+  	   url('../fonts/ss-social-regular.eot?#iefix') format('embedded-opentype'),
        url('../fonts/ss-social-regular.woff') format('woff'),
-       url('../fonts/ss-social-regular.ttf') format('truetype'),
-       url('../fonts/ss-social-regular.svg#SSSocialRegular') format('svg');
+       url('../fonts/ss-social-regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
