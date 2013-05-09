@@ -6,7 +6,7 @@
 		<h1>SewSew</h1>
 		
 		<figure class="hero">					
-			<img src="/img/work/sewsew/ss-19.jpg" alt="" />
+			<img src="/img/work/sewsew/ss-header.jpg" alt="" />
 		</figure>
 		
 		<div class="intro">
@@ -61,6 +61,10 @@
 				<img src="/img/work/sewsew/ss-14.jpg" alt="" />
 			</figure>
 		</div>
+		
+		<figure class="full-width grid">
+			<img src="/img/work/sewsew/ss-16.jpg" alt="" />
+		</figure>
 		
 		<figure class="full-width grid">
 			<img src="/img/work/sewsew/ss-13.jpg" alt="" />

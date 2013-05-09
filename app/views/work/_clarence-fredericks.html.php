@@ -6,7 +6,7 @@
 		<h1>Clarence & Fredericks</h1>
 		
 		<figure class="hero">					
-			<img src="/img/work/clarence-fredericks/cf-13.jpg" alt="" />
+			<img src="/img/work/clarence-fredericks/cf-header.jpg" alt="" />
 		</figure>
 		
 		<div class="intro">

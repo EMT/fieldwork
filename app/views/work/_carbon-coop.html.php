@@ -6,7 +6,7 @@
 		<h1>Carbon Coop</h1>
 		
 		<figure class="hero">					
-			<img src="/img/work/carbon-coop/header.jpg" alt="" />
+			<img src="/img/work/carbon-coop/cc-header.jpg" alt="" />
 		</figure>
 		
 		<div class="intro">

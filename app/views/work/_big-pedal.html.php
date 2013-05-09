@@ -6,7 +6,7 @@
 		<h1>The Big Pedal</h1>
 		
 		<figure class="hero">					
-			<img src="/img/work/big-pedal/header.jpg" alt="" />
+			<img src="/img/work/big-pedal/tbp-header.jpg" alt="" />
 		</figure>
 		
 		<div class="intro">
