@@ -1,3 +1,8 @@
+
+
+<?php $this->title('Us – Fieldwork'); ?>
+
+
 <div class="content-inner info-layout">
 
 	<h1>We Make Things</h1>

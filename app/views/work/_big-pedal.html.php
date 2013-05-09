@@ -1,5 +1,9 @@
 
-<div class="content-item" id="item-<?= $pages[$this_page]; ?>">
+
+<?php $this->title('The Big Pedal – Fieldwork'); ?>
+
+
+<article class="content-item" id="item-<?= $pages[$this_page]; ?>">
 
 	<div class="content-inner">
 
@@ -75,4 +79,4 @@
 		
 	</div>
 	
-</div>
+</article>

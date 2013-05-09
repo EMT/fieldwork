@@ -1,5 +1,7 @@
 
 
+<?php $this->title('Fieldwork – We Love Making Things'); ?>
+
 	
 <div class="content-inner">
 

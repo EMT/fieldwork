@@ -1,5 +1,9 @@
 
-<div class="content-item" id="item-<?= $pages[$this_page]; ?>">
+
+<?php $this->title('SewSew – Fieldwork'); ?>
+
+
+<article class="content-item" id="item-<?= $pages[$this_page]; ?>">
 
 	<div class="content-inner">
 
@@ -86,4 +90,4 @@
 		
 	</div>
 	
-</div>
+</article>

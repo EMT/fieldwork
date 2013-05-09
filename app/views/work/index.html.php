@@ -1,4 +1,8 @@
 
+
+<?php $this->title('Our Work – Fieldwork'); ?>
+
+
 <div class="content-inner work-index">
 	
 	<h1>Work</h1>
