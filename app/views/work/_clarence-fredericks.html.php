@@ -1,6 +1,6 @@
 
 
-<?php $this->title('Clarence &amp; Fredericks – Fieldwork'); ?>
+<?php $this->title('Clarence & Fredericks – Fieldwork'); ?>
 
 
 <article class="content-item" id="item-<?= $pages[$this_page]; ?>">
