@@ -6,7 +6,7 @@
 		<h1>Mini Bugs</h1>
 		
 		<figure class="hero">					
-			<img src="/img/work/mini-bugs/mb-7.jpg" alt="" />
+			<img src="/img/work/mini-bugs/mb-header.jpg" alt="" />
 		</figure>
 		
 		<div class="intro">
@@ -30,47 +30,56 @@
 	
 		
 		
-		<figure class="hero">					
-			<img src="/img/work/mini-bugs/mb-7.jpg" alt="" />
+		<figure class="full-width grid">					
+			<img src="/img/work/mini-bugs/mb-7.png" alt="" />
 		</figure>
 		
 		<div class="grid">
 			<figure class="col-2-1">
-				<img src="/img/work/clarence-fredericks/cf-20.png" alt="" />
+				<img src="/img/work/mini-bugs/mb-3.jpg" alt="" />
 			</figure>
 			<figure class="col-2-1">
-				<img src="/img/work/clarence-fredericks/cf-18.png" alt="" />
+				<img src="/img/work/mini-bugs/mb-1.jpg" alt="" />
 			</figure>
 		</div>
 		
-<!--
+		<figure class="full-width grid">					
+			<img src="/img/work/mini-bugs/mb-bugs.png" alt="" />
+		</figure>
+		
 		<div class="grid">
 			<figure class="col-2-1">
-				<img src="/img/work/clarence-fredericks/cf-20.jpg" alt="" />
+				<img src="/img/work/mini-bugs/mb-5.jpg" alt="" />
 			</figure>
 			<figure class="col-2-1">
-				<img src="/img/work/clarence-fredericks/cf-18.jpg" alt="" />
+				<img src="/img/work/mini-bugs/mb-10.jpg" alt="" />
 			</figure>
 		</div>
--->
 		
-		<figure class="full-width grid">
-			<img src="/img/work/clarence-fredericks/cf-3.jpg" alt="" />
+		<figure class="full-width grid">					
+			<img src="/img/work/mini-bugs/mb-web1.jpg" alt="" />
 		</figure>
 		
-		<figure class="full-width grid">
-			<img src="/img/work/clarence-fredericks/cf-2.jpg" alt="" />
+		<figure class="full-width grid">					
+			<img src="/img/work/mini-bugs/mb-web2.jpg" alt="" />
 		</figure>
 		
-		<figure class="full-width grid">
-			<img src="/img/work/clarence-fredericks/cf-16.jpg" alt="" />
+		<figure class="full-width grid">					
+			<img src="/img/work/mini-bugs/mb-11.jpg" alt="" />
 		</figure>
 		
-		<figure class="full-width grid">
-			<img src="/img/work/clarence-fredericks/cf-17.jpg" alt="" />
-		</figure>
+		<div class="grid">
+			<figure class="col-2-1">
+				<img src="/img/work/mini-bugs/mb-9.jpg" alt="" />
+			</figure>
+			<figure class="col-2-1">
+				<img src="/img/work/mini-bugs/mb-7.jpg" alt="" />
+			</figure>
+		</div>
 
-		
+		<figure class="full-width grid">					
+			<img src="/img/work/mini-bugs/mb-12.jpg" alt="" />
+		</figure>
 		
 		
 		
