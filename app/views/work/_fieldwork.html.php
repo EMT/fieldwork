@@ -60,6 +60,10 @@
 		</div>
 		
 		<figure class="full-width grid">
+			<img src="/img/work/fieldwork/fw-7.jpg" alt="" />
+		</figure>
+		
+		<figure class="full-width grid">
 			<img src="/img/work/fieldwork/fw-8.jpg" alt="" />
 		</figure>
 		
