@@ -48,33 +48,35 @@ $(document).ready(function() {
 	
 	
 	//	Home page machine parts
-	var arr = [1, 2, 3, 4, 5, 6],
-		rand_arr = [];
-	for (var i in arr) {
-		rand_arr.splice(Math.floor(Math.random() * (1 + rand_arr.length)), 0, arr[i]);
-	}
-	var doc_width = $(document).width(),
-		how_many_parts = 3;
-	if (doc_width > 500) {
-		how_many_parts = 4;
-	}
-	if (doc_width > 600) {
-		how_many_parts = 6;
-	}
-	for (i = 0; i < how_many_parts; i ++) {
-		$('<img src="/img/machine/machine-' + rand_arr[i] + '.png" alt="" />').appendTo('#machine');
-	}
-	var arr = [1, 2],
-		rand_arr = [],
-		positions = [
-			{left: '14.5%', top: '10%'},
-			{left: '60%', top: '22%'}
-		];
-	for (var i in arr) {
-		rand_arr.splice(Math.floor(Math.random() * (1 + rand_arr.length)), 0, arr[i]);
-	}
-	for (i = 0; i < 2; i ++) {
-		$('<img class="floating" src="/img/machine/machine-f-' + rand_arr[i] + '.png" alt="" />').css(positions[i]).appendTo('#machine');
+	if ($('#machine').length) {
+		var arr = [1, 2, 3, 4, 5, 6],
+			rand_arr = [];
+		for (var i in arr) {
+			rand_arr.splice(Math.floor(Math.random() * (1 + rand_arr.length)), 0, arr[i]);
+		}
+		var doc_width = $(document).width(),
+			how_many_parts = 3;
+		if (doc_width > 500) {
+			how_many_parts = 4;
+		}
+		if (doc_width > 600) {
+			how_many_parts = 6;
+		}
+		for (i = 0; i < how_many_parts; i ++) {
+			$('<img src="/img/machine/machine-' + rand_arr[i] + '.png" alt="" />').appendTo('#machine');
+		}
+		var arr = [1, 2],
+			rand_arr = [],
+			positions = [
+				{left: '14.5%', top: '10%'},
+				{left: '60%', top: '22%'}
+			];
+		for (var i in arr) {
+			rand_arr.splice(Math.floor(Math.random() * (1 + rand_arr.length)), 0, arr[i]);
+		}
+		for (i = 0; i < 2; i ++) {
+			$('<img class="floating" src="/img/machine/machine-f-' + rand_arr[i] + '.png" alt="" />').css(positions[i]).appendTo('#machine');
+		}
 	}
 
 
