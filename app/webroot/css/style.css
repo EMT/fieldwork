@@ -244,17 +244,39 @@ td { vertical-align: top; }
 		 url("../fonts/2fceaeee-6fbc-436d-8d93-a589c21045cb.ttf") format("truetype");
 }
 
+@charset "UTF-8";
+
+/*
+* Symbolset
+* www.symbolset.com
+* Copyright © 2012 Oak Studios LLC
+*
+* Upload this file to your web server
+* and place this within your <head> tags.
+* <link href="webfonts/ss-social.css" rel="stylesheet" />
+*/
+
 @font-face {
   font-family: "SSSocial";
-  src: url('../fonts/ss-social-regular.eot');
-  src: url('../fonts/ss-social-regular.svg#SSSocialRegular') format('svg'),
-  	   url('../fonts/ss-social-regular.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/ss-social-regular.woff') format('woff'),
-       url('../fonts/ss-social-regular.ttf') format('truetype');
-  font-weight: normal;
+  src: url('../fonts/ss-social-circle.eot');
+  src: url('../fonts/ss-social-circle.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/ss-social-circle.woff') format('woff'),
+       url('../fonts/ss-social-circle.ttf') format('truetype'),
+       url('../fonts/ss-social-circle.svg#SSSocialCircle') format('svg');
+  font-weight: bold;
   font-style: normal;
 }
 
+@font-face {
+  font-family: "SSSocial";
+  src: url('../fonts/ss-social-regular.eot');
+  src: url('../fonts/ss-social-regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/ss-social-regular.woff') format('woff'),
+       url('../fonts/ss-social-regular.ttf') format('truetype'),
+       url('../fonts/ss-social-regular.svg#SSSocialRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* This triggers a redraw in IE to Fix IE8's :before content rendering. */
 html:hover [class^="ss-"]{-ms-zoom: 1;}
@@ -295,6 +317,7 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
 
 
 
+
 html {
 	background: rgb(235,235,232);
 }
@@ -307,7 +330,7 @@ body {
 /* 	padding: 0 5%; */
 }
 .js body {
-	display: none;
+/* 	display: none; */
 }
 
 

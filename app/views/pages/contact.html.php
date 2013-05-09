@@ -1,3 +1,8 @@
+
+
+<?php $this->title('Contact – Fieldwork'); ?>
+
+
 <div class="content-inner info-layout">
 
 	<h1>Say Hello</h1>
@@ -64,9 +69,9 @@
 		
 		<h3>Social Media</h3>
 		<ul class="social-media">
-			<li><a class="ss-icon" href="http://twitter.com/madebyfieldwork">Twitter</a></li>
-			<li><a class="ss-icon" href="http://facebook.com/madebyfieldwork">Facebook</a></li>
-			<li><a class="ss-icon" href="http://flickr.com/photos/madebyfieldwork">Flickr</a></li>
+			<li><a class="ss-icon" href="http://twitter.com/madebyfieldwork">twitter</a></li>
+			<li><a class="ss-icon" href="http://facebook.com/madebyfieldwork">facebook</a></li>
+			<li><a class="ss-icon" href="http://flickr.com/photos/madebyfieldwork">flickr</a></li>
 		</ul>
 		
 		<h3>Extra Curricular</h3>

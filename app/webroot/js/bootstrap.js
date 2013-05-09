@@ -1,8 +1,27 @@
 
 
-	
 
-$(function(){
+function redirectTo(url) {
+	window.location = url;
+}
+
+var page_shown = false;
+function showPage() {
+	if (!page_shown) {
+		page_shown = true;
+		$('body').fadeIn(500);
+	}
+}
+
+
+window.onpageshow = function(event) {
+    if (event.persisted) {
+        window.location.reload() 
+    }
+};
+
+
+$(document).ready(function() {
 	
 	
 /*
@@ -16,15 +35,14 @@ $(function(){
 	});
 */
 
-
-	$('body').fadeIn(500);
+	showPage();
 	
 	var siteURL = "http://" + top.location.host.toString();
 	$('a.fade-transition').on('click', function(e) {
 		e.preventDefault();
 		var loc = $(this).attr('href');
 		$('body').fadeOut(500, function() {
-			window.location = loc;
+			redirectTo(loc);
 		});
 	});
 	
