@@ -18,7 +18,7 @@
 			<div class="social">
 				<ul>
 					<li><?= $this->html->twitter('Test tweet', 'http://madebyfieldwork.com/volumes', 'Tweet'); ?></li>
-					<li><?= $this->html->facebook('http://madebyfieldwork.com/volumes', 'Like'); ?></li>
+					<li><?= $this->html->facebook('http://madebyfieldwork.com/volumes', 'Share'); ?></li>
 					<li><a href="">Pin</a></li>
 					<li><a href="">Plus</a></li>
 				</ul>
