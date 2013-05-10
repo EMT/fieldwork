@@ -14,12 +14,11 @@
 		</figure>
 		
 		<div class="intro">
-			<p class="runner">The Big Pedal is a massive cycle-to-school event that takes place over three weeks each year, involving well over 1,000 schools and generating over a million journeys to school by bike.
-</p>
+			<p class="runner">The Big Pedal is a massive cycle-to-school event that takes place over three weeks each year, involving well over 1,000 schools and generating over a million journeys to school by bike.</p>
 			<div class="social">
 				<ul>
-					<li><a href="">Tweet</a></li>
-					<li><a href="">Like</a></li>
+					<li><?= $this->html->twitter('Test tweet', 'http://madebyfieldwork.com/volumes', 'Tweet'); ?></li>
+					<li><?= $this->html->facebook('http://madebyfieldwork.com/volumes', 'Like'); ?></li>
 					<li><a href="">Pin</a></li>
 					<li><a href="">Plus</a></li>
 				</ul>
@@ -27,9 +26,9 @@
 		</div>
 		
 		<div class="details">
-			<p>At Fieldwork, we make sure to keep a good balance between client work and in-house projects. We needed a visual identity flexible enough to work across anything from project proposals and invoices, through fun prints and publications, all the way to super geeky stuff like code projects and gadgets.</p>
-			<p>After establishing some guiding principals about how we want to work, who we’d most like to work with, and what we want to work on, we wrote a short and simple <a href="">manifesto</a> for Fieldwork, and collected some visual inspiration based around those ideas.</p>
-			<p>Through a process of iteration, we developed the simple identity you see on this page and across the website, as well as a collection of visual materials to </p>
+			<p>Before we started working with Sustrans on The Big Pedal, they used spread sheets, email and telephone calls to run their national virtual bike race. There was no website, and event administration was becoming unmanageable under the weight of numbers.</p>
+			<p>We built the first version of the web application quickly, to accommodate the basic requirements and address the most pressing needs, and have spent the four years since iterating and improving the application into the full-featured platform it is today.</p>
+			<p>Through automating the registration and participation processes, the event has been able to involve many more schools, and increase the number of participants. The Big Pedal continues to grow, and has an increasing impact on the number of children cycling to school each year.</p>
 		</div>
 	
 		
