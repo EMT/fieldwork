@@ -58,6 +58,10 @@ extract($this->data());
 		</div>
 		
 		<figure class="full-width grid">					
+			<img src="/img/work/mini-bugs/mb-13.jpg" alt="" />
+		</figure>
+		
+		<figure class="full-width grid">					
 			<img src="/img/work/mini-bugs/mb-web1.jpg" alt="" />
 		</figure>
 		
