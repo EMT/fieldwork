@@ -1,6 +1,11 @@
 
 
-<?php $this->title('Clarence & Fredericks – Fieldwork'); ?>
+<?php 
+$this->title('Clarence & Fredericks – Fieldwork');
+$this->set(array('main_img' => '/img/work/clarence-fredericks/cf-header.jpg'));
+$this->set(array('description' => 'Based in south London, Clarence & Fredericks are a small, family run micro-brewery, producing a range of delicious craft beers.'));
+extract($this->data());
+?>
 
 
 <article class="content-item" id="item-<?= $pages[$this_page]; ?>">
@@ -10,26 +15,18 @@
 		<h1>Clarence &amp; Fredericks</h1>
 		
 		<figure class="hero">					
-			<img src="/img/work/clarence-fredericks/cf-header.jpg" alt="" />
+			<img src="<?= $main_img; ?>" alt="" />
 		</figure>
 		
 		<div class="intro">
-			<p class="runner">The Big Pedal is a massive cycle-to-school event that takes place over three weeks each year, involving well over 1,000 schools and generating over a million journeys to school by bike.
-</p>
-			<div class="social">
-				<ul>
-					<li><a href="">Tweet</a></li>
-					<li><a href="">Like</a></li>
-					<li><a href="">Pin</a></li>
-					<li><a href="">Plus</a></li>
-				</ul>
-			</div>
+			<p class="runner"><?= $description; ?></p>
+			<?= $this->_render('element', 'sharing', $this->data()); ?>
 		</div>
 		
 		<div class="details">
-			<p>At Fieldwork, we make sure to keep a good balance between client work and in-house projects. We needed a visual identity flexible enough to work across anything from project proposals and invoices, through fun prints and publications, all the way to super geeky stuff like code projects and gadgets.</p>
-			<p>After establishing some guiding principals about how we want to work, who we’d most like to work with, and what we want to work on, we wrote a short and simple <a href="">manifesto</a> for Fieldwork, and collected some visual inspiration based around those ideas.</p>
-			<p>Through a process of iteration, we developed the simple identity you see on this page and across the website, as well as a collection of visual materials to </p>
+			<p>We worked up a concept based around family and heritage, which resulted in the woodcut crest used for the main identity.</p>
+			<p>To compliment this we worked with illustrator <a href="http://www.icantbelieveitsnotbetter.co.uk/">Matthew Green</a> to devise a figure head for the brand. Barry the Budgie has become a firm favourite (some say he’s the Lesley Phillips of the Budgie world).</p>
+			<p>Along with letterpresses business cards we helped with design of the bottles, pump clips, apparel.</p>
 		</div>
 	
 		

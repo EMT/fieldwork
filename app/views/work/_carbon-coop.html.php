@@ -1,6 +1,11 @@
 
 
-<?php $this->title('Carbon Coop – Fieldwork'); ?>
+<?php 
+$this->title('Carbon Coop – Fieldwork');
+$this->set(array('main_img' => '/img/work/carbon-coop/cc-header.jpg'));
+$this->set(array('description' => 'Carbon Co-op are a groundbreaking group of residents and housing experts who are pioneering a new model for making homes in Greater Manchester more energy efficient.'));
+extract($this->data());
+?>
 
 
 <article class="content-item" id="item-<?= $pages[$this_page]; ?>">
@@ -10,19 +15,12 @@
 		<h1>Carbon Coop</h1>
 		
 		<figure class="hero">					
-			<img src="/img/work/carbon-coop/cc-header.jpg" alt="" />
+			<img src="<?= $main_img; ?>" alt="" />
 		</figure>
 		
 		<div class="intro">
-			<p class="runner">A groundbreaking group of residents and housing experts who are pioneering a new model for making homes in Greater Manchester more energy efficient.</p>
-			<div class="social">
-				<ul>
-					<li><a href="">Tweet</a></li>
-					<li><a href="">Like</a></li>
-					<li><a href="">Pin</a></li>
-					<li><a href="">Plus</a></li>
-				</ul>
-			</div>
+			<p class="runner"><?= $description; ?></p>
+			<?= $this->_render('element', 'sharing', $this->data()); ?>
 		</div>
 		
 		<div class="details">

@@ -1,6 +1,11 @@
 
 
-<?php $this->title('The Big Pedal – Fieldwork'); ?>
+<?php 
+$this->title('The Big Pedal – Fieldwork');
+$this->set(array('main_img' => '/img/work/big-pedal/tbp-header.jpg'));
+$this->set(array('description' => 'The Big Pedal is a massive cycle-to-school event that takes place over three weeks each year, involving over 1,000 schools and generating over a million journeys to school by bike.'));
+extract($this->data());
+?>
 
 
 <article class="content-item" id="item-<?= $pages[$this_page]; ?>">
@@ -10,19 +15,12 @@
 		<h1>The Big Pedal</h1>
 		
 		<figure class="hero">					
-			<img src="/img/work/big-pedal/tbp-header.jpg" alt="" />
+			<img src="<?= $main_img; ?>" alt="" />
 		</figure>
 		
 		<div class="intro">
-			<p class="runner">The Big Pedal is a massive cycle-to-school event that takes place over three weeks each year, involving well over 1,000 schools and generating over a million journeys to school by bike.</p>
-			<div class="social">
-				<ul>
-					<li><?= $this->html->twitter('Test tweet', 'http://madebyfieldwork.com/volumes', 'Tweet'); ?></li>
-					<li><?= $this->html->facebook('http://madebyfieldwork.com/volumes', 'Share'); ?></li>
-					<li><a href="">Pin</a></li>
-					<li><a href="">Plus</a></li>
-				</ul>
-			</div>
+			<p class="runner"><?= $description; ?></p>
+			<?= $this->_render('element', 'sharing', $this->data()); ?>
 		</div>
 		
 		<div class="details">

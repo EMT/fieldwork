@@ -216,7 +216,13 @@ $(document).ready(function() {
 	});
 	
 	
-	flickr();
+	if ($('#flickr').length) {
+		flickr();
+	}
+	
+	if ($('#latest-tweet').length) {
+		latestTweet('madebyfieldwork');
+	}
 	
 	if (typeof google !== 'undefined') {
 		initializeMap();
@@ -459,17 +465,24 @@ function initializeMap() {
 
 
 //	Flickr API
+
 function flickr() {
-/* 	var url = 'http://api.flickr.com/services/feeds/groups_pool.gne?id=2172335@N24&lang=en-us&format=json'; */
 	var url = 'http://api.flickr.com/services/feeds/groups_pool.gne?id=2172335@N24&lang=en-us&format=json&jsoncallback=?';
 	$.getJSON(url, function(data) {
 		$('<a href="' + data.items[0].link + '"><img src="' + data.items[0].media.m.replace('_m.jpg', '_z.jpg') + '" alt="' + data.items[0].media + '" /><div class="home-grid-details"><h3>' + data.items[0].title + '</h3></div></a>').appendTo('#flickr');
 	});
-/*
-	$.get(url, '', function(data) {
-		$('<img src="' + data.items[0].media.m + '" alt="' + data.items[0].media + '" />').appendTo('#flickr');
-	}, 'jsonp');
-*/
+}
+
+
+//	Twitter
+
+function latestTweet(username) {
+	var url = 'https://api.twitter.com/1/statuses/user_timeline/' + username + '.json?count=1&include_rts=1&callback=?';
+	$.getJSON(url, function(data) {
+		var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig; 
+		$('#latest-tweet .tweet').html(data[0].text.replace(exp, "<a href='$1'>$1</a>"));
+		$('#latest-tweet .twitter-handle').html('<a href="http://twitter.com/' + data[0].user.screen_name + '">@' + data[0].user.screen_name + '</a>');
+	});
 }
 
 

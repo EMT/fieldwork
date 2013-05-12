@@ -61,8 +61,8 @@
 			<div class="grid-item col-3-1">
 				<div id="latest-tweet">
 					<div>
-						<p>We’re super excited to be working with the very talented @Heystudio on a new project — http://volumes.madebyfieldwork.com/making/  Coming soon!</p>
-						<p><a href="http://twitter.com/madebyfieldwork">@madebyfieldwork</a></p>
+						<p class="tweet">We’re super excited to be working with the very talented @Heystudio on a new project — http://volumes.madebyfieldwork.com/making/  Coming soon!</p>
+						<p class="twitter-handle"><a href="http://twitter.com/madebyfieldwork">@madebyfieldwork</a></p>
 					</div>
 				</div>
 			</div>

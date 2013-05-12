@@ -1,6 +1,12 @@
 
 
-<?php $this->title('Our Brand – Fieldwork'); ?>
+<?php 
+$this->title('Our Brand – Fieldwork');
+$this->set(array('main_img' => '/img/work/fieldwork/fw-1.jpg'));
+$this->set(array('description' => 'Our in-house projects are an important part of our work, so we developed a multi-layered visual language to work across all of our activities, from'));
+extract($this->data());
+?>
+
 
 
 <article class="content-item" id="item-<?= $pages[$this_page]; ?>">
@@ -10,19 +16,12 @@
 		<h1>Fieldwork</h1>
 		
 		<figure class="hero">					
-			<img src="/img/work/fieldwork/fw-1.jpg" alt="" />
+			<img src="<?= $main_img; ?>" alt="" />
 		</figure>
-	
+		
 		<div class="intro">
-			<p class="runner">Our in-house projects are an important part of our work, so we developed a multi-layered visual language to work across all of our activities, from </p>
-			<div class="social">
-				<ul>
-					<li><a href="">Tweet</a></li>
-					<li><a href="">Like</a></li>
-					<li><a href="">Pin</a></li>
-					<li><a href="">Plus</a></li>
-				</ul>
-			</div>
+			<p class="runner"><?= $description; ?></p>
+			<?= $this->_render('element', 'sharing', $this->data()); ?>
 		</div>
 		
 		<div class="details">
