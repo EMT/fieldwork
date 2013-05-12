@@ -105,10 +105,10 @@ extract($this->data());
 		
 		<div class="grid">
 			<figure class="col-2-1">
-				<img src="/img/work/clarence-fredericks/cf-17.jpg" alt="" />
+				<img src="/img/work/clarence-fredericks/cf-24.jpg" alt="" />
 			</figure>
 			<figure class="col-2-1">
-				<img src="/img/work/clarence-fredericks/cf-24.jpg" alt="" />
+				<img src="/img/work/clarence-fredericks/cf-17.jpg" alt="" />
 			</figure>
 		</div>
 
