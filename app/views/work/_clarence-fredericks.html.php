@@ -103,9 +103,14 @@ extract($this->data());
 			<img src="/img/work/clarence-fredericks/cf-16.jpg" alt="" />
 		</figure>
 		
-		<figure class="full-width grid">
-			<img src="/img/work/clarence-fredericks/cf-17.jpg" alt="" />
-		</figure>
+		<div class="grid">
+			<figure class="col-2-1">
+				<img src="/img/work/clarence-fredericks/cf-17.jpg" alt="" />
+			</figure>
+			<figure class="col-2-1">
+				<img src="/img/work/clarence-fredericks/cf-24.jpg" alt="" />
+			</figure>
+		</div>
 
 		
 		
