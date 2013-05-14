@@ -1058,7 +1058,7 @@ a:hover .home-grid-details {
 
 
 /* Forms */
-input[type=submit] {
+input[type="submit"] {
 	-webkit-appearance: none;
 }
 
