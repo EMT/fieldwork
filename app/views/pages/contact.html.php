@@ -20,7 +20,7 @@
 			<h3>Start a Project</h3>
 			<div class="section-content">
 				<p>Do you have a project in mind? Something you think we might be able to help with? Let’s talk.</p>
-				<p><a href="">andy@madebyfieldwork.com</a></p>
+				<p><a href="mailto:andy@madebyfieldwork.com">andy@madebyfieldwork.com</a></p>
 			</div>
 		</section>
 		
@@ -28,7 +28,7 @@
 			<h3>General Enquiries</h3>
 			<div class="section-content">
 				<p>Just want to say hello, ask a question, tell us a joke, or arrange to pop in for tea and cake? Get in touch. We love getting mail from folks like you.</p>
-				<p><a href="">hello@madebyfieldwork.com</a></p>
+				<p><a href="mailto:hello@madebyfieldwork.com">hello@madebyfieldwork.com</a></p>
 			</div>
 		</section>
 		
@@ -37,7 +37,7 @@
 			<div class="section-content">
 				<p>We offer a work placement scheme for students and graduates to gain industry experience and help make the transition into professional design or development practice. If you’re interested please get in touch.</p>
 				<p>We’re a young and growing company, and on the lookout for talented people to join Fieldwork from time to time. Send us your portfolio/Github profile/etc.</p>
-				<p><a href="">work@madebyfieldwork.com</a></p>
+				<p><a href="mailto:work@madebyfieldwork.com">work@madebyfieldwork.com</a></p>
 			</div>
 		</section>
 		
@@ -45,7 +45,7 @@
 			<h3>Collaborate</h3>
 			<div class="section-content">
 				<p>Working with talented folk is something we believe in strongly as a studio, we’d love to hear from you if you want show us work or have an idea for a project to collaborate on</p>
-				<p><a href="">collaborate@madebyfieldwork.com</a></p>
+				<p><a href="mailto:collaborate@madebyfieldwork.com">collaborate@madebyfieldwork.com</a></p>
 			</div>
 		</section>
 		
