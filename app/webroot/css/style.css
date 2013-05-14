@@ -1060,8 +1060,8 @@ a:hover .home-grid-details {
 /* Forms */
 input[type="submit"] {
 	-webkit-appearance: none;
-	-webkit-border-radius: none;
-	border-radius: none;
+	-webkit-border-radius: 0;
+	border-radius: 0;
 }
 
 
