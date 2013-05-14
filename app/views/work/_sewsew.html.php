@@ -24,11 +24,10 @@ extract($this->data());
 		</div>
 		
 		<div class="details">
-			
-			
 		
-			<p>Claire's passion for her craft is at the heart of every one of her creations. We wanted to create an identity that would convey the handmade, delicate nature of what she does. We developed the a marque and visual palette across a range of stationery and printed materials as well as branding for the products and packaging.</p>
-			<p>We also designed and developed a simple e-commerce website for SewSew, due to launch any time now. Watch this space.</p>
+			<p>Claire's passion for her craft is at the heart of every one of her creations, and she needed an identity that would convey the handmade, delicate and high quality nature of her work.</p>
+			<p>We developed a marque along with a broader visual palette to work across a range of stationery and printed materials as well as branding for the products and packaging.</p>
+			<p>We also designed and developed a simple e-commerce website for SewSew, putting the focus on the quality of SewSew’s products with imagery and clear, concise information. The new site is due to launch any time now. Watch this space.</p>
 		</div>
 	
 		

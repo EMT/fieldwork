@@ -26,7 +26,7 @@ extract($this->data());
 		<div class="details">
 			
 			<p>Clarence & Fredericks needed a strong identity that would embody family run business, the craftsmanship of brewing, and the idea of building their own heritage for the company over the coming years.</p>
-			<p>We developed an identity that works well for a range of applications from stationary to bottles to website. To compliment this we worked with illustrator <a href="http://www.icantbelieveitsnotbetter.co.uk/">Matthew Green</a> to devise a figure head for the brand. Barry the Budgie has become a firm favourite (some say he’s the Lesley Phillips of the Budgie world).</p>
+			<p>We developed an identity that works well for a range of applications from stationary to bottles to website. To compliment the main identity, we worked with illustrator <a href="http://www.icantbelieveitsnotbetter.co.uk/">Matthew Green</a> to devise a figure head for the brand. Barry the Budgie has become a firm favourite (some say he’s the Lesley Phillips of the Budgie world).</p>
 			<p>We also designed and developed a simple, updatable website to showcase the current range of beers, and become an online hub for the company’s activities.</p>
 			
 		</div>

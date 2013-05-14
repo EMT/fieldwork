@@ -24,9 +24,9 @@ extract($this->data());
 		</div>
 		
 		<div class="details">
-			<p>We created the identity, stationery, print and e-commerce site. Illustrator <a href="http://www.lucygell.com/">Lucy Gell</a> created the bug illustrations</p>
-			<p>Bright, bold, colourful palette with a hand drawn logotype</p>
-			<p>Currently working closely with them to design the signage and interior look and feel of the new shop.</p>
+			<p>Mini Bugs approached us to develop a fun and engaging brand identity that would appeal to both children and parents. We designed a hand drawn logotype, and brought in illustrator, <a href="http://www.lucygell.com/">Lucy Gell</a>, to create the bugs and provide added depth to the colourful visual palette.</p>
+			<p>We designed and developed an e-commerce website to handle the Buxton based shop’s large and ever changing catalogue of products, as well as provide an online presence and point of contact for the business.</p>
+			<p>We’re excited to currently be working with Mini Bugs to design the look and feel for the interior of their new shop.</p>
 		</div>
 	
 		

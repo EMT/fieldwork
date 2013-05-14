@@ -24,7 +24,7 @@ extract($this->data());
 		</div>
 		
 		<div class="details">
-			<p>Before we started working with Sustrans on The Big Pedal, they used spread sheets, email and telephone calls to run their national virtual bike race. There was no website, and event administration was becoming unmanageable under the weight of numbers.</p>
+			<p>Before we started working with Sustrans on The Big Pedal, they used spread sheets, email and telephone calls to run their national virtual bike race. We designed and built an automated web application to handle the administrative tasks as well as providing public information and instant feedback to schools about their progress.</p>
 			<p>We built the first version of the web application quickly, to accommodate the basic requirements and address the most pressing needs, and have spent the four years since iterating and improving the application into the full-featured platform it is today.</p>
 			<p>Through automating the registration and participation processes, the event has been able to involve many more schools, and increase the number of participants. The Big Pedal continues to grow, and has an increasing impact on the number of children cycling to school each year.</p>
 		</div>
