@@ -22,24 +22,24 @@
 		</div>
 		
 		<div class="grid-item col-2-1">
-			<a class="fade-transition" href="/work/fieldwork">
-				<img src="/img/work/fieldwork.jpg" alt="" />
+			<a class="fade-transition" href="/work/big-pedal">
+				<img src="/img/work/bigpedal.jpg" alt="" />
 				<div class="item-details bottom-left">
 					<div>
-						<h3>Fieldwork</h3>
-						<p>Behold the magic power of the F</p>
+						<h3>Big Pedal</h3>
+						<p>Over a million school journeys by bike</p>
 					</div>
 				</div>
 			</a>
 		</div>
 		
 		<div class="grid-item col-2-1">
-			<a class="fade-transition" href="/work/big-pedal">
-				<img src="/img/work/bigpedal.jpg" alt="" />
+			<a class="fade-transition" href="/work/fieldwork">
+				<img src="/img/work/fieldwork.jpg" alt="" />
 				<div class="item-details bottom-right">
 					<div>
-						<h3>Big Pedal</h3>
-						<p>Over a million school journeys by bike</p>
+						<h3>Fieldwork</h3>
+						<p>Behold the magic power of the F</p>
 					</div>
 				</div>
 			</a>

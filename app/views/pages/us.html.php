@@ -26,7 +26,7 @@
 		<section class="col-3-1">
 			<h3>Our Approach</h3>
 			<p>We build things with you, collaboratively, to support and enhance the work that you do. Combining your knowledge of your organisation and its work, with our experience and design process, we produce things that have real impact.</p>
-			<p>We build things with you, collaboratively, to support and enhance the work that you do. Combining your knowledge of your organisation and its work, with our experience and design process, we produce things that have real impact.</p>
+			<p>Finally, we develop and deploy final products and assets, and work out how best to launch the project for the most positive impact.</p>
 		</section>
 		
 		
@@ -64,7 +64,7 @@
 					<img src="/img/studio/process-deliver.svg" alt="" />
 				</figure>
 				<h4>Deliver</h4>
-				<p>Finally, we develop and deploy final products and assets, and work out how best to launch the project for the most positive impact.</p>
+				<p>We write code, finalise designs, test and deploy. Then we add that extra special shine before working out how best to launch the project for the most positive impact.</p>
 			</li>
 		</ul>
 	</div>

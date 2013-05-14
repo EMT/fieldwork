@@ -62,6 +62,9 @@ extract($this->data());
 			<figure class="col-2-1">
 				<img src="/img/work/sewsew/ss-14.jpg" alt="" />
 			</figure>
+			<figure class="col-2-1">
+				<img src="/img/work/sewsew/ss-19.jpg" alt="" />
+			</figure>
 		</div>
 		
 		<figure class="full-width grid">
@@ -82,8 +85,22 @@ extract($this->data());
 		</div>
 		
 		<figure class="full-width grid">
+			<img src="/img/work/sewsew/ss-21.jpg" alt="" />
+		</figure>
+		
+		<div class="grid">
+			<figure class="col-2-1">
+				<img src="/img/work/sewsew/ss-20.jpg" alt="" />
+			</figure>
+			<figure class="col-2-1">
+				<img src="/img/work/sewsew/ss-22.jpg" alt="" />
+			</figure>
+		</div>
+		
+		<figure class="full-width grid">
 			<img src="/img/work/sewsew/ss-10.jpg" alt="" />
 		</figure>
+		
 		
 		
 	</div>

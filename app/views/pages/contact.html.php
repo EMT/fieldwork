@@ -33,9 +33,10 @@
 		</section>
 		
 		<section>
-			<h3>Work/Placements</h3>
+			<h3>Jobs/Placements</h3>
 			<div class="section-content">
-				<p>We offer a work placement scheme for students to gain industry experience and help make the transition into professional design or development practice. If you’re interested please get in touch.</p>
+				<p>We offer a work placement scheme for students and graduates to gain industry experience and help make the transition into professional design or development practice. If you’re interested please get in touch.</p>
+				<p>We’re a young and growing company, and on the lookout for talented people to join Fieldwork from time to time. Send us your portfolio/Github profile/etc.</p>
 				<p><a href="">work@madebyfieldwork.com</a></p>
 			</div>
 		</section>
@@ -44,7 +45,7 @@
 			<h3>Collaborate</h3>
 			<div class="section-content">
 				<p>Working with talented folk is something we believe in strongly as a studio, we’d love to hear from you if you want show us work or have an idea for a project to collaborate on</p>
-				<p><a href="">work@madebyfieldwork.com</a></p>
+				<p><a href="">collaborate@madebyfieldwork.com</a></p>
 			</div>
 		</section>
 		
@@ -75,15 +76,22 @@
 		</ul>
 		
 		<h3>Extra Curricular</h3>
-		<p>We’re always making things, and getting involved with projects we believe in. Here are some of our other bits and pieces.</p>
+		<p>Here are some of the other things we make or get involved with.</p>
 		<ul class="text-list">
-			<li><a href="http://volumes.madebyfieldwork.com">Volumes</a> (coming soon, stay tuned)</li>
-			<li><a href="http://thingswefind.com">Things We Find</a> – the visual loveliness we find</li>
-			<li><a href="http://goodfornothing.com">Good for Nothing</a> – smart people solving hard problems</li>
+			<li>
+				<h4><a href="http://volumes.madebyfieldwork.com">Volumes</a></h4>
+				<p>Coming soon, stay tuned.</p>
+			</li>
+			<li>
+				<h4><a href="http://thingswefind.com">Things We Find</a></h4>
+				<p>The visual loveliness we find.</p>
+			</li>
+			<li>
+				<h4><a href="http://goodfornothing.com">Good for Nothing</a></h4>
+				<p>Smart people solving hard problems.</p>
+			</li>
 		</ul>
 		
-		<h3>Visiting</h3>
-		<p>If you’re in the area, feel free to pop in. We keep a healthy supply of tea and cake (and it’s never around for long enough to go stale).</p>
 		
 	</div>
 	

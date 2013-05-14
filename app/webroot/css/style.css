@@ -351,6 +351,7 @@ h1 {
 	line-height: 1.2em;
 	letter-spacing: -1px;
 	margin: 1.8em 0;
+	margin: 5.5%;
 }
 
 h2 a {
@@ -381,6 +382,12 @@ h2 a:hover,
 .text-list a:hover {
 	color: rgb(23,77,89);
 	border-bottom: 1px solid rgba(23,77,89,0.7);
+}
+.text-list h4 {
+	margin-bottom: 0;
+}
+.text-list p {
+	margin-top: 0;
 }
 
 
@@ -468,16 +475,24 @@ nav .search:hover {
 }
 nav .index {
 	text-indent: -999em;
-	background: transparent url('/img/icon-sprite.png') -90px 17px no-repeat;
+	background: transparent url('/img/icon-sprite.svg') no-repeat 0 14px;
+	background-size: 200%;
 	height: 3em;
-	width: 17px;
+	width: 16px;
 	margin: 0 0 0 0.6em;
 	position: relative;
 }
 .index-open nav .index,
 nav .index:hover {
 	border-bottom-color: transparent;
-	background-position: -90px -33px;
+	background-position: -16px 14px;
+}
+.no-svg nav .index {
+	background: transparent url('/img/icon-sprite.png') no-repeat 0 14px;
+}
+.no-svg .index-open nav .index,
+.no-svg nav .index:hover {
+	background-position: -16px 14px;
 }
 .index-open nav .index:after {
 	content: ' ';
@@ -1085,7 +1100,7 @@ a:hover .home-grid-details {
 	line-height: 33px;
 	font-size: 0.85em;
 	color: rgb(235,235,232);
-	background: transparent url('/img/grey-hex.png') no-repeat left center;
+	background: transparent url('/img/icon-sprite.svg') no-repeat 0 -58px;
 	background-size: 200%;
 /* 	text-indent: -999em; */
 	display: block;
@@ -1093,7 +1108,13 @@ a:hover .home-grid-details {
 	height: 30px;
 }
 .social-media a:hover {
-	background-position: right center;
+	background-position: -26px -58px;
+}
+.no-svg .social-media a {
+	background: transparent url('/img/icon-sprite.png') no-repeat 0 -72px;
+}
+.no-svg .social-media a:hover {
+	background: transparent url('/img/icon-sprite.png') no-repeat -26px -72px;
 }
 
 
