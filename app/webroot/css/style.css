@@ -905,6 +905,9 @@ h3 {
 	max-width: 33.3333%;
 	vertical-align: bottom;
 }
+#machine img:nth-child(n+4) {
+	display: none;
+}
 #machine .floating {
 	position: absolute;
 }
@@ -1211,6 +1214,9 @@ a:hover .home-grid-details {
 	#machine img {
 		max-width: 25%;
 	}
+	#machine img:nth-child(n+4) {
+		display: none;
+	}
 	
 	
 }
@@ -1227,6 +1233,9 @@ a:hover .home-grid-details {
 	}
 	#machine img {
 		max-width: 16.66666666%;
+	}
+	#machine img:nth-child(n+5) {
+		display: inline;
 	}
 
 }
