@@ -22,6 +22,14 @@ window.onpageshow = function(event) {
 
 
 $(document).ready(function() {
+
+
+	//	Replace SVG in non-supporting browsers
+	if(!Modernizr.svg) {
+	    $('img[src*="svg"]').attr('src', function() {
+	        return $(this).attr('src').replace('.svg', '.png');
+	    });
+	}
 	
 	
 /*
@@ -37,6 +45,8 @@ $(document).ready(function() {
 
 	showPage();
 	
+	
+	
 	var siteURL = "http://" + top.location.host.toString();
 	$('a.fade-transition').on('click', function(e) {
 		e.preventDefault();
@@ -49,8 +59,9 @@ $(document).ready(function() {
 	
 	//	Home page machine parts
 	if ($('#machine').length) {
-		var arr = [1, 2, 3, 4, 5, 6],
-			rand_arr = [];
+		var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+			rand_arr = [],
+			ext = (Modernizr.svg) ? 'svg' : 'png';
 		for (var i in arr) {
 			rand_arr.splice(Math.floor(Math.random() * (1 + rand_arr.length)), 0, arr[i]);
 		}
@@ -63,8 +74,9 @@ $(document).ready(function() {
 			how_many_parts = 6;
 		}
 		for (i = 0; i < how_many_parts; i ++) {
-			$('<img src="/img/machine/machine-' + rand_arr[i] + '.png" alt="" />').appendTo('#machine');
+			$('<img src="/img/machine/fw-machine-' + rand_arr[i] + '.' + ext + '" alt="" />').appendTo('#machine');
 		}
+/*
 		var arr = [1, 2],
 			rand_arr = [],
 			positions = [
@@ -77,6 +89,7 @@ $(document).ready(function() {
 		for (i = 0; i < 2; i ++) {
 			$('<img class="floating" src="/img/machine/machine-f-' + rand_arr[i] + '.png" alt="" />').css(positions[i]).appendTo('#machine');
 		}
+*/
 	}
 
 

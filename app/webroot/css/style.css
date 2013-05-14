@@ -866,6 +866,7 @@ h3 {
 }
 #machine img {
 	max-width: 33.3333%;
+	vertical-align: bottom;
 }
 #machine .floating {
 	position: absolute;

@@ -34,12 +34,12 @@ extract($this->data());
 		
 		
 		<figure class="full-width grid">
-			<img src="/img/work/fieldwork/fw-i-1.png" alt="" />
+			<img src="/img/work/fieldwork/fw-logo.svg" alt="" />
 		</figure>
 		
 		<div class="grid">
 			<figure class="col-2-1 right">
-				<img src="/img/work/fieldwork/fw-i-2.png" alt="" />
+				<img src="/img/work/fieldwork/fw-cubes.svg" alt="" />
 			</figure>
 		</div>
 		
