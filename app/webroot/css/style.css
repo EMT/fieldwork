@@ -1056,6 +1056,13 @@ a:hover .home-grid-details {
 }
 
 
+
+/* Forms */
+input[type=submit] {
+	-webkit-appearance: none;
+}
+
+
 /* contact page */
 
 #map {
