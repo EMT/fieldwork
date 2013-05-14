@@ -11,7 +11,9 @@
 	<p class="centered-intro runner">From digital platforms to brand identities, we work with you, collaboratively, to make things that help your organisation do great work.</p>
 	
 	
-	<figure id="machine"></figure>
+	<div id="machine-wrapper">
+		<figure id="machine"></figure>
+	</div>
 	
 	
 	
