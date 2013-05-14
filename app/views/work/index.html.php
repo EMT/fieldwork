@@ -15,7 +15,7 @@
 				<div class="item-details top-left">
 					<div>
 						<h3>Clarence &amp; Fredericks</h3>
-						<p>Cycling to school has never been this much fun</p>
+						<p>Tasty, craft brewed beer, you say? We’re in.</p>
 					</div>
 				</div>
 			</a>
@@ -27,7 +27,7 @@
 				<div class="item-details bottom-left">
 					<div>
 						<h3>Big Pedal</h3>
-						<p>Over a million school journeys by bike</p>
+						<p>A national event generating over a million cycle journeys.</p>
 					</div>
 				</div>
 			</a>
@@ -39,7 +39,7 @@
 				<div class="item-details bottom-right">
 					<div>
 						<h3>Fieldwork</h3>
-						<p>Behold the magic power of the F</p>
+						<p>Our visual language and a work in progress.</p>
 					</div>
 				</div>
 			</a>
@@ -51,7 +51,7 @@
 				<div class="item-details bottom">
 					<div>
 						<h3>Carbon Coop</h3>
-						<p>A new model for making homes more energy efficient</p>
+						<p>A new model for making homes more energy efficient.</p>
 					</div>
 				</div>
 			</a>
@@ -63,7 +63,7 @@
 				<div class="item-details bottom">
 					<div>
 						<h3>SewSew</h3>
-						<p>Nice things made by nice hands</p>
+						<p>Beautiful unique creations, made by hand.</p>
 					</div>
 				</div>
 			</a>
@@ -75,7 +75,7 @@
 				<div class="item-details top-left">
 					<div>
 						<h3>Mini Bugs</h3>
-						<p>Behold the magic power of the F</p>
+						<p>Weird and wonderful things for curious kids.</p>
 					</div>
 				</div>
 			</a>

@@ -3,7 +3,7 @@
 <?php 
 $this->title('Our Brand – Fieldwork');
 $this->set(array('main_img' => '/img/work/fieldwork/fw-1.jpg'));
-$this->set(array('description' => 'We love our client work, but our in-house projects are also an important part of our work. We developed our won identity with this in mind.'));
+$this->set(array('description' => 'We love our client work, but our in-house projects are also an important part of what we do. We developed our own identity with an eye on both sides of Fieldwork.'));
 extract($this->data());
 ?>
 
