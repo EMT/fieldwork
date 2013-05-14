@@ -46,7 +46,7 @@ extract($this->data());
 		
 		<div class="grid">
 			<figure class="col-2-1">
-				<img src="/img/work/big-pedal/tbp-14.png" alt="" />
+				<img src="/img/work/big-pedal/bp-jerseys.svg" alt="" />
 			</figure>
 			<figure class="col-2-1">
 				<img src="/img/work/big-pedal/tbp-13.jpg" alt="" />

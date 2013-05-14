@@ -32,12 +32,12 @@ extract($this->data());
 		
 		
 		<figure class="full-width grid">
-			<img src="/img/work/carbon-coop/cc-17.png" alt="" />
+			<img src="/img/work/carbon-coop/cc-logo.svg" alt="" />
 		</figure>
 		
 		<div class="grid">
 			<figure class="col-2-1">
-				<img src="/img/work/carbon-coop/cc-18.png" alt="" />
+				<img src="/img/work/carbon-coop/cc-icons.svg" alt="" />
 			</figure>
 			<figure class="col-2-1">
 				<img src="/img/work/carbon-coop/cc-20.jpg" alt="" />

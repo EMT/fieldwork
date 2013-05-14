@@ -24,6 +24,9 @@ extract($this->data());
 		</div>
 		
 		<div class="details">
+			
+			
+		
 			<p>Claire's passion for her craft is at the heart of every one of her creations. We wanted to create an identity that would convey the handmade, delicate nature of what she does. We developed the a marque and visual palette across a range of stationery and printed materials as well as branding for the products and packaging.</p>
 			<p>We also designed and developed a simple e-commerce website for SewSew, due to launch any time now. Watch this space.</p>
 		</div>
@@ -31,7 +34,7 @@ extract($this->data());
 		
 		
 		<figure class="full-width grid">
-			<img src="/img/work/sewsew/ss-20.png" alt="" />
+			<img src="/img/work/sewsew/ss-logo.svg" alt="" />
 		</figure>
 		
 		<div class="grid">
@@ -39,7 +42,7 @@ extract($this->data());
 				<img src="/img/work/sewsew/ss-7.jpg" alt="" />
 			</figure>
 			<figure class="col-2-1">
-				<img src="/img/work/sewsew/ss-21.png" alt="" />
+				<img src="/img/work/sewsew/ss-pattern.svg" alt="" />
 			</figure>
 		</div>
 		
@@ -48,7 +51,7 @@ extract($this->data());
 				<img src="/img/work/sewsew/ss-rollers.jpg" alt="" />
 			</figure>
 			<figure class="col-2-1">
-				<img src="/img/work/sewsew/ss-22.png" alt="" />
+				<img src="/img/work/sewsew/ss-patterndetail.svg    " alt="" />
 			</figure>
 		</div>
 		

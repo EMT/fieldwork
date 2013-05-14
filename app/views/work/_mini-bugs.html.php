@@ -32,7 +32,7 @@ extract($this->data());
 		
 		
 		<figure class="full-width grid">					
-			<img src="/img/work/mini-bugs/mb-7.png" alt="" />
+			<img src="/img/work/mini-bugs/mb-logo.svg" alt="" />
 		</figure>
 		
 		<div class="grid">
@@ -45,7 +45,7 @@ extract($this->data());
 		</div>
 		
 		<figure class="full-width grid">					
-			<img src="/img/work/mini-bugs/mb-bugs.png" alt="" />
+			<img src="/img/work/mini-bugs/mb-bugs.svg" alt="" />
 		</figure>
 		
 		<div class="grid">
