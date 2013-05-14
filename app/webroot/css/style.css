@@ -674,7 +674,6 @@ footer .social {
 	
 }
 .centered-intro {
-	text-align: center;
 	margin: 0 auto 5%;
 	max-width: 660px;
 }
@@ -891,13 +890,15 @@ h3 {
 
 #machine-wrapper {
 	position: relative;
-	padding-bottom: 32.2%;
+	padding-bottom: 64.63%;
 }
 #machine {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	right: 0;
+	max-height: 100%;
+	overflow: hidden;
 /* 	padding-top: 3em; */
 }
 #machine img {
@@ -1171,6 +1172,10 @@ a:hover .home-grid-details {
 		width: 48.5%;
 	}
 	
+	.centered-intro {
+		text-align: center;
+	}
+	
 	.grid .col-3-1 {
 		float: left;
 		width: 30.42071%;
@@ -1200,6 +1205,9 @@ a:hover .home-grid-details {
 		width: 30%;
 	}
 	
+	#machine-wrapper {
+		padding-bottom: 48.48%;
+	}
 	#machine img {
 		max-width: 25%;
 	}
@@ -1214,6 +1222,9 @@ a:hover .home-grid-details {
 		margin: 5.5% 0;
 	}
 	
+	#machine-wrapper {
+		padding-bottom: 32.32%;
+	}
 	#machine img {
 		max-width: 16.66666666%;
 	}
