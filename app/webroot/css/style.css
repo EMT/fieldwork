@@ -350,8 +350,7 @@ h1 {
 	font-weight: normal;
 	line-height: 1.2em;
 	letter-spacing: -1px;
-	margin: 1.8em 0;
-	margin: 5.5%;
+	margin: 1em 0;
 }
 
 h2 a {
@@ -488,12 +487,14 @@ nav .index:hover {
 	background-position: -16px 14px;
 }
 .no-svg nav .index {
-	background: transparent url('/img/icon-sprite.png') no-repeat 0 14px;
+	background-image: url('/img/icon-sprite.png');
 }
+/*
 .no-svg .index-open nav .index,
 .no-svg nav .index:hover {
 	background-position: -16px 14px;
 }
+*/
 .index-open nav .index:after {
 	content: ' ';
 	position: absolute;
@@ -786,25 +787,29 @@ h3 {
 
 .slider-nav {
 	text-indent: -999em;
-	background: transparent url('/img/icon-sprite.png') 0 0 no-repeat;
+	background: transparent url('/img/icon-sprite.svg') -32px -152px no-repeat;
+	background-size: 200%;
 	display: block;
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	margin-top: -17px;
 	margin-left: -617px;
-	height: 33px;
-	width: 33px;
+	height: 32px;
+	width: 32px;
+}
+.no-svg .slider-nav {
+	background-image: url('/img/icon-sprite.png');
 }
 #slider-next {
-	background-position: -33px 0;
+	background-position: 0 -152px;
 	margin-left: 584px;
 }
 #slider-next:hover {
-	background-position: -33px -33px;
+	background-position: 0 -120px;
 }
 #slider-prev:hover {
-	background-position: 0 -33px;
+	background-position: -32px -120px;
 }
 
 
@@ -1116,10 +1121,10 @@ a:hover .home-grid-details {
 	background-position: -26px -58px;
 }
 .no-svg .social-media a {
-	background: transparent url('/img/icon-sprite.png') no-repeat 0 -72px;
+	background-image: url('/img/icon-sprite.png');
 }
 .no-svg .social-media a:hover {
-	background: transparent url('/img/icon-sprite.png') no-repeat -26px -72px;
+	background-image: url('/img/icon-sprite.png');
 }
 
 
@@ -1204,6 +1209,10 @@ a:hover .home-grid-details {
 
 
 @media all and (min-width: 600px) {
+	
+	h1 {
+		margin: 5.5% 0;
+	}
 	
 	#machine img {
 		max-width: 16.66666666%;

@@ -25,12 +25,12 @@ class WorkController extends \app\extensions\action\Controller {
 		$path = join('/', func_get_args());
 	
 		$pages = array(
+			'clarence-fredericks',
 			'big-pedal',
+			'fieldwork',
 			'carbon-coop',
 			'sewsew',
-			'clarence-fredericks',
-			'mini-bugs',
-			'fieldwork'
+			'mini-bugs'
 		);
 		foreach($pages as $key => $page) {
 			if ($page === $path) {
