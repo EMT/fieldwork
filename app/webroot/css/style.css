@@ -990,10 +990,18 @@ a:hover .home-grid-details {
 
 .process-overview {
 	list-style: none;
+	padding-top: 3em;
 }
-.process-overview li {
-	background: transparent url('/img/process-overview-sprite.png') no-repeat 30px top;
-	padding-top: 210px;
+.process-overview figure {
+	position: relative;
+	padding-bottom: 50.48%;
+}
+.process-overview figure img {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	max-width: 100%;
 }
 .process-overview li.make {
 	background-position: 30px -240px;
@@ -1001,17 +1009,20 @@ a:hover .home-grid-details {
 .process-overview li.deliver {
 	background-position: 30px -500px;
 }
-.process-overview li > * {
+.process-overview li > h4,
+.process-overview li > p {
 	background: rgb(255,255,255);
-	padding: 0 10% 1em;
+	padding-left: 10%;
+	padding-right: 10%;
 	margin: 0;
 }
 .process-overview h4 {
 	color: rgb(241,55,72);
-	padding-top: 1.6em;
+	padding-top: 10%;
+	padding-bottom: 1em;
 }
 .process-overview p {
-	padding-bottom: 1.6em;
+	padding-bottom: 15%;
 }
 
 
