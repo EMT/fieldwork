@@ -839,11 +839,14 @@ h3 {
 .grid-item > a:hover img {
 	opacity: 0.2;
 }
+.grid-index .grid-item > a {
+	text-decoration: none;
+}
 .grid-item .item-details {
 	background: rgb(255,255,255);
-	position: absolute;
 	overflow: hidden;
 }
+/*
 .grid-item .item-details.top-left {
 	top: 0;
 	bottom: 50%;
@@ -868,6 +871,7 @@ h3 {
 	left: 0;
 	right: 0;
 }
+*/
 .grid-item h3 {
 	margin: 0;
 }
@@ -875,7 +879,8 @@ h3 {
 	margin-top: 0;
 }
 .grid-item .item-details > div {
-	padding: 7.5% 8.5%;
+	padding: 4%;
+	height: 5em;
 }
 
 
@@ -1169,19 +1174,6 @@ a:hover .home-grid-details {
 		float: left;
 		width: 47.08738%;
 	}
-	.grid .col-2-1.col-half {
-		overflow: hidden;
-	}
-	.grid .col-2-1.col-half a {
-		width: 50%;
-		padding-bottom: 36.5491%;
-	}
-	.grid .col-2-1.col-half-left a {
-		float: left;
-	}
-	.grid .col-2-1.col-half-right a {
-		float: right;
-	}
 	.grid-tight .col-3-1 {
 		width: 33.3333%;
 	}
@@ -1251,6 +1243,56 @@ a:hover .home-grid-details {
 		width: 70%;
 	}
 
+}
+
+
+@media all and (min-width: 970px) {
+	
+	.grid-item .item-details {
+		position: absolute;
+	}
+	.grid-item .item-details.top-left {
+		top: 0;
+		bottom: 50%;
+		left: 0;
+		right: 50%;
+	}
+	.grid-item .item-details.bottom-left {
+		top: 50%;
+		bottom: 0;
+		left: 0;
+		right: 50%;
+	}
+	.grid-item .item-details.bottom-right {
+		top: 50%;
+		bottom: 0;
+		left: 50%;
+		right: 0;
+	}
+	.grid-item .item-details.bottom {
+		top: 50%;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+	.grid-item .item-details > div {
+		padding: 7.5% 8.5%;
+	}
+	
+		.grid .col-2-1.col-half {
+		overflow: hidden;
+	}
+	.grid .col-2-1.col-half a {
+		width: 50%;
+		padding-bottom: 36.5491%;
+	}
+	.grid .col-2-1.col-half-left a {
+		float: left;
+	}
+	.grid .col-2-1.col-half-right a {
+		float: right;
+	}
+	
 }
 
 
