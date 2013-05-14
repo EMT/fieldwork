@@ -1,7 +1,7 @@
 
 	<header>
 		<div>
-			<a class="marque fade-transition" href="/"><img src="/img/fw-marque.png" alt="Fieldwork – Home" /></a>
+			<a class="marque fade-transition" href="/"><img src="/img/fw-logo.svg" alt="Fieldwork – Home" /></a>
 			<nav>
 				<a class="work fade-transition" href="/work">Work</a>
 				<a class="us fade-transition" href="/us">Us</a>

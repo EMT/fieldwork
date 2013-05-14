@@ -256,6 +256,7 @@ td { vertical-align: top; }
 * <link href="webfonts/ss-social.css" rel="stylesheet" />
 */
 
+/*
 @font-face {
   font-family: "SSSocial";
   src: url('../fonts/ss-social-circle.eot');
@@ -266,6 +267,7 @@ td { vertical-align: top; }
   font-weight: bold;
   font-style: normal;
 }
+*/
 
 @font-face {
   font-family: "SSSocial";
@@ -409,6 +411,7 @@ header {
 }
 header .marque img {
 	padding-top: 0.85em;
+	height: 20px;
 }
 .js header .marque {
 /* 	display: none; */
