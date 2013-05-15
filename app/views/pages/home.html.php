@@ -75,7 +75,7 @@
 			<div class="col-3-1">
 				<h2>Blog</h2>
 				<div class="grid-item" id="blog-teaser">
-					<a href="">
+					<a href="http://madebyfieldwork.com/emt/2013/05/14/tilt-website/">
 						<img src="http://madebyfieldwork.com/emt/wp-content/uploads/2013/05/collection-home-630x472.jpg" alt="" />
 						<div class="home-grid-details">
 <!-- 							<h3>TILT Website</h3> -->
