@@ -23,7 +23,7 @@
 <div class="home-grid">
 	<div class="content-inner">
 	
-		<h2>Featured</h2>
+		<h2>Featured Work</h2>
 	
 		<div class="grid grid-tight">
 	
@@ -60,6 +60,7 @@
 					</a>
 				</div>
 			</div>
+<!--
 			<div class="grid-item col-3-1">
 				<div id="latest-tweet">
 					<div>
@@ -72,14 +73,45 @@
 			<div class="grid-item col-3-1">
 				<div id="blog-teaser">
 					<div>
-						<h3>Threadless: The Do First Work Ethic</h3>
-						<p class="post-meta">March 7, 2013 01:38 am</p>
-<!-- 						<p>Interesting insight into the way the Threadless guys got started and their approach to making things.</p> -->
-						<p><a href="">Read more</a></p>
+						<h3><a href="http://madebyfieldwork.com/emt/2013/05/14/tilt-website/">TILT Website</a></h3>
+						<p class="post-meta">May 14</p>
+						<p>Over the last few months we’ve been working with the guys at TILT to design and develop their new online presence.</p>
+						<p><a href="http://madebyfieldwork.com/emt/2013/05/14/tilt-website/">Read more</a></p>
+					</div>
+				</div>
+			</div>
+-->
+		</div>
+		
+		
+		
+		
+		<div class="grid" style="margin-top: 6%;">
+			<div class="col-2-1">
+				<h2>Flickr</h2>
+				<div id="flickr"></div>
+			</div>
+			<div class="col-2-1">
+				<div style="overflow: hidden;">
+					<h2>Blog</h2>
+					<img src="http://madebyfieldwork.com/emt/wp-content/uploads/2013/05/collection-home-630x472.jpg" alt="" style="width: 48%; float:left;" />
+					<div style="float: right; width: 48%;">
+						<h3 style="margin-top: 0;"><a style="color: rgb(233,51,63);" href="http://madebyfieldwork.com/emt/2013/05/14/tilt-website/">TILT Website</a></h3>
+						<p class="post-meta">May 14</p>
+						<p>Over the last few months we’ve been working with the guys at TILT to design and develop their new online presence.</p>
+						<p><a style="color: rgb(233,51,63);" href="http://madebyfieldwork.com/emt/2013/05/14/tilt-website/">Read more</a></p>
+					</div>
+				</div>
+				<div style="margin-top: 6%;">
+					<h2>Twitter</h2>
+					<div>
+						<p class="tweet">We’re super excited to be working with the very talented @Heystudio on a new project — http://volumes.madebyfieldwork.com/making/  Coming soon!</p>
+						<p class="twitter-handle"><a href="http://twitter.com/madebyfieldwork">@madebyfieldwork</a></p>
 					</div>
 				</div>
 			</div>
 		</div>
+		
 		
 	</div>
 </div>	

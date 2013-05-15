@@ -369,6 +369,7 @@ time {
 
 p a,
 h2 a,
+h3 a,
 .text-list a {
 	color: rgb(150,150,150);
 	text-decoration: none;
@@ -953,14 +954,15 @@ h3 {
 }
 .home-grid .grid-item > div {
 	background: rgb(254,48,66);
-	padding-bottom: 72%;
+/* 	padding-bottom: 72%; */
 	position: relative;
 	overflow: hidden;
 }
 .home-grid .grid-item img {
 	display: block;
 }
-.home-grid p a {
+.home-grid p a,
+.home-grid h3 a {
 	color: rgb(255,255,255);
 	border-bottom-color: rgba(255,255,255,0.5);
 	-webkit-transition: all .3s ease-out;
@@ -969,6 +971,7 @@ h3 {
 	border-bottom-color: rgba(255,255,255,1);
 }
 
+/*
 .grid-item > div > a {
 	display: block;
 	position: absolute;
@@ -977,6 +980,27 @@ h3 {
 	left: 0;
 	right: 0;
 }
+*/
+.home-grid a {
+	text-decoration: none;
+}
+.home-grid a .home-grid-details {
+	background: rgb(255,255,255);
+	color: rgb(60,60,60);
+	padding: 4%;
+	height: 5em;
+}
+#flickr .home-grid-details {
+	height: auto;
+	padding: 1px 2.6666%;
+}
+.home-grid a:hover img {
+	opacity: 0.2;
+}
+.home-grid img {
+	max-width: 100%;
+}
+/*
 a .home-grid-details {
 	color: rgb(255,255,255);
 	opacity: 0;
@@ -992,13 +1016,14 @@ a .home-grid-details {
 a:hover .home-grid-details {
 	opacity: 1;
 }
-.home-grid-details h3,
+*/
+
 #blog-teaser h3 {
 	color: rgb(255,255,255);
 }
 
 #latest-tweet > div,
-#blog-teaser > div {
+#blog-teaser > * {
 	color: rgb(255,255,255);
 	position: absolute;
 	top: 0;
@@ -1007,6 +1032,9 @@ a:hover .home-grid-details {
 	right: 0;
 	padding: 7.5% 8.5%;
 	word-wrap: break-word;
+}
+.home-grid #blog-teaser h3 a {
+	border-bottom: 0;
 }
 /*
 #latest-tweet a,
@@ -1256,7 +1284,7 @@ input[type="submit"] {
 		max-width: 25%;
 	}
 	#machine img:nth-child(n+4) {
-		display: none;
+		display: inline;
 	}
 	
 	
@@ -1275,7 +1303,7 @@ input[type="submit"] {
 	#machine img {
 		max-width: 16.66666666%;
 	}
-	#machine img:nth-child(n+5) {
+	#machine img:nth-child(n+3) {
 		display: inline;
 	}
 
@@ -1283,6 +1311,10 @@ input[type="submit"] {
 
 
 @media all and (min-width: 700px) {
+	
+
+	
+	
 	
 	.info-layout .primary-content {
 		float: left;
@@ -1293,11 +1325,6 @@ input[type="submit"] {
 		width: 24.074%;
 	}
 	
-	
-}
-
-
-@media all and (min-width: 700px) {
 
 	.info-layout .primary-content section {
 		overflow: hidden;
@@ -1317,6 +1344,10 @@ input[type="submit"] {
 
 
 @media all and (min-width: 970px) {
+
+	.home-grid .grid-tight .col-3-1 {
+		width: 33.3333%;
+	}
 	
 	.grid-item .item-details {
 		position: absolute;

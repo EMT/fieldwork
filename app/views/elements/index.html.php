@@ -5,7 +5,7 @@
 			<ul>
 				<li>The collected <a href="">filmic</a> works of <a href="">Bill Murray</a></li>
 				<li>Robots</li>
-<!-- 				<li>Hand Painted Lettering</li> -->
+				<li><a href="http://www.jeffcanham.com/">Hand Painted Lettering</a></li>
 				<li><a href="http://chrispprinters.co.uk/">Letterpress</a></li>
 <!-- 				<li>The <a href="">Outdoors</a></li> -->
 				<li>Procrastinating</li>

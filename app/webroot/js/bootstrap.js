@@ -79,7 +79,8 @@ $(document).ready(function() {
 			how_many_parts = 6;
 		}
 		for (i = 0; i < how_many_parts; i ++) {
-			$('<img src="/img/machine/fw-machine-' + rand_arr[i] + '.' + ext + '" style="display: none;" onload="fadeIn(this);" alt="" />').appendTo('#machine');
+/* 			$('<img src="/img/machine/fw-machine-' + rand_arr[i] + '.' + ext + '" style="display: none;" onload="fadeIn(this);" alt="" />').appendTo('#machine'); */
+			$('<img src="/img/machine/fw-machine-' + rand_arr[i] + '.' + ext + '" alt="" />').appendTo('#machine');
 		}
 /*
 		var arr = [1, 2],
