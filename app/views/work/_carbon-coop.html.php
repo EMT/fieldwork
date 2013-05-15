@@ -24,7 +24,7 @@ extract($this->data());
 		</div>
 		
 		<div class="details">
-			<p>We worked with Carbon Co–op to design a core brand, which we developed across a range of different outputs such as print, stationery and exhibition graphics. Bespoke iconography and illustration add extra depth and versatility to the identity.</p>
+			<p>We worked with Carbon Co–op to design a core brand, which we developed across a range of different outputs such as print, stationery and exhibition graphics. Illustrations by <a href="http://www.charlottetrounce.co.uk/">Charlotte Trounce</a> and bespoke iconography add extra depth and versatility to the identity.</p>
 			<p>Initially working with a tight budget, we rapidly designed and developed the first prototype of the Carbon Co–op web platform as a fast and cost-effective way to meet their existing needs. We continue to work with them to iterate on that initial version, adapting according to the things they learn about their requirements as we go.</p>
 			<p>Carbon Co-op have a steadily increasing membership, and are attracting new funding through their innovative uses of technology.</p>
 		</div>
