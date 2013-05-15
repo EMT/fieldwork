@@ -90,8 +90,13 @@
 				<div style="">
 					<h2>Twitter</h2>
 					<div id="latest-tweet">
-						<p class="tweet">We’re super excited to be working with the very talented @Heystudio on a new project — http://volumes.madebyfieldwork.com/making/  Coming soon!</p>
+						<p class="tweet"></p>
 						<p class="twitter-handle"><a href="http://twitter.com/madebyfieldwork">@madebyfieldwork</a></p>
+						<div class="in-reply-to">
+							<h4>In reply to…</h4>
+							<p class="irt"></p>
+							<p class="irt-handle"></p>
+						</div>
 					</div>
 				</div>
 			</div>

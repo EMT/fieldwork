@@ -1060,21 +1060,20 @@ a:hover .home-grid-details {
 	position: relative;
 /* 	min-height: 356px; */
 	background: rgb(81,206,201);
-	padding-bottom: 6%;
+	padding: 6%;
 }
-#latest-tweet .tweet {
+#latest-tweet p {
 	word-wrap: break-word;
 	color: rgb(255,255,255);
-	padding: 6% 6% 4em;
-	margin: 0;
+	margin: 0 0 1em 0;
 }
 #latest-tweet .twitter-handle {
-	position: absolute;
-	bottom: 0;
-	padding-bottom: 6%;
-	left: 6%;
-	right: 6%;
+	
 }
+#latest-tweet .in-reply-to {
+	display: none;
+}
+
 #flickr .home-grid-details,
 #blog-teaser .home-grid-details {
 	min-height: none;

@@ -497,12 +497,25 @@ function flickr() {
 //	Twitter
 
 function latestTweet(username) {
-	var url = 'https://api.twitter.com/1/statuses/user_timeline/' + username + '.json?count=1&include_rts=1&callback=?';
+	var url = 'https://api.twitter.com/1/statuses/user_timeline/' + username + '.json?count=10&include_rts=1&callback=?';
 	$.getJSON(url, function(data) {
 		var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig; 
 		$('#latest-tweet .tweet').html(data[0].text.replace(exp, "<a href='$1'>$1</a>"));
 		$('#latest-tweet .twitter-handle').html('<a href="http://twitter.com/' + data[0].user.screen_name + '">@' + data[0].user.screen_name + '</a>');
+		showReply(data[0]);
 	});
+}
+function showReply(tweet) {
+	if (tweet.in_reply_to_status_id_str) {
+		var url = 'https://api.twitter.com/1/statuses/show.json?id=' + tweet.in_reply_to_status_id_str + '&callback=?';
+		$.getJSON(url, function(data) {
+console.log(data);
+			var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig; 
+			$('#latest-tweet .irt').html(data.text.replace(exp, "<a href='$1'>$1</a>"));
+			$('#latest-tweet .irt-handle').html('<a href="http://twitter.com/' + data.user.screen_name + '">@' + data.user.screen_name + '</a>');
+			$('#latest-tweet .in-reply-to').slideDown(300);
+		});
+	}
 }
 
 
