@@ -25,7 +25,7 @@
 	
 		<h2 class="centered-intro">Featured Work</h2>
 	
-		<div class="grid">
+		<div class="grid work">
 	
 			<div class="grid-item col-3-1">
 				<div>

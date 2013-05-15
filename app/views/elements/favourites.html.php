@@ -11,7 +11,7 @@
 				<li>Procrastinating</li>
 				<li>Reading</li>
 				<li><a href="http://www.flickr.com/photos/_andygott/8514818727/in/pool-madebyfieldwork">Making Lists</a></li>
-				<li><a href="http://www.richardgoodallgallery.com/rggstore/designer-vinyl-toys/vinyl-figures-c-22_25.html">Toys</a></li>
+				<li>Toys</li>
 				<li><a href="http://www.marblebeers.com/">Beer</a> &amp; Cheese</li>
 <!-- 				<li>Bicycle <a href="">Racing</a></li> -->
 				<li><a href="http://www.youtube.com/watch?v=91lJhEzMaH4">John Hughes</a></li>
