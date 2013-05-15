@@ -164,4 +164,12 @@ h1 {
 #main {
 	padding-bottom: 7em;
 }
+
+
+.home-grid a .work-details {
+	display: none
+}
+.home-grid a:hover .work-details {
+	display: block;
+}
 	

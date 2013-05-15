@@ -377,6 +377,10 @@ a .read-more {
 	display: inline-block;
 	border-bottom: 1px solid rgba(170,184,184,0.5);
 	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
 }
 p a:hover,
 h2 a:hover,
@@ -617,6 +621,10 @@ nav .index:hover {
 	color: rgb(255,255,255);
 	border-bottom: 1px solid rgba(255,255,255,0.5);
 	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
 }
 #index a:hover {
 	border-bottom: 1px solid rgba(255,255,255,1);
@@ -715,6 +723,10 @@ footer .social {
 	text-decoration: none;
 	color: rgb(153,153,153);
 	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
 }
 .social a:hover {
 	color: rgb(23,77,89);
@@ -877,6 +889,10 @@ h3 {
 	display: block;
 	max-width: 100%;
 	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
 }
 .grid-item > a {
 	background: rgb(243,51,68);
@@ -885,6 +901,8 @@ h3 {
 	position: relative;
 }
 .grid-item > a:hover img {
+	/* IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
 	opacity: 0.2;
 }
 .grid-index .grid-item > a {
@@ -980,6 +998,10 @@ h3 {
 	color: rgb(255,255,255);
 	border-bottom-color: rgba(255,255,255,0.5);
 	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
 }
 .home-grid p a:hover {
 	border-bottom-color: rgba(255,255,255,1);
@@ -1016,6 +1038,10 @@ h3 {
 	opacity: 0;
 	padding: 6%;
 	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
 }
 .home-grid a .work-details h3 {
 	color: rgb(255,255,255);
@@ -1031,7 +1057,10 @@ h3 {
 }
 */
 .home-grid a:hover img {
+	/* IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 	opacity: 0.2;
+	
 }
 .home-grid img {
 	width: 100%;
@@ -1048,6 +1077,10 @@ a .home-grid-details {
 	right: 0;
 	padding: 7.5% 8.5%;
 	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
 }
 a:hover .home-grid-details {
 	opacity: 1;
