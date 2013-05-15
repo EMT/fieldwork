@@ -15,7 +15,7 @@ extract($this->data());
 		<h1>SewSew</h1>
 		
 		<figure class="hero">					
-			<img src="<?= $main_img; ?>" alt="" />
+			<img src="<?= $main_img; ?>" alt="Hand holding a cloud shaped cushion" />
 		</figure>
 		
 		<div class="intro">
@@ -37,92 +37,92 @@ extract($this->data());
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/sewsew/ss-logo.svg" alt="" />
+					<img src="/img/work/sewsew/ss-logo.svg" alt="SewSew logo" />
 				</figure>
 			</div>
 			
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/sewsew/ss-7.jpg" alt="" />
+					<img src="/img/work/sewsew/ss-7.jpg" alt="logo concept sketches" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/sewsew/ss-pattern.svg" alt="" />
+					<img src="/img/work/sewsew/ss-pattern.svg" alt="Pattern used within the SewSew branding" />
 				</figure>
 			</div>
 		
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/sewsew/ss-rollers.jpg" alt="" />
+					<img src="/img/work/sewsew/ss-rollers.jpg" alt="A printing press rollers covered in ink whilst printing SewSew stationary" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/sewsew/ss-patterndetail.svg    " alt="" />
+					<img src="/img/work/sewsew/ss-patterndetail.svg" alt="Close-up detail of the SewSew pattern" />
 				</figure>
 			</div>
 		
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/sewsew/ss-18.jpg" alt="" />
+					<img src="/img/work/sewsew/ss-18.jpg" alt="A collection of packaging and stationary with SewSew branding" />
 				</figure>
 			</div>
 			
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/sewsew/ss-14.jpg" alt="" />
+					<img src="/img/work/sewsew/ss-14.jpg" alt="Close-up shot of a stack of SewSew business cards" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/sewsew/ss-19.jpg" alt="" />
+					<img src="/img/work/sewsew/ss-19.jpg" alt="Close-up shot of the SewSew logo on a businsess card" />
 				</figure>
 			</div>
 		
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/sewsew/ss-16.jpg" alt="" />
+					<img src="/img/work/sewsew/ss-16.jpg" alt="A manilla envelope with SewSew stamp and compliment slip" />
 				</figure>
 			</div>
 		
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/sewsew/ss-13.jpg" alt="" />
+					<img src="/img/work/sewsew/ss-13.jpg" alt="SewSew packaging with string and tissue paper" />
 				</figure>
 			</div>
 			
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/sewsew/ss-17.jpg" alt="" />
+					<img src="/img/work/sewsew/ss-17.jpg" alt="SewSew products and packaging in a cardboard box" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/sewsew/ss-4.jpg" alt="" />
+					<img src="/img/work/sewsew/ss-4.jpg" alt="A SewSew swing tag attached to a cloud shpaed cushion" />
 				</figure>
 			</div>
 
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/sewsew/ss-21.jpg" alt="" />
+					<img src="/img/work/sewsew/ss-21.jpg" alt="Collection of SewSew products" />
 				</figure>
 			</div>
 			
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/sewsew/ss-20.jpg" alt="" />
+					<img src="/img/work/sewsew/ss-20.jpg" alt="Emma holding a stack of SewSew cushions" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/sewsew/ss-22.jpg" alt="" />
+					<img src="/img/work/sewsew/ss-22.jpg" alt="Hands holding a cloud shaped cushion with eyes" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/sewsew/ss-10.jpg" alt="" />
+					<img src="/img/work/sewsew/ss-10.jpg" alt="Photo of a SewSew door-stop in the shopping basket of a bicycle" />
 				</figure>
 			</div>
 
