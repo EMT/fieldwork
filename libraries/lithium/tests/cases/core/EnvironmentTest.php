@@ -105,7 +105,12 @@ class EnvironmentTest extends \lithium\test\Unit {
 		$this->assertTrue($isProduction);
 
 		$request = new MockRequest(array('SERVER_ADDR' => '::1'));
-		$request->url = 'test/myTest';
+		$request->url = '/test/myTest';
+		Environment::set($request);
+		$this->assertTrue(Environment::is('test'));
+
+		$request = new MockRequest(array('SERVER_ADDR' => '::1'));
+		$request->url = '/test';
 		Environment::set($request);
 		$this->assertTrue(Environment::is('test'));
 
@@ -229,7 +234,7 @@ class EnvironmentTest extends \lithium\test\Unit {
 		$this->assertEqual(Environment::get(true), Environment::get('development'));
 
 		Environment::set('production');
-		$this->assertFalse(Environment::get(true));
+		$this->assertEmpty(Environment::get(true));
 	}
 }
 

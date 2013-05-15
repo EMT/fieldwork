@@ -151,13 +151,14 @@ $(document).ready(function() {
 	}
 	
 	// Set state handlers for content slider
-	
-	stateHandler.replace(document.title, slider.current_item);
-	stateHandler.onPop(function(event) {
-		if (event.state.item_index) {
-			slider.gotoItem(event.state.item_index);
-		}
-	});
+	if (stateHandler.supported()) {
+		stateHandler.replace(document.title, slider.current_item);
+		stateHandler.onPop(function(event) {
+			if (event.state.item_index) {
+				slider.gotoItem(event.state.item_index);
+			}
+		});
+	}
 	
 	
 	

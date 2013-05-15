@@ -86,7 +86,7 @@ class MongoDb extends \lithium\data\Source {
 		'!'   => '$not',
 		'and' => '$and',
 		'&&'  => '$and',
-		'nor' => 'nor'
+		'nor' => '$nor'
 	);
 
 	/**
@@ -143,9 +143,8 @@ class MongoDb extends \lithium\data\Source {
 	 *          or an array containing a read preference and a tag set such as:
 	 *          array(Mongo::RP_SECONDARY_PREFERRED, array('dc' => 'east) See the documentation for
 	 *          `Mongo::setReadPreference()`. Defaults to null.
-	 *
-	 * Typically, these parameters are set in `Connections::add()`, when adding the adapter to the
-	 * list of active connections.
+	 *          Typically, these parameters are set in `Connections::add()`, when adding the
+	 *          adapter to the list of active connections.
 	 */
 	public function __construct(array $config = array()) {
 		$host = 'localhost:27017';
@@ -164,7 +163,8 @@ class MongoDb extends \lithium\data\Source {
 			'schema'     => null,
 			'gridPrefix' => 'fs',
 			'safe'       => false,
-			'readPreference' => null
+			'readPreference' => null,
+			'autoConnect' => false
 		);
 		parent::__construct($config + $defaults);
 	}
@@ -206,7 +206,9 @@ class MongoDb extends \lithium\data\Source {
 			'arrays' => true,
 			'transactions' => false,
 			'booleans' => true,
-			'relationships' => true
+			'relationships' => true,
+			'schema' => false,
+			'sources' => true
 		);
 		return isset($features[$feature]) ? $features[$feature] : null;
 	}
@@ -628,7 +630,8 @@ class MongoDb extends \lithium\data\Source {
 	public function relationship($class, $type, $name, array $config = array()) {
 		$key = Inflector::camelize($type === 'belongsTo' ? $class::meta('name') : $name, false);
 
-		$config += compact('name', 'type', 'key');
+		$fieldName = $this->relationFieldName($type, $name);
+		$config += compact('name', 'type', 'key', 'fieldName');
 		$config['from'] = $class;
 		$relationship = $this->_classes['relationship'];
 
@@ -694,6 +697,7 @@ class MongoDb extends \lithium\data\Source {
 	/**
 	 * Protected helper method used to format conditions.
 	 *
+	 * @todo Catch Document/Array objects used in conditions and extract their values.
 	 * @param array $conditions The conditions array to be processed.
 	 * @param string $model The name of the model class used in the query.
 	 * @param object $schema The object containing the schema definition.
@@ -719,9 +723,6 @@ class MongoDb extends \lithium\data\Source {
 				$conditions[$operator] = $value;
 				continue;
 			}
-			/**
-			 * @todo Catch Document/Array objects used in conditions and extract their values.
-			 */
 			if (is_object($value)) {
 				continue;
 			}
@@ -838,6 +839,23 @@ class MongoDb extends \lithium\data\Source {
 		if (!$this->_isConnected && !$this->connect()) {
 			throw new NetworkException("Could not connect to the database.");
 		}
+	}
+
+	/**
+	 * Returns the field name of a relation name (camelBack).
+	 *
+	 * @param string The type of the relation.
+	 * @param string The name of the relation.
+	 * @return string
+	 */
+	public function relationFieldName($type, $name) {
+		$fieldName = Inflector::camelize($name, false);
+		if (preg_match('/Many$/', $type)) {
+			$fieldName = Inflector::pluralize($fieldName);
+		} else {
+			$fieldName = Inflector::singularize($fieldName);
+		}
+		return $fieldName;
 	}
 }
 

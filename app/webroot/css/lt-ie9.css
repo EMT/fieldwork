@@ -1,0 +1,167 @@
+
+
+.content-item .intro {
+	float: left;
+	clear: left;
+	width: 46.5%;
+}
+.social {
+	float: left;
+}
+.details {
+	float: right;
+	clear: right;
+	width: 48.5%;
+}
+
+.centered-intro {
+	text-align: center;
+}
+
+.grid .col-3-1 {
+	float: left;
+	width: 30.42071%;
+}
+.grid .col-2-1 {
+	float: left;
+	width: 47.08738%;
+}
+.grid-tight .col-3-1 {
+	width: 33.3333%;
+}
+.home-grid .grid-tight .col-3-1 {
+	width: 50%;
+}
+.grid-tight .col-2-1 {
+	width: 50%;
+}
+
+footer .social {
+	text-align: right;
+	width: 50%;
+	float: right;
+	padding: 1em 0;
+}
+footer li {
+	display: inline-block;
+}
+footer > div > p {
+	float: left;
+	width: 30%;
+}
+
+#machine-wrapper {
+	padding-bottom: 48.48%;
+}
+#machine img {
+	max-width: 25%;
+}
+#machine img:nth-child(n+4) {
+	display: inline;
+}
+
+
+
+
+h1 {
+	margin: 5.5% 0;
+}
+
+#machine-wrapper {
+	padding-bottom: 32.32%;
+}
+#machine img {
+	max-width: 16.66666666%;
+}
+#machine img:nth-child(n+3) {
+	display: inline;
+}
+
+
+
+
+
+
+
+.info-layout .primary-content {
+	float: left;
+	width: 65.9%;
+}
+.info-layout .additional-content {
+	float: right;
+	width: 24.074%;
+}
+
+
+.info-layout .primary-content section {
+	overflow: hidden;
+}
+.info-layout .primary-content h3 {
+	float: left;
+	clear: left;
+	width: 25%;
+}
+.info-layout .primary-content .section-content {
+	float: right;
+	clear: right;
+	width: 70%;
+}
+
+
+
+.home-grid .grid-tight .col-3-1 {
+	width: 33.3333%;
+}
+
+.grid-item .item-details {
+	position: absolute;
+}
+.grid-item .item-details.top-left {
+	top: 0;
+	bottom: 50%;
+	left: 0;
+	right: 50%;
+}
+.grid-item .item-details.bottom-left {
+	top: 50%;
+	bottom: 0;
+	left: 0;
+	right: 50%;
+}
+.grid-item .item-details.bottom-right {
+	top: 50%;
+	bottom: 0;
+	left: 50%;
+	right: 0;
+}
+.grid-item .item-details.bottom {
+	top: 50%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.grid-item .item-details > div {
+	padding: 7.5% 8.5%;
+}
+
+.grid .col-2-1.col-half {
+	overflow: hidden;
+}
+.grid .col-2-1.col-half a {
+	width: 50%;
+	padding-bottom: 36.5491%;
+}
+.grid .col-2-1.col-half-left a {
+	float: left;
+}
+.grid .col-2-1.col-half-right a {
+	float: right;
+}
+
+
+
+
+#main {
+	padding-bottom: 7em;
+}
+	

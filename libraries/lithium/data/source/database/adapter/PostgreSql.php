@@ -27,23 +27,46 @@ class PostgreSql extends \lithium\data\source\Database {
 	 * @var array
 	 */
 	protected $_columns = array(
-		'primary_key' => array('name' => 'SERIAL not null'),
-		'string' => array('name' => 'varchar', 'length' => 255),
-		'text' => array('name' => 'text'),
-		'integer' => array('name' => 'integer', 'formatter' => 'intval'),
-		'float' => array('name' => 'float', 'formatter' => 'floatval'),
-		'datetime' => array(
-			'name' => 'timestamp', 'format' => 'Y-m-d H:i:s', 'formatter' => 'date'
+		'id' => array('use' => 'integer', 'increment' => true),
+		'string' => array('use' => 'varchar', 'length' => 255),
+		'text' => array('use' => 'text'),
+		'integer' => array('use' => 'integer', 'formatter' => 'intval'),
+		'float' => array('use' => 'real', 'formatter' => 'floatval'),
+		'datetime' => array('use' => 'timestamp', 'format' => 'Y-m-d H:i:s'),
+		'timestamp' => array('use' => 'timestamp', 'format' => 'Y-m-d H:i:s'),
+		'time' => array('use' => 'time', 'format' => 'H:i:s', 'formatter' => 'date'),
+		'date' => array('use' => 'date', 'format' => 'Y-m-d', 'formatter' => 'date'),
+		'binary' => array('use' => 'bytea'),
+		'boolean' => array('use' => 'boolean'),
+		'inet' => array('use' => 'inet')
+	);
+
+	/**
+	 * Column/table metas
+	 * By default `'escape'` is false and 'join' is `' '`
+	 *
+	 * @var array
+	 */
+	protected $_metas = array(
+		'table' => array(
+			'tablespace' => array('keyword' => 'TABLESPACE')
+		)
+	);
+
+	/**
+	 * Column contraints
+	 *
+	 * @var array
+	 */
+	protected $_constraints = array(
+		'primary' => array('template' => 'PRIMARY KEY ({:column})'),
+		'foreign_key' => array(
+			'template' => 'FOREIGN KEY ({:column}) REFERENCES {:to} ({:toColumn}) {:on}'
 		),
-		'timestamp' => array(
-			'name' => 'timestamp', 'format' => 'Y-m-d H:i:s', 'formatter' => 'date'
+		'unique' => array(
+			'template' => 'UNIQUE {:index} ({:column})'
 		),
-		'time' => array('name' => 'time', 'format' => 'H:i:s', 'formatter' => 'date'),
-		'date' => array('name' => 'date', 'format' => 'Y-m-d', 'formatter' => 'date'),
-		'binary' => array('name' => 'bytea'),
-		'boolean' => array('name' => 'boolean'),
-		'number' => array('name' => 'numeric'),
-		'inet' => array('name' => 'inet')
+		'check' => array('template' => 'CHECK ({:expr})')
 	);
 
 	/**
@@ -76,9 +99,8 @@ class PostgreSql extends \lithium\data\source\Database {
 	 *        - `'persistent'`: If a persistent connection (if available) should be made.
 	 *        Defaults to true.
 	 *        - `'schema'`: The name of the database schema to use. Defaults to 'public'
-	 *
-	 * Typically, these parameters are set in `Connections::add()`, when adding the adapter to the
-	 * list of active connections.
+	 *        Typically, these parameters are set in `Connections::add()`, when adding the
+	 *        adapter to the list of active connections.
 	 */
 	public function __construct(array $config = array()) {
 		$defaults = array(
@@ -106,7 +128,9 @@ class PostgreSql extends \lithium\data\source\Database {
 			'arrays' => false,
 			'transactions' => true,
 			'booleans' => true,
-			'relationships' => true
+			'schema' => true,
+			'relationships' => true,
+			'sources' => true
 		);
 		return isset($features[$feature]) ? $features[$feature] : null;
 	}
@@ -130,7 +154,7 @@ class PostgreSql extends \lithium\data\source\Database {
 		}
 
 		if ($this->_config['schema']) {
-			$this->search_path($this->_config['schema']);
+			$this->searchPath($this->_config['schema']);
 		}
 
 		if ($this->_config['timezone']) {
@@ -194,29 +218,33 @@ class PostgreSql extends \lithium\data\source\Database {
 			$name = $self->connection->quote($self->invokeMethod('_entityName', array($entity)));
 			$schema = $self->connection->quote($schema);
 
-			$sql = "SELECT DISTINCT table_schema AS schema, column_name AS field, data_type AS type,
-					is_nullable AS null, column_default AS default, ordinal_position AS position,
-					character_maximum_length AS char_length, character_octet_length AS oct_length
-					FROM information_schema.columns
-					WHERE table_name = {$name} AND table_schema = {$schema} ORDER BY position";
+			$sql = 'SELECT "column_name" AS "field", "data_type" AS "type",	';
+			$sql .= '"is_nullable" AS "null", "column_default" AS "default", ';
+			$sql .= '"character_maximum_length" AS "char_length" ';
+			$sql .= 'FROM "information_schema"."columns" WHERE "table_name" = ' . $name;
+			$sql .= ' AND table_schema = ' . $schema . ' ORDER BY "ordinal_position"';
 
 			$columns = $self->connection->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-
 			$fields = array();
 
 			foreach ($columns as $column) {
-				$match = $self->invokeMethod('_column', array($column['type']));
+				$schema = $self->invokeMethod('_column', array($column['type']));
+				$default = $column['default'];
 
-				if (preg_match('/nextval\([\'"]?([\w.]+)/', $column['default'])) {
-					$default = null;
+				if (preg_match("/^'(.*)'::/", $default, $match)) {
+					$default = $match[1];
+				} elseif ($default === 'true') {
+					$default = true;
+				} elseif ($default === 'false') {
+					$default = false;
 				} else {
-					$default = $column['default'];
+					$default = null;
 				}
-				$fields[$column['field']] = $match + array(
-					'null'	   => ($column['null'] == 'YES' ? true : false),
+				$fields[$column['field']] = $schema + array(
+					'null'     => ($column['null'] === 'YES' ? true : false),
 					'default'  => $default
 				);
-				if ($fields[$column['field']]['type'] == 'string') {
+				if ($fields[$column['field']]['type'] === 'string') {
 					$fields[$column['field']]['length'] = $column['char_length'];
 				}
 			}
@@ -226,18 +254,19 @@ class PostgreSql extends \lithium\data\source\Database {
 
 	/**
 	 * Gets or sets the search path for the connection
-	 * @param $search_path
-	 * @return mixed If setting the search_path; returns ture on success, else false
-	 *         When getting, returns the search_path
+	 *
+	 * @param $searchPath
+	 * @return mixed If setting the searchPath; returns ture on success, else false
+	 *         When getting, returns the searchPath
 	 */
-	public function search_path($search_path) {
-		if (empty($search_path)) {
+	public function searchPath($searchPath) {
+		if (empty($searchPath)) {
 			$query = $this->connection->query('SHOW search_path');
-			$search_path = $query->fetchColumn(1);
-			return explode(",", $search_path);
+			$searchPath = $query->fetchColumn(1);
+			return explode(",", $searchPath);
 		}
 		try{
-			$this->connection->exec("SET search_path TO ${search_path}");
+			$this->connection->exec("SET search_path TO ${searchPath}");
 			return true;
 		} catch (PDOException $e) {
 			return false;
@@ -246,6 +275,7 @@ class PostgreSql extends \lithium\data\source\Database {
 
 	/**
 	 * Gets or sets the time zone for the connection
+	 *
 	 * @param $timezone
 	 * @return mixed If setting the time zone; returns true on success, else false
 	 *         When getting, returns the time zone
@@ -315,7 +345,7 @@ class PostgreSql extends \lithium\data\source\Database {
 	}
 
 	public function alias($alias, $context) {
-		if ($context->type() == 'update' || $context->type() == 'delete') {
+		if ($context->type() === 'update' || $context->type() === 'delete') {
 			return;
 		}
 		return parent::alias($alias, $context);
@@ -402,23 +432,23 @@ class PostgreSql extends \lithium\data\source\Database {
 		switch (true) {
 			case in_array($column['type'], array('date', 'time', 'datetime')):
 				return $column;
-			case ($column['type'] == 'timestamp'):
+			case ($column['type'] === 'timestamp'):
 				$column['type'] = 'datetime';
 			break;
-			case ($column['type'] == 'tinyint' && $column['length'] == '1'):
-			case ($column['type'] == 'boolean'):
+			case ($column['type'] === 'tinyint' && $column['length'] == '1'):
+			case ($column['type'] === 'boolean'):
 				return array('type' => 'boolean');
 			break;
 			case (strpos($column['type'], 'int') !== false):
 				$column['type'] = 'integer';
 			break;
-			case (strpos($column['type'], 'char') !== false || $column['type'] == 'tinytext'):
+			case (strpos($column['type'], 'char') !== false || $column['type'] === 'tinytext'):
 				$column['type'] = 'string';
 			break;
 			case (strpos($column['type'], 'text') !== false):
 				$column['type'] = 'text';
 			break;
-			case (strpos($column['type'], 'blob') !== false || $column['type'] == 'binary'):
+			case (strpos($column['type'], 'blob') !== false || $column['type'] === 'binary'):
 				$column['type'] = 'binary';
 			break;
 			case preg_match('/float|double|decimal/', $column['type']):
@@ -431,8 +461,64 @@ class PostgreSql extends \lithium\data\source\Database {
 		return $column;
 	}
 
-	protected function _toNativeBoolean($value) {
-		return $this->connection->quote($value ? 't' : 'f');
+	/**
+	 * Provide an associative array of Closures to be used as the "formatter" key inside of the
+	 * `Database::$_columns` specification.
+	 *
+	 * @see lithium\data\source\Database::_formatters()
+	 */
+	protected function _formatters() {
+		$self = $this;
+
+		$datetime = $timestamp = function($format, $value) use ($self) {
+			if ($format && (($time = strtotime($value)) !== false)) {
+				$val = date($format, $time);
+				if (!preg_match('/^' . preg_quote($val) . '\.\d+$/', $value)) {
+					$value = $val;
+				}
+			}
+			return $self->connection->quote($value);
+		};
+
+		return compact('datetime', 'timestamp') + array(
+			'boolean' => function($value) use ($self){
+				return $self->connection->quote($value ? 't' : 'f');
+			}
+		) + parent::_formatters();
+	}
+
+	/**
+	 * Helper for `DatabaseSchema::_column()`
+	 *
+	 * @param array $field A field array
+	 * @return string SQL column string
+	 */
+	protected function _buildColumn($field) {
+		extract($field);
+		if ($type === 'float' && $precision) {
+			$use = 'numeric';
+		}
+
+		if ($precision) {
+			$precision = $use === 'numeric' ? ",{$precision}" : '';
+		}
+
+		$out = $this->name($name);
+
+		if (isset($increment) && $increment) {
+			$out .= ' serial NOT NULL';
+		} else {
+			$out .= ' ' . $use;
+
+			if ($length && preg_match('/char|numeric|interval|bit|time/',$use)) {
+				$out .= "({$length}{$precision})";
+			}
+
+			$out .= is_bool($null) ? ($null ? ' NULL' : ' NOT NULL') : '' ;
+			$out .= $default ? ' DEFAULT ' . $this->value($default, $field) : '';
+		}
+
+		return $out;
 	}
 }
 

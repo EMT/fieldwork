@@ -48,6 +48,7 @@ Router::connect('/', 'Pages::view');
  */
 Router::connect('/contact', array('Pages::view', 'args' => array('contact')));
 Router::connect('/us', array('Pages::view', 'args' => array('us')));
+Router::connect('/favourites', array('Pages::view', 'args' => array('favourites')));
 Router::connect('/work', 'Work::index');
 Router::connect('/work/{:args}.{:type}', 'Work::view');
 Router::connect('/work/{:args}', 'Work::view');

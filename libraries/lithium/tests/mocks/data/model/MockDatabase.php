@@ -64,8 +64,8 @@ class MockDatabase extends \lithium\data\source\Database {
 
 	public function sources($class = null) {}
 
-	public function describe($entity, $schema = array(), array $meta = array()) {
-		return $this->_instance('schema', array('fields' => $schema));
+	public function describe($entity, $fields = array(), array $meta = array()) {
+		return $this->_instance('schema', compact('fields'));
 	}
 
 	public function encoding($encoding = null) {}
@@ -79,12 +79,6 @@ class MockDatabase extends \lithium\data\source\Database {
 			return $result;
 		}
 		return "'{$value}'";
-	}
-
-	public function cast($entity, array $data, array $options = array()) {
-		$defaults = array('first' => false);
-		$options += $defaults;
-		return $options['first'] ? reset($data) : $data;
 	}
 
 	public function testConfig() {
@@ -113,6 +107,21 @@ class MockDatabase extends \lithium\data\source\Database {
 		$query = $query->export($this);
 		ksort($query);
 		return sha1(serialize($query));
+	}
+
+	public static function enabled($feature = null) {
+		if (!$feature) {
+			return true;
+		}
+		$features = array(
+			'arrays' => false,
+			'transactions' => true,
+			'booleans' => true,
+			'schema' => true,
+			'relationships' => true,
+			'sources' => true
+		);
+		return isset($features[$feature]) ? $features[$feature] : null;
 	}
 }
 

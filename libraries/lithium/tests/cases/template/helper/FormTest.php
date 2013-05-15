@@ -38,14 +38,10 @@ class FormTest extends \lithium\test\Unit {
 
 	public $base = null;
 
-	protected $_routes = array();
-
 	/**
 	 * Initialize test by creating a new object instance with a default context.
 	 */
 	public function setUp() {
-		$this->_routes = Router::get();
-		Router::reset();
 		Router::connect('/{:controller}/{:action}/{:id}.{:type}', array('id' => null));
 		Router::connect('/{:controller}/{:action}/{:args}');
 
@@ -61,10 +57,6 @@ class FormTest extends \lithium\test\Unit {
 
 	public function tearDown() {
 		Router::reset();
-
-		foreach ($this->_routes as $route) {
-			Router::connect($route);
-		}
 	}
 
 	public function testFormCreation() {
@@ -189,7 +181,6 @@ class FormTest extends \lithium\test\Unit {
 			'value' => 'This is a saved post', 'id' => 'MockFormPostTitle'
 		)));
 
-
 		$result = $this->form->text('zeroInt');
 		$this->assertTags($result, array('input' => array(
 			'type' => 'text', 'name' => 'zeroInt',
@@ -253,8 +244,8 @@ class FormTest extends \lithium\test\Unit {
 			)
 		);
 		$this->assertEqual($expected, $result);
-		$this->assertTrue(is_callable($result['attributes']['id']));
-		$this->assertTrue(is_callable($result['attributes']['name']));
+		$this->assertInternalType('callable', $result['attributes']['id']);
+		$this->assertInternalType('callable', $result['attributes']['name']);
 	}
 
 	public function testFormElementWithDefaultValue() {
@@ -544,9 +535,9 @@ class FormTest extends \lithium\test\Unit {
 				'value' => '1',
 				'name' => 'foo',
 				'checked' => 'checked',
-				'id' => 'Foo')
+				'id' => 'Foo'
 			)
-		));
+		)));
 
 		$record = new Record(array('model' => $this->_model, 'data' => array('foo' => true)));
 		$this->form->create($record);
@@ -568,6 +559,25 @@ class FormTest extends \lithium\test\Unit {
 				'type' => 'radio', 'value' => '1', 'name' => 'foo', 'id' => 'MockFormPostFoo'
 			))
 		));
+
+		$document = new Document(array(
+			'model' => $this->_model,
+			'data' => array(
+				'subdocument' => array(
+					'foo' => true
+				)
+			)
+		));
+		$this->form->create($document);
+
+		$result = $this->form->radio('subdocument.foo');
+		$this->assertTags($result, array(array('input' => array(
+			'type' => 'radio',
+			'value' => '1',
+			'name' => 'subdocument[foo]',
+			'id' => 'MockFormPostSubdocumentFoo',
+			'checked' => 'checked'
+		))));
 	}
 
 	public function testCustomRadio() {
@@ -1027,26 +1037,24 @@ class FormTest extends \lithium\test\Unit {
 		));
 		$this->assertTags($result, array(
 			array('div' => array()),
-				array('label' => array('for' => 'Name')),
-					'Enter a name',
-				'/label',
-				array('input' => array('type' => 'text', 'name' => 'name', 'id' => 'Name')),
+			array('label' => array('for' => 'Name')),
+			'Enter a name',
+			'/label',
+			array('input' => array('type' => 'text', 'name' => 'name', 'id' => 'Name')),
 			'/div',
-
 			array('div' => array()),
-				array('label' => array('for' => 'PhoneNumber')),
-					'Phone Number',
-				'/label',
-				array('input' => array(
-					'type' => 'text', 'name' => 'phone_number', 'id' => 'PhoneNumber'
-				)),
+			array('label' => array('for' => 'PhoneNumber')),
+			'Phone Number',
+			'/label',
+			array('input' => array(
+				'type' => 'text', 'name' => 'phone_number', 'id' => 'PhoneNumber'
+			)),
 			'/div',
-
 			array('div' => array()),
-				array('label' => array('for' => 'Email')),
-					'Enter a valid email',
-				'/label',
-				array('input' => array('type' => 'text', 'name' => 'email', 'id' => 'Email')),
+			array('label' => array('for' => 'Email')),
+			'Enter a valid email',
+			'/label',
+			array('input' => array('type' => 'text', 'name' => 'email', 'id' => 'Email')),
 			'/div'
 		));
 	}
@@ -1097,7 +1105,7 @@ class FormTest extends \lithium\test\Unit {
 	public function testFormErrorWithout() {
 		$this->form->create(null);
 		$result = $this->form->error('name');
-		$this->assertTrue(is_null($result));
+		$this->assertInternalType('null', $result);
 	}
 
 	public function testFormErrorWithRecordAndStringError() {
@@ -1205,20 +1213,20 @@ class FormTest extends \lithium\test\Unit {
 		));
 		$expected = array(
 			'<div',
-				array('label' => array('for' => 'Colors')),
-					'Colors',
-				'/label',
-				'select' => array('name' => 'colors', 'id' => 'Colors'),
-					array('option' => array('value' => 'r')),
-						'red',
-					'/option',
-					array('option' => array('value' => 'g')),
-						'green',
-					'/option',
-					array('option' => array('value' => 'b')),
-						'blue',
-					'/option',
-				'/select',
+			array('label' => array('for' => 'Colors')),
+			'Colors',
+			'/label',
+			'select' => array('name' => 'colors', 'id' => 'Colors'),
+			array('option' => array('value' => 'r')),
+			'red',
+			'/option',
+			array('option' => array('value' => 'g')),
+			'green',
+			'/option',
+			array('option' => array('value' => 'b')),
+			'blue',
+			'/option',
+			'/select',
 			'/div'
 		);
 		$this->assertTags($result, $expected);
@@ -1433,7 +1441,7 @@ class FormTest extends \lithium\test\Unit {
 		));
 
 		$result = $this->form->error('body');
-		$this->assertTrue(empty($result));
+		$this->assertEmpty($result);
 
 		$result = $this->form->error('record1.title');
 		$this->assertTags($result, array(

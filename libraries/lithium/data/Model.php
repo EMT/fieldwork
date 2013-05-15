@@ -98,7 +98,6 @@ class Model extends \lithium\core\StaticObject {
 
 	/**
 	 * Model hasOne relations.
-	 * Not yet implemented.
 	 *
 	 * @var array
 	 */
@@ -106,7 +105,6 @@ class Model extends \lithium\core\StaticObject {
 
 	/**
 	 * Model hasMany relations.
-	 * Not yet implemented.
 	 *
 	 * @var array
 	 */
@@ -114,7 +112,6 @@ class Model extends \lithium\core\StaticObject {
 
 	/**
 	 * Model belongsTo relations.
-	 * Not yet implemented.
 	 *
 	 * @var array
 	 */
@@ -165,6 +162,13 @@ class Model extends \lithium\core\StaticObject {
 	 * @var array
 	 */
 	protected $_relations = array();
+
+	/**
+	 * Matching between relation's fieldnames and their corresponding relation name.
+	 *
+	 * @var array
+	 */
+	protected $_relationFieldNames = array();
 
 	/**
 	 * List of relation types.
@@ -245,13 +249,13 @@ class Model extends \lithium\core\StaticObject {
 	 * {{{
 	 * // config/bootstrap/connections.php:
 	 * Connections::add('default', array(
-	 * 	'type' => 'MongoDb',
-	 * 	'host' => 'localhost',
-	 * 	'database' => 'app_name',
-	 * 	'schema' => function($db, $collection, $meta) {
-	 * 		$result = $db->connection->schemas->findOne(compact('collection'));
-	 * 		return $result ? $result['data'] : array();
-	 * 	}
+	 *  'type' => 'MongoDb',
+	 *  'host' => 'localhost',
+	 *  'database' => 'app_name',
+	 *  'schema' => function($db, $collection, $meta) {
+	 *      $result = $db->connection->schemas->findOne(compact('collection'));
+	 *      return $result ? $result['data'] : array();
+	 *  }
 	 * ));
 	 * }}}
 	 *
@@ -264,14 +268,14 @@ class Model extends \lithium\core\StaticObject {
 	 * types as follows:
 	 *
 	 * {{{
-	 *	id      => MongoId
-	 *	date    => MongoDate
-	 *	regex   => MongoRegex
-	 *	integer => integer
-	 *	float   => float
-	 *	boolean => boolean
-	 *	code    => MongoCode
-	 *	binary  => MongoBinData
+	 *  id      => MongoId
+	 *  date    => MongoDate
+	 *  regex   => MongoRegex
+	 *  integer => integer
+	 *  float   => float
+	 *  boolean => boolean
+	 *  code    => MongoCode
+	 *  binary  => MongoBinData
 	 * }}}
 	 *
 	 * @see lithium\data\source\MongoDb::$_schema
@@ -280,7 +284,7 @@ class Model extends \lithium\core\StaticObject {
 	protected $_schema = array();
 
 	/**
-	 * Default query parameters.
+	 * Default query parameters for the model finders.
 	 *
 	 * - `'conditions'`: The conditional query elements, e.g.
 	 *                 `'conditions' => array('published' => true)`
@@ -335,6 +339,20 @@ class Model extends \lithium\core\StaticObject {
 	);
 
 	/**
+	 * Holds an array of values that should be processed on `Model::config()`. Each value should
+	 * have a matching inherited public property defined in the class.
+	 *
+	 * @see lithium\data\Model::config()
+	 * @var array
+	 */
+	protected $_inherit = array(
+		'validates',
+		'belongsTo',
+		'hasMany',
+		'hasOne'
+	);
+
+	/**
 	 * Configures the model for use. This method will set the `Model::$_schema`, `Model::$_meta`,
 	 * `Model::$_finders` class attributes, as well as obtain a handle to the configured
 	 * persistent storage connection.
@@ -384,13 +402,8 @@ class Model extends \lithium\core\StaticObject {
 		}
 		static::$_initialized[$class] = true;
 
-		$query   = array();
-		$finders = array();
-		$meta    = array();
-		$schema  = array();
-		$source  = array();
-		$classes = $self->_classes;
-		$initializers = array();
+		$inherited = array_fill_keys($self->_autoConfig, array());
+		$inheritedAttrs = array_fill_keys($self->_inherit, array());
 
 		foreach (static::_parents() as $parent) {
 			$parentConfig = get_class_vars($parent);
@@ -398,27 +411,41 @@ class Model extends \lithium\core\StaticObject {
 			foreach ($self->_autoConfig as $key) {
 				if (isset($parentConfig["_{$key}"])) {
 					$val = $parentConfig["_{$key}"];
-					${$key} = is_array($val) ? ${$key} + $val : $val;
+					$inherited[$key] = is_array($val) ? $inherited[$key] + $val : $val;
 				}
 			}
+
+			foreach ($self->_inherit as $key) {
+				if (isset($parentConfig["{$key}"])) {
+					$val = $parentConfig["{$key}"];
+					$inheritedAttrs[$key] = $inheritedAttrs[$key] + $val;
+				}
+			}
+
 			if ($parent === __CLASS__) {
 				break;
 			}
 		}
 
-		$tmp = $self->_meta + $meta;
+		foreach ($inheritedAttrs as $key => $value) {
+			$self->{$key} += $value;
+		}
+
+		$tmp = $self->_meta + $inherited['meta'];
 		$source = array('meta' => array(), 'finders' => array(), 'schema' => array());
 
 		if ($tmp['connection']) {
-			$conn = $classes['connections']::get($tmp['connection']);
+			$conn = $inherited['classes']['connections']::get($tmp['connection']);
 			$source = (($conn) ? $conn->configureClass($class) : array()) + $source;
 		}
-		$self->_classes = $classes;
+
+		$self->_query += $inherited['query'];
+		$self->_classes += $inherited['classes'];
 
 		$local = compact('class') + $self->_meta;
-		$self->_meta = ($local + $source['meta'] + $meta);
+		$self->_meta = ($local + $source['meta'] + $inherited['meta']);
 
-		$self->_initializers += array(
+		$self->_initializers += $inherited['initializers'] + array(
 			'name' => function($self) {
 				return basename(str_replace('\\', '/', $self));
 			},
@@ -432,6 +459,7 @@ class Model extends \lithium\core\StaticObject {
 			}
 		);
 
+		$source['schema'] = $source['schema'] + $inherited['schema'];
 		if (is_object($self->_schema)) {
 			$self->_schema->append($source['schema']);
 		} elseif (is_array($self->_schema)) {
@@ -440,7 +468,7 @@ class Model extends \lithium\core\StaticObject {
 			$self->_schema = $source['schema'];
 		}
 
-		$self->_finders += $source['finders'] + $self->_findFilters();
+		$self->_finders += $source['finders'] + $inherited['finders'] + $self->_findFilters();
 
 		static::_relationsToLoad();
 		return $self;
@@ -469,7 +497,6 @@ class Model extends \lithium\core\StaticObject {
 	 * @see lithium\data\Model::find()
 	 * @see lithium\data\Model::$_meta
 	 * @link http://php.net/manual/en/language.oop5.overloading.php PHP Manual: Overloading
-	 *
 	 * @throws BadMethodCallException On unhandled call, will throw an exception.
 	 * @param string $method Method name caught by `__callStatic()`.
 	 * @param array $params Arguments given to the above `$method` call.
@@ -548,7 +575,7 @@ class Model extends \lithium\core\StaticObject {
 	 * Posts::find('all'); // returns all records
 	 * Posts::find('count'); // returns a count of all records
 	 *
-	 * // The first ten records that have 'author' set to 'Lithium'
+	 * // The first ten records that have 'author' set to 'Bob'
 	 * Posts::find('all', array(
 	 *     'conditions' => array('author' => "Bob"), 'limit' => 10
 	 * ));
@@ -630,7 +657,6 @@ class Model extends \lithium\core\StaticObject {
 	 *        - `'limit'`: The maximum number of records to return.
 	 *        - `'page'`: For pagination of data.
 	 *        - `'with'`: An array of relationship names to be included in the query.
-	 *
 	 * @return mixed Returns the query definition if querying, or `null` if setting.
 	 */
 	public static function query($query = null) {
@@ -765,13 +791,16 @@ class Model extends \lithium\core\StaticObject {
 	 *
 	 * @param string $type A type of model relation.
 	 * @return mixed An array of relation instances or an instance of relation.
-	 *
 	 */
 	public static function relations($type = null) {
 		$self = static::_object();
 
 		if ($type === null) {
 			return static::_relations();
+		}
+
+		if (isset($self->_relationFieldNames[$type])) {
+			$type = $self->_relationFieldNames[$type];
 		}
 
 		if (isset($self->_relations[$type])) {
@@ -825,7 +854,6 @@ class Model extends \lithium\core\StaticObject {
 		});
 	}
 
-
 	/**
 	 * Creates a relationship binding between this model and another.
 	 *
@@ -841,10 +869,14 @@ class Model extends \lithium\core\StaticObject {
 	 */
 	public static function bind($type, $name, array $config = array()) {
 		$self = static::_object();
+		if (!isset($config['fieldName'])) {
+			$config['fieldName'] = $self->_relationFieldName($type, $name);
+		}
 
 		if (!in_array($type, $self->_relationTypes)) {
 			throw new ConfigException("Invalid relationship type `{$type}` specified.");
 		}
+		$self->_relationFieldNames[$config['fieldName']] = $name;
 		$rel = static::connection()->relationship(get_called_class(), $type, $name, $config);
 		return $self->_relations[$name] = $rel;
 	}
@@ -1001,7 +1033,7 @@ class Model extends \lithium\core\StaticObject {
 	 *
 	 * {{{
 	 * if (!$post->save($someData)) {
-	 * 	return array('errors' => $post->errors());
+	 *     return array('errors' => $post->errors());
 	 * }
 	 * }}}
 	 *
@@ -1017,10 +1049,10 @@ class Model extends \lithium\core\StaticObject {
 	 * @see lithium\data\Model::validates()
 	 * @see lithium\data\Entity::errors()
 	 * @param object $entity The record or document object to be saved in the database. This
-	 *               parameter is implicit and should not be passed under normal circumstances.
-	 *               In the above example, the call to `save()` on the `$post` object is
-	 *               transparently proxied through to the `Posts` model class, and `$post` is passed
-	 *               in as the `$entity` parameter.
+	 *        parameter is implicit and should not be passed under normal circumstances.
+	 *        In the above example, the call to `save()` on the `$post` object is
+	 *        transparently proxied through to the `Posts` model class, and `$post` is passed
+	 *        in as the `$entity` parameter.
 	 * @param array $data Any data that should be assigned to the record before it is saved.
 	 * @param array $options Options:
 	 *        - `'callbacks'` _boolean_: If `false`, all callbacks will be disabled before
@@ -1035,7 +1067,6 @@ class Model extends \lithium\core\StaticObject {
 	 *          method if `'validate'` is not `false`.
 	 *        - `'whitelist'` _array_: An array of fields that are allowed to be saved to this
 	 *          record.
-	 *
 	 * @return boolean Returns `true` on a successful save operation, `false` on failure.
 	 * @filter
 	 */
@@ -1105,24 +1136,24 @@ class Model extends \lithium\core\StaticObject {
 	 * @see lithium\util\Validator::check()
 	 * @see lithium\data\Entity::errors()
 	 * @param string $entity Model entity to validate. Typically either a `Record` or `Document`
-	 *               object. In the following example:
-	 * {{{
-	 * $post = Posts::create($data);
-	 * $success = $post->validates();
-	 * }}}
-	 * The `$entity` parameter is equal to the `$post` object instance.
+	 *        object. In the following example:
+	 *        {{{
+	 *            $post = Posts::create($data);
+	 *            $success = $post->validates();
+	 *        }}}
+	 *        The `$entity` parameter is equal to the `$post` object instance.
 	 * @param array $options Available options:
-	 *              - `'rules'` _array_: If specified, this array will _replace_ the default
-	 *                validation rules defined in `$validates`.
-	 *              - `'events'` _mixed_: A string or array defining one or more validation
-	 *                 _events_. Events are different contexts in which data events can occur, and
-	 *                correspond to the optional `'on'` key in validation rules. For example, by
-	 *                default, `'events'` is set to either `'create'` or `'update'`, depending on
-	 *                whether `$entity` already exists. Then, individual rules can specify
-	 *                `'on' => 'create'` or `'on' => 'update'` to only be applied at certain times.
-	 *                Using this parameter, you can set up custom events in your rules as well, such
-	 *                as `'on' => 'login'`. Note that when defining validation rules, the `'on'` key
-	 *                can also be an array of multiple events.
+	 *        - `'rules'` _array_: If specified, this array will _replace_ the default
+	 *          validation rules defined in `$validates`.
+	 *        - `'events'` _mixed_: A string or array defining one or more validation
+	 *          _events_. Events are different contexts in which data events can occur, and
+	 *          correspond to the optional `'on'` key in validation rules. For example, by
+	 *          default, `'events'` is set to either `'create'` or `'update'`, depending on
+	 *          whether `$entity` already exists. Then, individual rules can specify
+	 *          `'on' => 'create'` or `'on' => 'update'` to only be applied at certain times.
+	 *          Using this parameter, you can set up custom events in your rules as well, such
+	 *          as `'on' => 'login'`. Note that when defining validation rules, the `'on'` key
+	 *          can also be an array of multiple events.
 	 * @return boolean Returns `true` if all validation rules on all fields succeed, otherwise
 	 *         `false`. After validation, the messages for any validation failures are assigned to
 	 *         the entity, and accessible through the `errors()` method of the entity object.
@@ -1137,9 +1168,10 @@ class Model extends \lithium\core\StaticObject {
 		$options += $defaults;
 		$self = static::_object();
 		$validator = $self->_classes['validator'];
+		$entity->errors(false);
 		$params = compact('entity', 'options');
 
-		$filter = function($parent, $params) use (&$self, $validator) {
+		$filter = function($parent, $params) use ($validator) {
 			$entity = $params['entity'];
 			$options = $params['options'];
 			$rules = $options['rules'];
@@ -1253,13 +1285,20 @@ class Model extends \lithium\core\StaticObject {
 	 */
 	public static function applyFilter($method, $closure = null) {
 		$instance = static::_object();
+
+		if ($method === false) {
+			$instance->_instanceFilters = array();
+			return;
+		}
 		$methods = (array) $method;
 
 		foreach ($methods as $method) {
-			if (!isset($instance->_instanceFilters[$method])) {
+			if (!isset($instance->_instanceFilters[$method]) || $closure === false) {
 				$instance->_instanceFilters[$method] = array();
 			}
-			$instance->_instanceFilters[$method][] = $closure;
+			if ($closure !== false) {
+				$instance->_instanceFilters[$method][] = $closure;
+			}
 		}
 	}
 
@@ -1305,20 +1344,35 @@ class Model extends \lithium\core\StaticObject {
 	 */
 	protected static function _relationsToLoad() {
 		try {
-			if (!static::connection()) {
+			if (!$connection = static::connection()) {
 				return;
 			}
 		} catch (ConfigExcepton $e) {
 			return;
 		}
+
+		if (!$connection::enabled('relationships')) {
+			return;
+		}
+
 		$self = static::_object();
 
 		foreach ($self->_relationTypes as $type) {
 			$self->$type = Set::normalize($self->$type);
 			foreach ($self->$type as $name => $config) {
 				$self->_relationsToLoad[$name] = $type;
+				$fieldName = $self->_relationFieldName($type, $name);
+				$self->_relationFieldNames[$fieldName] = $name;
 			}
 		}
+	}
+
+	protected function _relationFieldName($type, $name) {
+		if (!isset($this->{$type}[$name]['fieldName'])) {
+			$fieldName = static::connection()->relationFieldName($type, $name);
+			$this->{$type}[$name]['fieldName'] = $fieldName;
+		}
+		return $this->{$type}[$name]['fieldName'];
 	}
 
 	/**
@@ -1332,9 +1386,16 @@ class Model extends \lithium\core\StaticObject {
 
 		return array(
 			'first' => function($self, $params, $chain) {
-				$params['options']['limit'] = 1;
+				$options =& $params['options'];
+				$options['limit'] = 1;
 				$data = $chain->next($self, $params, $chain);
-				$data = is_object($data) ? $data->rewind() : $data;
+
+				if (isset($options['return']) && $options['return'] === 'array') {
+					$data = is_array($data) ? reset($data) : $data;
+				} else {
+					$data = is_object($data) ? $data->rewind() : $data;
+				}
+
 				return $data ?: null;
 			},
 			'list' => function($self, $params, $chain) {

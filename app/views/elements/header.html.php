@@ -8,7 +8,7 @@
 				<a class="journal fade-transition" href="/emt">Journal</a>
 				<a class="contact fade-transition" href="/contact">Contact</a>
 <!-- 				<a class="search" id="open-search" href="/search">Search</a> -->
-				<a class="index" id="open-index" href="/index">Index</a>
+				<a class="index" id="open-index" href="/favourites">Favourites</a>
 			</nav>
 		</div>
 	</header>

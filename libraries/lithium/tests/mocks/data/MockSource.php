@@ -153,12 +153,6 @@ class MockSource extends \lithium\data\Source {
 
 	}
 
-	public function cast($entity, array $data = array(), array $options = array()) {
-		$defaults = array('first' => false);
-		$options += $defaults;
-		return $options['first'] ? reset($data) : $data;
-	}
-
 	public function relationship($class, $type, $name, array $config = array()) {
 		$field = Inflector::underscore(Inflector::singularize($name));
 		$key = "{$field}_id";
@@ -183,6 +177,21 @@ class MockSource extends \lithium\data\Source {
 	public function calculation($type, $query, array $options = array()) {
 		$query->calculate($type);
 		return compact('query', 'options');
+	}
+
+	public static function enabled($feature = null) {
+		if (!$feature) {
+			return true;
+		}
+		$features = array(
+			'arrays' => false,
+			'transactions' => true,
+			'booleans' => true,
+			'schema' => true,
+			'relationships' => true,
+			'sources' => true
+		);
+		return isset($features[$feature]) ? $features[$feature] : null;
 	}
 }
 

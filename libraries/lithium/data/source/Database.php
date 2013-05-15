@@ -13,10 +13,12 @@ use PDOException;
 use lithium\util\Set;
 use lithium\util\String;
 use lithium\util\Inflector;
-use InvalidArgumentException;
 use lithium\core\ConfigException;
 use lithium\core\NetworkException;
 use lithium\data\model\QueryException;
+use lithium\data\model\Query;
+use InvalidArgumentException;
+use UnexpectedValueException;
 
 /**
  * The `Database` class provides the base-level abstraction for SQL-oriented relational databases.
@@ -52,8 +54,9 @@ abstract class Database extends \lithium\data\Source {
 		'create' => "INSERT INTO {:source} ({:fields}) VALUES ({:values});{:comment}",
 		'update' => "UPDATE {:source} SET {:fields} {:conditions};{:comment}",
 		'delete' => "DELETE {:flags} FROM {:source} {:conditions};{:comment}",
-		'schema' => "CREATE TABLE {:source} (\n{:columns}{:indexes});{:comment}",
-		'join'   => "{:type} JOIN {:source} {:alias} {:constraints}"
+		'join' => "{:mode} JOIN {:source} {:alias} {:constraints}",
+		'schema' => "CREATE TABLE {:source} (\n{:columns}{:constraints}){:table};{:comment}",
+		'drop'   => "DROP TABLE {:exists}{:source};"
 	);
 
 	/**
@@ -83,12 +86,11 @@ abstract class Database extends \lithium\data\Source {
 		'>=' => array(),
 		'!=' => array('multiple' => 'NOT IN'),
 		'<>' => array('multiple' => 'NOT IN'),
-		'between' => array('format' => 'BETWEEN ? AND ?'),
 		'BETWEEN' => array('format' => 'BETWEEN ? AND ?'),
-		'like' => array(),
 		'LIKE' => array(),
-		'not like' => array(),
-		'NOT LIKE' => array()
+		'NOT LIKE' => array(),
+		'IS' => array(),
+		'IS NOT' => array()
 	);
 
 	protected $_constraintTypes = array(
@@ -173,10 +175,31 @@ abstract class Database extends \lithium\data\Source {
 			'dsn'        => null,
 			'options'    => array()
 		);
+		parent::__construct($config + $defaults);
+	}
+
+	/**
+	 * Initialize `Database::$_strategies` because Closures cannot be created within the class
+	 * definition.
+	 *
+	 * @see lithium\data\source\Database::$_strategies
+	 */
+	protected function _init() {
+		parent::_init();
+
+		$formatters = $this->_formatters();
+
+		foreach ($this->_columns as $type => $column) {
+			if (isset($formatters[$type])) {
+				$this->_columns[$type]['formatter'] = $formatters[$type];
+			}
+		}
+
 		$this->_strings += array(
 			'read' => 'SELECT {:fields} FROM {:source} {:alias} {:joins} {:conditions} {:group} ' .
 			          '{:having} {:order} {:limit};{:comment}'
 		);
+
 		$this->_strategies += array(
 			'joined' => function($self, $model, $context) {
 
@@ -224,7 +247,7 @@ abstract class Database extends \lithium\data\Source {
 					}
 				};
 
-				$tree = Set::expand(Set::normalize(array_keys($with)));
+				$tree = Set::expand(array_fill_keys(array_keys($with), false));
 				$alias = $context->alias();
 				$deps = array($alias => array());
 				$strategy($strategy, $model, $tree, '', $alias, $deps);
@@ -248,7 +271,6 @@ abstract class Database extends \lithium\data\Source {
 				throw new QueryException("This strategy is not yet implemented.");
 			}
 		);
-		parent::__construct($config + $defaults);
 	}
 
 	public function connect() {
@@ -274,12 +296,14 @@ abstract class Database extends \lithium\data\Source {
 			preg_match('/SQLSTATE\[(.+?)\]/', $e->getMessage(), $code);
 			$code = $code[1] ?: 0;
 			switch (true) {
-			case $code === 'HY000' || substr($code, 0, 2) === '08':
-				$msg = "Unable to connect to host `{$config['host']}`.";
-				throw new NetworkException($msg, null, $e);
-			case in_array($code, array('28000', '42000')):
-				$msg = "Host connected, but could not access database `{$config['database']}`.";
-				throw new ConfigException($msg, null, $e);
+				case $code === 'HY000' || substr($code, 0, 2) === '08':
+					$msg = "Unable to connect to host `{$config['host']}`.";
+					throw new NetworkException($msg, null, $e);
+				break;
+				case in_array($code, array('28000', '42000')):
+					$msg = "Host connected, but could not access database `{$config['database']}`.";
+					throw new ConfigException($msg, null, $e);
+				break;
 			}
 			throw new ConfigException("An unknown configuration error has occured.", null, $e);
 		}
@@ -382,14 +406,61 @@ abstract class Database extends \lithium\data\Source {
 			return 'NULL';
 		}
 
-		switch ($type = isset($schema['type']) ? $schema['type'] : $this->_introspectType($value)) {
-			case 'boolean':
-			case 'float':
-			case 'integer':
-				return $this->_cast($type, $value);
-			default:
-				return $this->connection->quote($this->_cast($type, $value));
+		$type = isset($schema['type']) ? $schema['type'] : $this->_introspectType($value);
+		$column = isset($this->_columns[$type]) ? $this->_columns[$type] : null;
+
+		return $this->_cast($type, $value, $column, $schema);
+	}
+
+	/**
+	 * Cast a value according to a column type, used by `Database::value()`
+	 *
+	 * @see lithium\data\source\Database::value()
+	 * @param string $type Name of the column type
+	 * @param string $value Value to cast
+	 * @param array $column The column definition
+	 * @return mixed Casted value
+	 */
+	protected function _cast($type, $value, $column, $schema = array()) {
+		$column += array('formatter' => null, 'format' => null);
+		$schema += array('default' => null, 'null' => false);
+
+		if (is_object($value)) {
+			return $value;
 		}
+		if ($formatter = $column['formatter']) {
+			$format = $column['format'];
+			return $format ? $formatter($format, $value) : $formatter($value);
+		}
+		return $this->connection->quote($value);
+	}
+
+	/**
+	 * Provide an associative array of Closures to be used as the "formatter" key inside of the
+	 * `Database::$_columns` specification. Each Closure should return the appropriately quoted
+	 * or unquoted value and accept one or two parameters:
+	 *  - @param mixed $value to be formatted
+	 *  - @param mixed $format to apply to $value
+	 *
+	 * @see lithium\data\source\Database::$_columns
+	 * @see lithium\data\source\Database::_init()
+	 * @return array of column types to Closure formatter
+	 */
+	protected function _formatters() {
+		$self = $this;
+
+		$datetime = $timestamp = $date = $time = function($format, $value) use ($self) {
+			if ($format && (($time = strtotime($value)) !== false)) {
+				$value = date($format, $time);
+			}
+			return $self->connection->quote($value);
+		};
+
+		return compact('datetime', 'timestamp', 'date', 'time') + array(
+			'boolean' => function($value) {
+				return $value ? 1 : 0;
+			}
+		);
 	}
 
 	/**
@@ -535,7 +606,9 @@ abstract class Database extends \lithium\data\Source {
 					}
 					$data['fields'] = $fields;
 					$data['limit'] = '';
-					$data['conditions'] = $this->conditions(array("{$name}.{$key}" => $ids), $query);
+					$data['conditions'] = $this->conditions(array(
+						"{$name}.{$key}" => $ids
+					), $query);
 					return $data;
 				}
 			}
@@ -629,22 +702,19 @@ abstract class Database extends \lithium\data\Source {
 	 * @return array Returns an array containing the configuration for a model relationship.
 	 */
 	public function relationship($class, $type, $name, array $config = array()) {
-		$field = Inflector::underscore(Inflector::singularize($name));
-		$key = "{$field}_id";
 		$primary = $class::meta('key');
 
 		if (is_array($primary)) {
 			$key = array_combine($primary, $primary);
 		} elseif ($type === 'hasMany' || $type === 'hasOne') {
-			if ($type === 'hasMany') {
-				$field = Inflector::pluralize($field);
-			}
 			$secondary = Inflector::underscore(Inflector::singularize($class::meta('name')));
 			$key = array($primary => "{$secondary}_id");
+		} else {
+			$key = Inflector::underscore(Inflector::singularize($name)) . '_id';
 		}
 
 		$from = $class;
-		$fieldName = $field;
+		$fieldName = $this->relationFieldName($type, $name);
 		$config += compact('type', 'name', 'key', 'from', 'fieldName');
 		return $this->_instance('relationship', $config);
 	}
@@ -882,7 +952,7 @@ abstract class Database extends \lithium\data\Source {
 				if (isset($value)) {
 					return $this->name($key) . ' = ' . $this->value($value, $fieldMeta);
 				}
-				return $this->name($key) . " IS NULL";
+				return $this->name($key) . ' IS NULL';
 			case is_numeric($key) && is_array($value):
 				$result = array();
 				foreach ($value as $cKey => $cValue) {
@@ -900,18 +970,40 @@ abstract class Database extends \lithium\data\Source {
 					$result[] = $this->_processConditions($cKey, $cValue, $context, $schema, $glue);
 				}
 				return '(' . implode(' ' . $glue . ' ', $result) . ')';
-			case (is_string($key) && is_array($value) && isset($this->_operators[key($value)])):
-				foreach ($value as $op => $val) {
-					$result[] = $this->_operator($key, array($op => $val), $fieldMeta);
-				}
-				return '(' . implode(' ' . $glue . ' ', $result) . ')';
+			case $result = $this->_processOperator($key, $value, $fieldMeta, $glue):
+				return $result;
 			case is_array($value):
-				if (!is_numeric($op = key($value))) {
-					throw new QueryException("Unsupported operator `{$op}`.");
-				}
 				$value = join(', ', $this->value($value, $fieldMeta));
 				return "{$this->name($key)} IN ({$value})";
 		}
+	}
+
+	/**
+	 * Helper method used by `_processConditions`.
+	 *
+	 * @param string The field name string.
+	 * @param array The operator to parse.
+	 * @param array The schema of the field.
+	 * @param string The glue operator (e.g `'AND'` or '`OR`'.
+	 * @return mixed Returns the operator expression string or `false` if no operator
+	 *         is applicable.
+	 * @throws A `QueryException` if the operator is not supported.
+	 */
+	protected function _processOperator($key, $value, $fieldMeta, $glue) {
+		if (!is_string($key) || !is_array($value)) {
+			return false;
+		}
+		$operator = strtoupper(key($value));
+		if (!is_numeric($operator)) {
+			if (!isset($this->_operators[$operator])) {
+				throw new QueryException("Unsupported operator `{$operator}`.");
+			}
+			foreach ($value as $op => $val) {
+				$result[] = $this->_operator($key, array($op => $val), $fieldMeta);
+			}
+			return '(' . implode(' ' . $glue . ' ', $result) . ')';
+		}
+		return false;
 	}
 
 	/**
@@ -1055,13 +1147,13 @@ abstract class Database extends \lithium\data\Source {
 				$result .= ' ';
 			}
 			$join = is_array($join) ? $this->_instance('query', $join) : $join;
-			$options['keys'] = array('source', 'alias', 'constraints');
+			$options['keys'] = array('mode', 'source', 'alias', 'constraints');
 			$result .= $this->renderCommand('join', $join->export($this, $options));
 		}
 		return $result;
 	}
 
-		/**
+	/**
 	 * Returns a string of formatted constraints to be inserted into the query statement. If the
 	 * query constraints are defined as an array, key pairs are converted to SQL strings.
 	 *
@@ -1104,56 +1196,71 @@ abstract class Database extends \lithium\data\Source {
 	}
 
 	/**
-	 * Return formatted clause for order.
+	 * Return formatted clause for `ORDER BY`.
 	 *
-	 * @param mixed $order The `order` clause to be formatted
+	 * @param mixed $order The clause to be formatted
 	 * @param object $context
-	 * @return mixed Formatted `order` clause.
+	 * @return string Formatted clause.
 	 */
 	public function order($order, $context) {
-		$direction = 'ASC';
+		return $this->_sort($order, $context);
+	}
+
+	/**
+	 * Return formatted clause for `GROUP BY`.
+	 *
+	 * @param mixed $group The clause to be formatted
+	 * @param object $context
+	 * @return string Formatted clause.
+	 */
+	public function group($group, $context) {
+		return $this->_sort($group, $context, 'GROUP BY', false);
+	}
+
+	/**
+	 * Helper method
+	 *
+	 * @see lithium\data\source\Database::order()
+	 * @see lithium\data\source\Database::group()
+	 * @param mixed $field The field
+	 * @param object $context
+	 * @return string Formatted clause.
+	 */
+	protected function _sort($field, $context, $clause = 'ORDER BY', $direction = true) {
+		$direction = $direction ? ' ASC' : '';
 		$model = $context->model();
 
-		if (is_string($order)) {
-			if (!$model::schema($order)) {
-				$match = '/\s+(A|DE)SC/i';
-				return "ORDER BY {$order}" . (preg_match($match, $order) ? '' : " {$direction}");
+		if (is_string($field)) {
+			if (preg_match('/^(.*?)\s+((?:A|DE)SC)$/i', $field, $match)) {
+				$field = $match[1];
+				$direction = $match[2];
 			}
-			$order = array($order => $direction);
+			$field = array($field => $direction);
 		}
 
-		if (!is_array($order)) {
+		if (!is_array($field)) {
 			return;
 		}
 		$result = array();
 
-		foreach ($order as $column => $dir) {
+		foreach ($field as $column => $dir) {
 			if (is_int($column)) {
 				$column = $dir;
 				$dir = $direction;
 			}
-			$dir = in_array($dir, array('ASC', 'asc', 'DESC', 'desc')) ? $dir : $direction;
+			$dir = in_array($dir, array('ASC', 'asc', 'DESC', 'desc')) ? " {$dir}" : $direction;
 
-			if (!$model) {
-				$result[] = "{$column} {$dir}";
+			if ($model && $field = $model::schema($column)) {
+				$column = $this->name($column);
+				$name = $this->name($context->alias()) . '.' . $column;
+				$result[] = "{$name}{$dir}";
 				continue;
 			}
-			if ($field = $model::schema($column)) {
-				$name = $this->name($model::meta('name')) . '.' . $this->name($column);
-				$result[] = "{$name} {$dir}";
-				continue;
-			}
-			$result[] = "{$column} {$dir}";
+			$column = $this->name($column);
+			$result[] = "{$column}{$dir}";
 		}
-		$order = join(', ', $result);
-		return "ORDER BY {$order}";
-	}
-
-	public function group($group, $context = null) {
-		if (!$group) {
-			return null;
-		}
-		return 'GROUP BY ' . join(', ', (array) $group);
+		$fields = join(', ', $result);
+		return "$clause {$fields}";
 	}
 
 	/**
@@ -1175,36 +1282,6 @@ abstract class Database extends \lithium\data\Source {
 
 	public function cast($entity, array $data, array $options = array()) {
 		return $data;
-	}
-
-	/**
-	 * Cast a value according to a column type.
-	 *
-	 * @param string $type Name of the column type
-	 * @param string $value Value to cast
-	 *
-	 * @return mixed Casted value
-	 *
-	 */
-	protected function _cast($type, $value) {
-		if (is_object($value) || $value === null) {
-			return $value;
-		}
-		if ($type === 'boolean') {
-			return $this->_toNativeBoolean($value);
-		}
-		if (!isset($this->_columns[$type]) || !isset($this->_columns[$type]['formatter'])) {
-			return $value;
-		}
-
-		$column = $this->_columns[$type];
-
-		switch ($column['formatter']) {
-			case 'date':
-				return $column['formatter']($column['format'], strtotime($value));
-			default:
-				return $column['formatter']($value);
-		}
 	}
 
 	protected function _createFields($data, $schema, $context) {
@@ -1243,11 +1320,15 @@ abstract class Database extends \lithium\data\Source {
 		$options += $defaults;
 
 		list($op, $value) = each($value);
+		$op = strtoupper($op);
 		$config = $this->_operators[$op];
 		$key = $this->name($key);
 		$values = array();
 
 		if (!is_object($value)) {
+			if ($value === null) {
+				$value = array(null);
+			}
 			foreach ((array) $value as $val) {
 				$values[] = $this->value($val, $schema);
 			}
@@ -1339,10 +1420,6 @@ abstract class Database extends \lithium\data\Source {
 		return (boolean) $value;
 	}
 
-	protected function _toNativeBoolean($value) {
-		return $value ? 1 : 0;
-	}
-
 	/**
 	 * Throw a `QueryException` error
 	 *
@@ -1362,9 +1439,13 @@ abstract class Database extends \lithium\data\Source {
 	 * Applying a strategy to a `lithium\data\model\Query` object
 	 *
 	 * @param array $options The option array
-	 * @param object $context A query object to configure
+	 * @param object $context A find query object to configure
 	 */
 	public function applyStrategy($options, $context) {
+		if ($context->type() !== 'read') {
+			return;
+		}
+
 		$options += array('strategy' => 'joined');
 		if (!$model = $context->model()) {
 			throw new ConfigException('The `\'with\'` option need a valid `\'model\'` option.');
@@ -1406,7 +1487,7 @@ abstract class Database extends \lithium\data\Source {
 		}
 
 		$context->joins($toAlias, compact('constraints', 'model') + array(
-			'type' => 'LEFT',
+			'mode' => 'LEFT',
 			'alias' => $toAlias
 		));
 	}
@@ -1438,7 +1519,6 @@ abstract class Database extends \lithium\data\Source {
 	 * @param array $constraints Array of additionnal $constraints.
 	 * @return array A constraints array.
 	 */
-
 	public function on($rel, $aliasFrom = null, $aliasTo = null, $constraints = array()) {
 		$model = $rel->from();
 
@@ -1461,11 +1541,12 @@ abstract class Database extends \lithium\data\Source {
 	protected function _on(array $constraints, $aliasFrom, $aliasTo, $mapAlias = array()) {
 		$result = array();
 		foreach ($constraints as $key => $value) {
-			if (
+			$isAliasable = (
 				!is_numeric($key) &&
 				!isset($this->_constraintTypes[$key]) &&
 				!isset($this->_operators[$key])
-			) {
+			);
+			if ($isAliasable) {
 				$key = $this->_aliasing($key, $aliasFrom, $mapAlias);
 			}
 			if (is_string($value)) {
@@ -1477,6 +1558,227 @@ abstract class Database extends \lithium\data\Source {
 			}
 		}
 		return $result;
+	}
+
+	/**
+	 * Build a SQL column/table meta
+	 *
+	 * @param string $type The type of the meta to build (possible values: 'table' or 'column')
+	 * @param string $name The name of the meta to build
+	 * @param mixed $value The value used for building the meta
+	 * @return string The SQL meta string
+	 */
+	protected function _meta($type, $name, $value) {
+		$meta = isset($this->_metas[$type][$name]) ? $this->_metas[$type][$name] : null;
+		if (!$meta || (isset($meta['options']) && !in_array($value, $meta['options']))) {
+			return;
+		}
+		$meta += array('keyword' => '', 'escape' => false, 'join' => ' ');
+		extract($meta);
+		if ($escape === true) {
+			$value = $this->value($value, array('type' => 'string'));
+		}
+		$result = $keyword . $join . $value;
+		return $result !== ' ' ? $result : '';
+	}
+
+	/**
+	 * Build a SQL column constraint
+	 *
+	 * @param string $name The name of the meta to build
+	 * @param mixed $value The value used for building the meta
+	 * @param object $schema A `Schema` instance.
+	 * @return string The SQL meta string
+	 */
+	protected function _constraint($name, $value, $schema = null) {
+		$value += array('options' => array());
+		$meta = isset($this->_constraints[$name]) ? $this->_constraints[$name] : null;
+		$template = isset($meta['template']) ? $meta['template'] : null;
+		if (!$template) {
+			return;
+		}
+
+		$data = array();
+		foreach ($value as $name => $value) {
+			switch ($name) {
+				case 'key':
+				case 'index':
+					if (isset($meta[$name])) {
+						$data['index'] = $meta[$name];
+					}
+				break;
+				case 'to':
+					$data[$name] = $this->name($value);
+				break;
+				case 'on':
+					$data[$name] = "ON {$value}";
+				break;
+				case 'expr':
+					if (is_array($value)) {
+						$result = array();
+						$context = new Query(array('type' => 'none'));
+						foreach ($value as $key => $val) {
+							$return = $this->_processConditions($key, $val, $context, $schema);
+							if ($return) {
+								$result[] = $return;
+							}
+						}
+						$data[$name] = join(" AND ", $result);
+					} else {
+						$data[$name] = $value;
+					}
+				break;
+				case 'toColumn':
+				case 'column':
+					$data[$name] = join(', ', array_map(array($this, 'name'), (array) $value));
+				break;
+			}
+		}
+
+		return trim(String::insert($template, $data, array('clean' => array('method' => 'text'))));
+	}
+
+	/**
+	 * Create a database-native schema
+	 *
+	 * @param string $name A table name.
+	 * @param object $schema A `Schema` instance.
+	 * @return boolean `true` on success, `true` otherwise
+	 */
+	public function createSchema($source, $schema) {
+
+		if (!$schema instanceof $this->_classes['schema']) {
+			throw new InvalidArgumentException("Passed schema is not a valid `{$class}` instance.");
+		}
+
+		$columns = array();
+		$primary = null;
+
+		$source = $this->name($source);
+
+		foreach ($schema->fields() as $name => $field) {
+			$field['name'] = $name;
+			if ($field['type'] === 'id') {
+				$primary = $name;
+			}
+			$columns[] = $this->column($field);
+		}
+		$columns = join(",\n", array_filter($columns));
+
+		$metas = $schema->meta() + array('table' => array(), 'constraints' => array());
+
+		$constraints = $this->_buildConstraints($metas['constraints'], $schema, ",\n", $primary);
+		$table = $this->_buildMetas('table', $metas['table']);
+
+		$params = compact('source', 'columns', 'constraints', 'table');
+		return $this->_execute($this->renderCommand('schema', $params));
+	}
+
+	/**
+	 * Helper for building columns metas
+	 *
+	 * @see DatabaseSchema::createSchema()
+	 * @see DatabaseSchema::_column()
+	 * @param array $metas The array of column metas.
+	 * @param array $names If `$names` is not `null` only build meta present in `$names`
+	 * @param type $joiner The join character
+	 * @return string The SQL constraints
+	 */
+	protected function _buildMetas($type, array $metas, $names = null, $joiner = ' ') {
+		$result = '';
+		$names = $names ? (array) $names : array_keys($metas);
+		foreach ($names as $name) {
+			$value = isset($metas[$name]) ? $metas[$name] : null;
+			if ($value && $meta = $this->_meta($type, $name, $value)) {
+				$result .= $joiner . $meta;
+			}
+		}
+		return $result;
+	}
+
+	/**
+	 * Helper for building columns constraints
+	 *
+	 * @see DatabaseSchema::createSchema()
+	 * @param array $constraints The array of constraints
+	 * @param type $schema The schema of the table
+	 * @param type $joiner The join character
+	 * @return string The SQL constraints
+	 */
+	protected function _buildconstraints(array $constraints, $schema = null, $joiner = ' ', $primary = false) {
+		$result = '';
+		foreach ($constraints as $constraint) {
+			if (isset($constraint['type'])) {
+				$name = $constraint['type'];
+				if ($meta = $this->_constraint($name, $constraint, $schema)) {
+					$result .= $joiner . $meta;
+				}
+				if ($name === 'primary') {
+					$primary = false;
+				}
+			}
+		}
+		if ($primary) {
+			$result .= $joiner . $this->_constraint('primary', array('column' => $primary));
+		}
+		return $result;
+	}
+
+	/**
+	 * Drop a table
+	 *
+	 * @param string $name The table name to drop.
+	 * @param boolean $soft With "soft dropping", the function will retrun `true` even if the
+	 *                table doesn't exists.
+	 * @return boolean `true` on success, `false` otherwise
+	 */
+	public function dropSchema($source, $soft = true) {
+		if ($source) {
+			$source = $this->name($source);
+			$exists = $soft ? 'IF EXISTS ' : '';
+			return $this->_execute($this->renderCommand('drop', compact('exists', 'source')));
+		}
+		return false;
+	}
+
+	/**
+	 * Generate a database-native column schema string
+	 *
+	 * @param array $column A field array structured like the following:
+	 *        `array('name' => 'value', 'type' => 'value' [, options])`, where options can
+	 *        be `'default'`, `'null'`, `'length'` or `'precision'`.
+	 * @return string SQL string
+	 */
+	public function column($field) {
+		if (!isset($field['type'])) {
+			$field['type'] = 'string';
+		}
+
+		if (!isset($field['name'])) {
+			throw new InvalidArgumentException("Column name not defined.");
+		}
+
+		if (!isset($this->_columns[$field['type']])) {
+			throw new UnexpectedValueException("Column type `{$field['type']}` does not exist.");
+		}
+
+		$field += $this->_columns[$field['type']];
+
+		$field += array(
+			'name' => null,
+			'type' => null,
+			'length' => null,
+			'precision' => null,
+			'default' => null,
+			'null' => null
+		);
+
+		$isNumeric = preg_match('/^(integer|float|boolean)$/', $field['type']);
+		if ($isNumeric && $field['default'] === '') {
+			$field['default'] = null;
+		}
+		$field['use'] = strtolower($field['use']);
+		return $this->_buildColumn($field);
 	}
 }
 

@@ -28,42 +28,84 @@ class Response extends \lithium\net\http\Response {
 	 */
 	protected $_classes = array(
 		'router' => 'lithium\net\http\Router',
-		'media' => 'lithium\net\http\Media'
+		'media' => 'lithium\net\http\Media',
+		'auth' => 'lithium\net\http\Auth'
 	);
 
+	/**
+	 * Auto configuration properties.
+	 *
+	 * @var array
+	 */
 	protected $_autoConfig = array('classes' => 'merge');
 
+	/**
+	 * Adds config values to the public properties when a new object is created. Config options
+	 * also include default values for `Response::body()` when called from `Response::render()`.
+	 *
+	 * @see lithium\net\http\Message::body()
+	 * @param array $config Configuration options : default value
+	 *        - `'protocol'` _string_: null
+	 *        - `'version'` _string_: '1.1'
+	 *        - `'headers'` _array_: array()
+	 *        - `'body'` _mixed_: null
+	 *        - `'message'` _string_: null
+	 *        - `'status'` _mixed_: null
+	 *        - `'type'` _string_: null
+	 *        - `'buffer'` _integer_: null
+	 *        - `'decode'` _boolean_: null
+	 *        - `'location'` _mixed_: null
+	 *        - `'request'` _object_: null
+	 */
 	public function __construct(array $config = array()) {
 		$defaults = array(
 			'buffer' => 8192,
 			'location' => null,
-			'status' => 0,
 			'request' => null,
 			'decode' => false
 		);
 		parent::__construct($config + $defaults);
 	}
 
+	/**
+	 * Sets the Location header using `$config['location']` and `$config['request']` passed in
+	 * through the constructor if provided.
+	 *
+	 * @return void
+	 */
 	protected function _init() {
 		parent::_init();
-		$config = $this->_config;
-		$this->status($config['status']);
-		unset($this->_config['status']);
 
-		if ($config['location']) {
-			$classes = $this->_classes;
-			$location = $classes['router']::match($config['location'], $config['request']);
+		if ($this->_config['location']) {
+			$router = $this->_classes['router'];
+			$location = $router::match($this->_config['location'], $this->_config['request']);
 			$this->headers('Location', $location);
 		}
+	}
+
+	/**
+	 * Expands on `\net\http\Message::headers()` with some magic conversions for shorthand headers.
+	 *
+	 * @param string $key
+	 * @param string $value
+	 * @param boolean $replace
+	 * @return mixed
+	 */
+	public function headers($key = null, $value = null, $replace = true) {
+		if (is_string($key) && strtolower($key) == 'download') {
+			$key = 'Content-Disposition';
+			$value = 'attachment; filename="' . $value . '"';
+		}
+		return parent::headers($key, $value, $replace);
 	}
 
 	/**
 	 * Controls how or whether the client browser and web proxies should cache this response.
 	 *
 	 * @param mixed $expires This can be a Unix timestamp indicating when the page expires, or a
-	 *              string indicating the relative time offset that a page should expire, i.e.
-	 *              `"+5 hours". Finally, `$expires` can be set to `false` to completely disable
-	 *              browser or proxy caching.
+	 *        string indicating the relative time offset that a page should expire, i.e. `"+5 hours".
+	 *        Finally, `$expires` can be set to `false` to completely disable browser or proxy
+	 *        caching.
 	 * @return void
 	 */
 	public function cache($expires) {
@@ -110,29 +152,16 @@ class Response extends \lithium\net\http\Response {
 	 */
 	public function render() {
 		$code = null;
-		$hasLocation = (isset($this->headers['location']) || isset($this->headers['Location']));
-
-		if ($hasLocation && $this->status['code'] === 200) {
-			$code = 302;
-		}
-		$this->_writeHeader($this->status($code) ?: $this->status(500));
-
-		foreach ($this->headers as $name => $value) {
-			$key = strtolower($name);
-
-			if ($key == 'location') {
-				$this->_writeHeader("Location: {$value}", $this->status['code']);
-			} elseif ($key == 'download') {
-				$this->_writeHeader('Content-Disposition: attachment; filename="' . $value . '"');
-			} elseif (is_array($value)) {
-				$this->_writeHeader(
-					array_map(function($v) use ($name) { return "{$name}: {$v}"; }, $value)
-				);
-			} elseif (!is_numeric($name)) {
-				$this->_writeHeader("{$name}: {$value}");
+		if (isset($this->headers['location']) || isset($this->headers['Location'])) {
+			if ($this->status['code'] === 200) {
+				$this->status(302);
 			}
+			$code = $this->status['code'];
 		}
-		if ($code == 302 || $code == 204) {
+		$this->_writeHeaders($this->status() ?: $this->status(500));
+		$this->_writeHeaders($this->headers(), $code);
+
+		if ($this->status['code'] === 302 || $this->status['code'] === 204) {
 			return;
 		}
 		$chunked = $this->body(null, $this->_config);
@@ -163,12 +192,10 @@ class Response extends \lithium\net\http\Response {
 	 *        primarily in conjunction with the 'Location' header.
 	 * @return void
 	 */
-	protected function _writeHeader($header, $code = null) {
-		if (is_array($header)) {
-			array_map(function($h) { header($h, false); }, $header);
-			return;
+	protected function _writeHeaders($headers, $code = null) {
+		foreach ((array) $headers as $header) {
+			$code ? header($header, false, $code) : header($header, false);
 		}
-		$code ? header($header, true, $code) : header($header, true);
 	}
 }
 
