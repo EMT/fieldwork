@@ -9,7 +9,7 @@ extract($this->data());
 
 
 
-<article class="content-item" id="item-<?= $pages[$this_page]; ?>">
+<article class="content-item work-item" id="item-<?= $pages[$this_page]; ?>">
 
 	<div class="content-inner">
 
@@ -33,65 +33,86 @@ extract($this->data());
 		
 		
 		
-		<figure class="full-width grid">
-			<img src="/img/work/fieldwork/fw-logo.svg" alt="" />
-		</figure>
-		
 		<div class="grid">
-			<figure class="col-2-1 right">
-				<img src="/img/work/fieldwork/fw-cubes.svg" alt="" />
-			</figure>
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/fieldwork/fw-logo.svg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/fieldwork/fw-cubes.svg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/fieldwork/fw-6.jpg" alt="" />
+				</figure>
+			</div>
+		
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/fieldwork/fw-2.jpg" alt="" />
+				</figure>
+			</div>
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/fieldwork/fw-5.jpg" alt="" />
+				</figure>
+			</div>
+		
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/fieldwork/fw-4.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/fieldwork/fw-7.jpg" alt="" />
+				</figure>
+			</div>
+		
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/fieldwork/fw-8.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/fieldwork/fw-3.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/fieldwork/fw-12.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/fieldwork/fw-11.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/fieldwork/fw-15.jpg" alt="" />
+				</figure>
+			</div>
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/fieldwork/fw-16.jpg" alt="" />
+				</figure>
+			</div>
+		
 		</div>
 		
-		<figure class="full-width grid">
-			<img src="/img/work/fieldwork/fw-6.jpg" alt="" />
-		</figure>
-		
-		<div class="grid">
-			<figure class="col-2-1">
-				<img src="/img/work/fieldwork/fw-2.jpg" alt="" />
-			</figure>
-			<figure class="col-2-1">
-				<img src="/img/work/fieldwork/fw-5.jpg" alt="" />
-			</figure>
-		</div>
-		
-		<div class="grid">
-			<figure class="col-2-1">
-				<img src="/img/work/fieldwork/fw-4.jpg" alt="" />
-			</figure>
-		</div>
-		
-		<figure class="full-width grid">
-			<img src="/img/work/fieldwork/fw-7.jpg" alt="" />
-		</figure>
-		
-		<figure class="full-width grid">
-			<img src="/img/work/fieldwork/fw-8.jpg" alt="" />
-		</figure>
-		
-		<figure class="full-width grid">
-			<img src="/img/work/fieldwork/fw-3.jpg" alt="" />
-		</figure>
-		
-		<div class="grid">
-			<figure class="col-2-1">
-				<img src="/img/work/fieldwork/fw-12.jpg" alt="" />
-			</figure>
-		</div>
-		
-		<figure class="full-width grid">
-			<img src="/img/work/fieldwork/fw-11.jpg" alt="" />
-		</figure>
-		
-		<div class="grid">
-			<figure class="col-2-1">
-				<img src="/img/work/fieldwork/fw-15.jpg" alt="" />
-			</figure>
-			<figure class="col-2-1">
-				<img src="/img/work/fieldwork/fw-16.jpg" alt="" />
-			</figure>
-		</div>
 		
 	</div>
 	

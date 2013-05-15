@@ -8,7 +8,7 @@ extract($this->data());
 ?>
 
 
-<article class="content-item" id="item-<?= $pages[$this_page]; ?>">
+<article class="content-item work-item" id="item-<?= $pages[$this_page]; ?>">
 
 	<div class="content-inner">
 
@@ -31,73 +31,101 @@ extract($this->data());
 	
 		
 		
-		<figure class="full-width grid">
-			<img src="/img/work/carbon-coop/cc-logo.svg" alt="" />
-		</figure>
-		
 		<div class="grid">
-			<figure class="col-2-1">
-				<img src="/img/work/carbon-coop/cc-icons.svg" alt="" />
-			</figure>
-			<figure class="col-2-1">
-				<img src="/img/work/carbon-coop/cc-20.jpg" alt="" />
-			</figure>
-		</div>
-		
-		<figure class="full-width grid">
-			<img src="/img/work/carbon-coop/cc-1.jpg" alt="" />
-		</figure>
-		
-		<div class="grid">
-			<figure class="col-2-1">
-				<img src="/img/work/carbon-coop/cc-2.jpg" alt="" />
-			</figure>
-			<figure class="col-2-1">
-				<img src="/img/work/carbon-coop/cc-3.jpg" alt="" />
-			</figure>
-		</div>
-		
-		<div class="grid">
-			<figure class="col-2-1">
-				<img src="/img/work/carbon-coop/cc-9.jpg" alt="" />
-			</figure>
-			<figure class="col-2-1">
-				<img src="/img/work/carbon-coop/cc-13.jpg" alt="" />
-			</figure>
-		</div>
-		
-		<figure class="full-width grid">
-			<img src="/img/work/carbon-coop/cc-web1.jpg" alt="" />
-		</figure>
-		
-		<figure class="full-width grid">
-			<img src="/img/work/carbon-coop/cc-web2.jpg" alt="" />
-		</figure>
-		
-		<figure class="full-width grid">
-			<img src="/img/work/carbon-coop/cc-web3.jpg" alt="" />
-		</figure>
-		
-		<figure class="full-width grid">
-			<img src="/img/work/carbon-coop/cc-8.jpg" alt="" />
-		</figure>
-		
-		<div class="grid">
-			<figure class="col-2-1">
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/carbon-coop/cc-logo.svg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/carbon-coop/cc-icons.svg" alt="" />
+				</figure>
+			</div>
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/carbon-coop/cc-20.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/carbon-coop/cc-1.jpg" alt="" />
+				</figure>
+			</div>
+
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/carbon-coop/cc-2.jpg" alt="" />
+				</figure>
+			</div>
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/carbon-coop/cc-3.jpg" alt="" />
+				</figure>
+			</div>	
+
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/carbon-coop/cc-9.jpg" alt="" />
+				</figure>
+			</div>
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/carbon-coop/cc-13.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/carbon-coop/cc-web1.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/carbon-coop/cc-web2.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/carbon-coop/cc-web3.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/carbon-coop/cc-8.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="col-2-1">
+				<figure>
 				<img src="/img/work/carbon-coop/cc-10.jpg" alt="" />
-			</figure>
-			<figure class="col-2-1">
+				</figure>
+			</div>
+			<div class="col-2-1">
+				<figure>
 				<img src="/img/work/carbon-coop/cc-5.jpg" alt="" />
-			</figure>
+				</figure>
+			</div>
+
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/carbon-coop/cc-11.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/carbon-coop/cc-19.jpg" alt="" />
+				</figure>
+			</div>
+
 		</div>
-		
-		<figure class="full-width grid">
-			<img src="/img/work/carbon-coop/cc-11.jpg" alt="" />
-		</figure>
-		
-		<figure class="full-width grid">
-			<img src="/img/work/carbon-coop/cc-19.jpg" alt="" />
-		</figure>
 		
 		
 	</div>

@@ -74,7 +74,7 @@
 					<div>
 						<h3>Threadless: The Do First Work Ethic</h3>
 						<p class="post-meta">March 7, 2013 01:38 am</p>
-						<p>Interesting insight into the way the Threadless guys got started and their approach to making things.</p>
+<!-- 						<p>Interesting insight into the way the Threadless guys got started and their approach to making things.</p> -->
 						<p><a href="">Read more</a></p>
 					</div>
 				</div>

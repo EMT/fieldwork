@@ -8,7 +8,7 @@ extract($this->data());
 ?>
 
 
-<article class="content-item" id="item-<?= $pages[$this_page]; ?>">
+<article class="content-item work-item" id="item-<?= $pages[$this_page]; ?>">
 
 	<div class="content-inner">
 
@@ -33,88 +33,90 @@ extract($this->data());
 	
 		
 		
-		<figure class="full-width grid">
-			<img src="/img/work/clarence-fredericks/cf-logo.svg" alt="" />
-		</figure>
-		
-		
 		<div class="grid">
-			<figure class="col-2-1">
-				<img src="/img/work/clarence-fredericks/cf-21.jpg" alt="" />
-			</figure>
-			<figure class="col-2-1">
-				<img src="/img/work/clarence-fredericks/cf-barry.png" alt="" />
-			</figure>
-		</div>
 		
-		<div class="grid">
-			<figure class="col-2-1">
-				<img src="/img/work/clarence-fredericks/cf-22.jpg" alt="" />
-			</figure>
-			<figure class="col-2-1">
-				<img src="/img/work/clarence-fredericks/cf-23.jpg" alt="" />
-			</figure>
-		</div>
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/clarence-fredericks/cf-logo.svg" alt="" />
+				</figure>
+			</div>
 		
-<!--
-		<div class="grid">
-			<figure class="col-2-1">
-				<img src="/img/work/clarence-fredericks/cf-20.jpg" alt="" />
-			</figure>
-			<figure class="col-2-1">
-				<img src="/img/work/clarence-fredericks/cf-18.jpg" alt="" />
-			</figure>
-		</div>
--->
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/clarence-fredericks/cf-21.jpg" alt="" />
+				</figure>
+			</div>
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/clarence-fredericks/cf-barry.png" alt="" />
+				</figure>
+			</div>
 		
-		<figure class="full-width grid">
-			<img src="/img/work/clarence-fredericks/cf-3.jpg" alt="" />
-		</figure>
-		
-<!--
-		<figure class="full-width grid">
-			<img src="/img/work/clarence-fredericks/cf-2.jpg" alt="" />
-		</figure>
--->
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/clarence-fredericks/cf-22.jpg" alt="" />
+				</figure>
+			</div>
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/clarence-fredericks/cf-23.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/clarence-fredericks/cf-3.jpg" alt="" />
+				</figure>
+			</div>
+	
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/clarence-fredericks/cf-2.jpg" alt="" />
+				</figure>
+			</div>
+	
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/clarence-fredericks/cf-web1.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/clarence-fredericks/cf-web2.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/clarence-fredericks/cf-web3.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/clarence-fredericks/cf-12.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="full-width">
+				<figure>
+					<img src="/img/work/clarence-fredericks/cf-16.jpg" alt="" />
+				</figure>
+			</div>
+			
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/clarence-fredericks/cf-24.jpg" alt="" />
+				</figure>
+			</div>
+			<div class="col-2-1">
+				<figure>
+					<img src="/img/work/clarence-fredericks/cf-17.jpg" alt="" />
+				</figure>
+			</div>
 
-		<div class="grid">
-			<figure class="col-2-1">
-				<img src="/img/work/clarence-fredericks/cf-2.jpg" alt="" />
-			</figure>
 		</div>
-
-		<figure class="full-width grid">
-			<img src="/img/work/clarence-fredericks/cf-web1.jpg" alt="" />
-		</figure>
-		
-		
-		<figure class="full-width grid">
-			<img src="/img/work/clarence-fredericks/cf-web2.jpg" alt="" />
-		</figure>
-		
-		<figure class="full-width grid">
-			<img src="/img/work/clarence-fredericks/cf-web3.jpg" alt="" />
-		</figure>
-		
-		
-		<figure class="full-width grid">
-			<img src="/img/work/clarence-fredericks/cf-12.jpg" alt="" />
-		</figure>
-		
-		<figure class="full-width grid">
-			<img src="/img/work/clarence-fredericks/cf-16.jpg" alt="" />
-		</figure>
-		
-		<div class="grid">
-			<figure class="col-2-1">
-				<img src="/img/work/clarence-fredericks/cf-24.jpg" alt="" />
-			</figure>
-			<figure class="col-2-1">
-				<img src="/img/work/clarence-fredericks/cf-17.jpg" alt="" />
-			</figure>
-		</div>
-
-		
 		
 		
 		

@@ -4,48 +4,19 @@
 			<h2>Our Favourite Things</h2>
 			<ul>
 				<li>The collected <a href="">filmic</a> works of <a href="">Bill Murray</a></li>
-				<li><a href="">Robots</a></li>
-				<li>Hand Painted Lettering</li>
-				<li><a href="">Letterpress</a></li>
-				<li>The <a href="">Outdoors</a></li>
-				<li><a href="">Toys</a></li>
+				<li>Robots</li>
+<!-- 				<li>Hand Painted Lettering</li> -->
+				<li><a href="http://chrispprinters.co.uk/">Letterpress</a></li>
+<!-- 				<li>The <a href="">Outdoors</a></li> -->
+				<li>Procrastinating</li>
+				<li>Reading</li>
+				<li><a href="http://www.flickr.com/photos/_andygott/8514818727/in/pool-madebyfieldwork">Making Lists</a></li>
+<!-- 				<li><a href="">Toys</a></li> -->
 				<li><a href="">Beer</a> &amp; Cheese</li>
 				<li>Bicycle <a href="">Racing</a></li>
-				<li>John Hughes</li>
-				<li>Toys</li>
+				<li><a href="http://www.youtube.com/watch?v=91lJhEzMaH4">John Hughes</a></li>
+				<li><a href="http://en.wikipedia.org/wiki/Life,_the_Universe_and_Everything">The Universe, and Everything</a></li>
+				<li><a href="http://thingswefind.com/Cats">Cats</a></li>
 			</ul>
-<!--
-			<ul>
-				<li><a href="">Carbon Coop</a></li>
-				<li><a href="">SewSew</a></li>
-				<li><a href="">The Big Pedal</a></li>
-				<li><a href="">Clarence &amp; Fredericks</a></li>
-				<li><a href="">Mini Bugs</a></li>
-			</ul>
-			<ul>
-				<li><a href="">Carbon Coop</a></li>
-				<li><a href="">SewSew</a></li>
-				<li><a href="">The Big Pedal</a></li>
-				<li><a href="">Clarence &amp; Fredericks</a></li>
-				<li><a href="">Mini Bugs</a></li>
-				<li><a href="">Carbon Coop</a></li>
-				<li><a href="">SewSew</a></li>
-				<li><a href="">The Big Pedal</a></li>
-				<li><a href="">Clarence &amp; Fredericks</a></li>
-				<li><a href="">Mini Bugs</a></li>
-				<li><a href="">Carbon Coop</a></li>
-				<li><a href="">SewSew</a></li>
-				<li><a href="">The Big Pedal</a></li>
-				<li><a href="">Clarence &amp; Fredericks</a></li>
-				<li><a href="">Mini Bugs</a></li>
-			</ul>
-			<ul>
-				<li><a href="">Carbon Coop</a></li>
-				<li><a href="">SewSew</a></li>
-				<li><a href="">The Big Pedal</a></li>
-				<li><a href="">Clarence &amp; Fredericks</a></li>
-				<li><a href="">Mini Bugs</a></li>
-			</ul>
--->
 		</div>
 	</div><!-- #index -->

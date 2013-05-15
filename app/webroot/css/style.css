@@ -719,6 +719,30 @@ footer .social {
 }
 
 
+/* Image laoding placeholders */
+
+.grid .full-width {
+	clear: both;
+}
+.work-item figure.hero,
+.work-item .grid figure {
+	background: rgb(220,220,220);
+	position: relative;
+}
+.work-item figure.hero {
+	padding-bottom: 59.25%;
+}
+.work-item .grid figure {
+	padding-bottom: 66.66%;
+}
+.work-item figure.hero img,
+.work-item .grid figure img {
+	position: absolute;
+}
+
+
+
+
 .grid {
 	margin-left: -3%;
 	overflow: hidden;
@@ -727,9 +751,12 @@ footer .social {
 	float: right;
 }
 .grid > * {
-	padding-left: 2.91262%;
+	margin-left: 2.91262%;
 	margin-bottom: 2.91262%;
 }
+
+
+
 
 
 .grid-tight {
@@ -741,9 +768,11 @@ footer .social {
 }
 .grid-tight .col-3-1 {
 	padding-left: 0;
+	margin-left: 0;
 }
 .grid-tight .col-2-1 {
 	padding-left: 0;
+	margin-left: 0;
 }
 .grid-tight .col-2-1 > *,
 .grid-tight .col-3-1 > * {
@@ -1199,6 +1228,9 @@ input[type="submit"] {
 	.grid-tight .col-3-1 {
 		width: 33.3333%;
 	}
+	.home-grid .grid-tight .col-3-1 {
+		width: 50%;
+	}
 	.grid-tight .col-2-1 {
 		width: 50%;
 	}
@@ -1317,7 +1349,7 @@ input[type="submit"] {
 		padding: 7.5% 8.5%;
 	}
 	
-		.grid .col-2-1.col-half {
+	.grid .col-2-1.col-half {
 		overflow: hidden;
 	}
 	.grid .col-2-1.col-half a {
