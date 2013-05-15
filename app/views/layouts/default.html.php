@@ -50,7 +50,7 @@
 	
 	<script src="/js/jquery.min.js"></script>
 	
-	<!--[if IE 8]><!-->
+	<!--[if IE 8]>
 		<script src="/js/ss-social.js"></script>
 	<!--<![endif]-->
 	
@@ -58,7 +58,7 @@
 		<script src="/js/bootstrap.js"></script>
 	<!--<![endif]-->
 	
-	<!--[if lte IE 8]><!-->
+	<!--[if lte IE 8]>
 		<script>
 			//	Replace SVG in non-supporting browsers
 			$('img[src*="svg"]').attr('src', function() {

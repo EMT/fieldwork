@@ -20,11 +20,18 @@ function fadeIn(el) {
 }
 
 function fixSvgHeight(el) {
+	var settings = {
+		position: $(el).css('position'),
+		top: $(el).css('top'),
+		display: $(el).css('display'),
+	}
 	$(el).css({position: 'absolute', top: '-999em', display: 'block'});
 	var w = $(el).width(),
-		h = $(el).width(),
+		h = $(el).height(),
 		ratio = w / h;
-	$(el).css({position: 'relative', top: 'auto', display: 'none', width: (w / ratio) + 'px'});
+	$(el).css({position: settings.position, top: settings.top, display: settings.display, width: (w / ratio) + 'px'});
+	$(el).css({width: Math.floor(w / ratio) + 'px'});
+	$(el).css({width: Math.floor(w) + 'px'});
 }
 
 
@@ -44,6 +51,8 @@ $(document).ready(function() {
 	        return $(this).attr('src').replace('.svg', '.png');
 	    });
 	}
+	
+	
 	
 	
 /*
@@ -259,6 +268,14 @@ $(document).ready(function() {
 	
 	
 });
+
+
+window.onload = function() {
+	//	Fix svg heights in safari
+	$('.process-overview img[src*="svg"]').each(function() {
+		fixSvgHeight(this);
+	});
+};
 
 
 var slider = {
