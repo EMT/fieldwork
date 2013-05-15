@@ -67,13 +67,13 @@
 		
 		<div class="grid">
 			<div class="col-3-1">
+				<h3>Flickr</h3>
 				<div class="grid-item">
-					<h2>Flickr</h2>
 					<div id="flickr"></div>
 				</div>
 			</div>
 			<div class="col-3-1">
-				<h2>Blog</h2>
+				<h3>Blog</h3>
 				<div class="grid-item" id="blog-teaser">
 					<a href="http://madebyfieldwork.com/emt/2013/05/14/tilt-website/">
 						<img src="http://madebyfieldwork.com/emt/wp-content/uploads/2013/05/collection-home-630x472.jpg" alt="" />
@@ -88,7 +88,7 @@
 			
 			<div class="col-3-1">
 				<div style="">
-					<h2>Twitter</h2>
+					<h3>Twitter</h3>
 					<div id="latest-tweet">
 						<p class="tweet"></p>
 						<p class="twitter-handle"><a href="http://twitter.com/madebyfieldwork">@madebyfieldwork</a></p>
