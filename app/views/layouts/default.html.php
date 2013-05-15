@@ -18,7 +18,8 @@
 		<?php echo $this->html->style(array(
 			'style'
 		), array(/* 'inline' => false */)); ?>
-		<?php echo ($env !== 'development') ? $this->optimize->styles() : $this->styles(); ?>
+		<?php echo $this->styles(); ?>
+		<?php //echo ($env !== 'development') ? $this->optimize->styles() : $this->styles(); ?>
 	<!--<![endif]-->
 	<!--[if IE 8]>
 		<?php echo $this->html->style(array(
