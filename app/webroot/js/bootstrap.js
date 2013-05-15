@@ -15,7 +15,16 @@ function showPage() {
 
 
 function fadeIn(el) {
+	fixSvgHeight(el);
 	$(el).fadeIn(100);
+}
+
+function fixSvgHeight(el) {
+	$(el).css({position: 'absolute', top: '-999em', display: 'block'});
+	var w = $(el).width(),
+		h = $(el).width(),
+		ratio = w / h;
+	$(el).css({position: 'relative', top: 'auto', display: 'none', width: (w / ratio) + 'px'});
 }
 
 
@@ -64,7 +73,7 @@ $(document).ready(function() {
 	
 	//	Home page machine parts
 	if ($('#machine').length) {
-		var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+		var arr = [1, 2, 3, 4, 5, 6/* , 7, 8, 9, 10, 11, 12 */],
 			rand_arr = [],
 			ext = (Modernizr.svg) ? 'svg' : 'png';
 		for (var i in arr) {
@@ -79,8 +88,8 @@ $(document).ready(function() {
 			how_many_parts = 6;
 		}
 		for (i = 0; i < how_many_parts; i ++) {
-/* 			$('<img src="/img/machine/fw-machine-' + rand_arr[i] + '.' + ext + '" style="display: none;" onload="fadeIn(this);" alt="" />').appendTo('#machine'); */
-			$('<img src="/img/machine/fw-machine-' + rand_arr[i] + '.' + ext + '" alt="" />').appendTo('#machine');
+			$('<img src="/img/machine/fw-machine-' + rand_arr[i] + '.' + ext + '" style="display: none;" onload="fadeIn(this);" alt="" />').appendTo('#machine');
+/* 			$('<img src="/img/machine/fw-machine-' + rand_arr[i] + '.' + ext + '" alt="" />').appendTo('#machine'); */
 		}
 /*
 		var arr = [1, 2],
