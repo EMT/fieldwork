@@ -16,7 +16,7 @@ extract($this->data());
 		<h1>Fieldwork</h1>
 		
 		<figure class="hero">					
-			<img src="<?= $main_img; ?>" alt="" />
+			<img src="<?= $main_img; ?>" alt="Close-up detail of the die-cut on a stack of Fieldwork business cards." />
 		</figure>
 		
 		<div class="intro">
@@ -37,77 +37,77 @@ extract($this->data());
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/fieldwork/fw-logo.svg" alt="" />
+					<img src="/img/work/fieldwork/fw-logo.svg" alt="The Fieldwork logo" />
 				</figure>
 			</div>
 			
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/fieldwork/fw-cubes.svg" alt="" />
+					<img src="/img/work/fieldwork/fw-cubes.svg" alt="Pattern made up of 3D cubes, used as part of the visual language for Fieldwork" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/fieldwork/fw-6.jpg" alt="" />
+					<img src="/img/work/fieldwork/fw-6.jpg" alt="A collection of stationary and packaging using the Fieldwork brand" />
 				</figure>
 			</div>
 		
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/fieldwork/fw-2.jpg" alt="" />
+					<img src="/img/work/fieldwork/fw-2.jpg" alt="The die-cut being pressed out of a Fieldwork business card by hand" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/fieldwork/fw-5.jpg" alt="" />
+					<img src="/img/work/fieldwork/fw-5.jpg" alt="Close-up details of the business card cut-out and left over peices" />
 				</figure>
 			</div>
 		
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/fieldwork/fw-4.jpg" alt="" />
+					<img src="/img/work/fieldwork/fw-4.jpg" alt="Die-cut Fieldwork branded letterhead" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/fieldwork/fw-7.jpg" alt="" />
+					<img src="/img/work/fieldwork/fw-7.jpg" alt="A hexagonal laser cut plywood board, with the Fieldwork logo cut out" />
 				</figure>
 			</div>
 		
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/fieldwork/fw-8.jpg" alt="" />
+					<img src="/img/work/fieldwork/fw-8.jpg" alt="Fieldwork branded poster tube" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/fieldwork/fw-3.jpg" alt="" />
+					<img src="/img/work/fieldwork/fw-3.jpg" alt="Collected items with Fieldwork branding" />
 				</figure>
 			</div>
 			
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/fieldwork/fw-12.jpg" alt="" />
+					<img src="/img/work/fieldwork/fw-12.jpg" alt="A box of Fieldwork illustrated prints" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/fieldwork/fw-11.jpg" alt="" />
+					<img src="/img/work/fieldwork/fw-11.jpg" alt="A framed Fieldwork illustrated print" />
 				</figure>
 			</div>
 			
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/fieldwork/fw-15.jpg" alt="" />
+					<img src="/img/work/fieldwork/fw-15.jpg" alt="Detail shot of a Fieldwork illustrated print" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/fieldwork/fw-16.jpg" alt="" />
+					<img src="/img/work/fieldwork/fw-16.jpg" alt="Detail shot of a Fieldwork illustrated print, showing close-up of the folds" />
 				</figure>
 			</div>
 		
