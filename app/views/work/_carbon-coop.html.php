@@ -12,10 +12,10 @@ extract($this->data());
 
 	<div class="content-inner">
 
-		<h1>Carbon Coop</h1>
+		<h1>Carbon Co-op</h1>
 		
 		<figure class="hero">					
-			<img src="<?= $main_img; ?>" alt="" />
+			<img src="<?= $main_img; ?>" alt="Illustration by Charlotte Trounce for Carbon Co-op" />
 		</figure>
 		
 		<div class="intro">
@@ -35,93 +35,93 @@ extract($this->data());
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/carbon-coop/cc-logo.svg" alt="" />
+					<img src="/img/work/carbon-coop/cc-logo.svg" alt="Carbon Co-op logo" />
 				</figure>
 			</div>
 			
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/carbon-coop/cc-icons.svg" alt="" />
+					<img src="/img/work/carbon-coop/cc-icons.svg" alt="Custom designed icons" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/carbon-coop/cc-20.jpg" alt="" />
+					<img src="/img/work/carbon-coop/cc-20.jpg" alt="Illustration of a familiy in a warm looking house" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/carbon-coop/cc-1.jpg" alt="" />
+					<img src="/img/work/carbon-coop/cc-1.jpg" alt="Collection of stationary and print materials for Carbon Co-op" />
 				</figure>
 			</div>
 
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/carbon-coop/cc-2.jpg" alt="" />
+					<img src="/img/work/carbon-coop/cc-2.jpg" alt="Carbon Co-op branded letterhead" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/carbon-coop/cc-3.jpg" alt="" />
+					<img src="/img/work/carbon-coop/cc-3.jpg" alt="Carbon Co-op business cards" />
 				</figure>
 			</div>	
 
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/carbon-coop/cc-9.jpg" alt="" />
+					<img src="/img/work/carbon-coop/cc-9.jpg" alt="Carbon Co-op bueinss cards detail shot of both sides" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/carbon-coop/cc-13.jpg" alt="" />
+					<img src="/img/work/carbon-coop/cc-13.jpg" alt="A hand holds a Carbon Co-op membership card" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/carbon-coop/cc-web1.jpg" alt="" />
+					<img src="/img/work/carbon-coop/cc-web1.jpg" alt="Screenshot of the Carbon Co-op website home page" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/carbon-coop/cc-web2.jpg" alt="" />
+					<img src="/img/work/carbon-coop/cc-web2.jpg" alt="Screenshot of the Carbon Co-op website members’ area" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/carbon-coop/cc-web3.jpg" alt="" />
+					<img src="/img/work/carbon-coop/cc-web3.jpg" alt="Various screesnhots from the Carbon Co-op website, shown on smartphone screens" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/carbon-coop/cc-8.jpg" alt="" />
+					<img src="/img/work/carbon-coop/cc-8.jpg" alt="A printed booklet with custom illustrations for Carbon Co-op" />
 				</figure>
 			</div>
 			
 			<div class="col-2-1">
 				<figure>
-				<img src="/img/work/carbon-coop/cc-10.jpg" alt="" />
+					<img src="/img/work/carbon-coop/cc-10.jpg" alt="Printed materials for Carbon Co-op" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-				<img src="/img/work/carbon-coop/cc-5.jpg" alt="" />
+					<img src="/img/work/carbon-coop/cc-5.jpg" alt="Detail shot of photography from a Carbon Co-op publication" />
 				</figure>
 			</div>
 
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/carbon-coop/cc-11.jpg" alt="" />
+					<img src="/img/work/carbon-coop/cc-11.jpg" alt="Photo of an old garden shed with plat pots" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/carbon-coop/cc-19.jpg" alt="" />
+					<img src="/img/work/carbon-coop/cc-19.jpg" alt="Photo of people in a garden on a sunny day" />
 				</figure>
 			</div>
 
