@@ -272,7 +272,7 @@ $(document).ready(function() {
 
 window.onload = function() {
 	//	Fix svg heights in safari
-	$('.process-overview img[src*="svg"]').each(function() {
+	$('img[src*="svg"]').each(function() {
 		fixSvgHeight(this);
 	});
 };
