@@ -73,6 +73,7 @@
 			<li><a class="ss-icon" href="http://twitter.com/madebyfieldwork">twitter</a></li>
 			<li><a class="ss-icon" href="http://facebook.com/madebyfieldwork">facebook</a></li>
 			<li><a class="ss-icon" href="http://flickr.com/photos/madebyfieldwork">flickr</a></li>
+			<li><a class="ss-icon" href="https://github.com/EMT">github</a></li>
 		</ul>
 		
 		<h3>Extra Curricular</h3>
