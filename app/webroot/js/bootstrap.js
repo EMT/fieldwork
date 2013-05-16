@@ -19,20 +19,7 @@ function fadeIn(el) {
 	$(el).fadeIn(100);
 }
 
-function fixSvgHeight(el) {
-	var settings = {
-		position: $(el).css('position'),
-		top: $(el).css('top'),
-		display: $(el).css('display'),
-	}
-	$(el).css({position: 'absolute', top: '-999em', display: 'block'});
-	var w = $(el).width(),
-		h = $(el).height(),
-		ratio = w / h;
-	$(el).css({position: settings.position, top: settings.top, display: settings.display, width: (w / ratio) + 'px'});
-	$(el).css({width: Math.floor(w / ratio) + 'px'});
-	$(el).css({width: Math.floor(w) + 'px'});
-}
+
 
 
 window.onpageshow = function(event) {
@@ -267,15 +254,37 @@ $(document).ready(function() {
 	}
 	
 	
+	$('img[src*="svg"]').load(function() {
+		fixSvgHeight(this);
+	});
+	
 });
 
 
 window.onload = function() {
-	//	Fix svg heights in safari
+	fixSvgHeights();
+};
+
+function fixSvgHeights() {
 	$('img[src*="svg"]').each(function() {
 		fixSvgHeight(this);
 	});
-};
+}
+
+function fixSvgHeight(el) {
+	var settings = {
+		position: $(el).css('position'),
+		top: $(el).css('top'),
+		display: $(el).css('display'),
+	}
+	$(el).css({position: 'absolute', top: '-999em', display: 'block'});
+	var w = $(el).width(),
+		h = $(el).height(),
+		ratio = w / h;
+	$(el).css({position: settings.position, top: settings.top, display: settings.display, width: (w / ratio) + 'px'});
+	$(el).css({width: Math.floor(w / ratio) + 'px'});
+	$(el).css({width: Math.floor(w) + 'px'});
+}
 
 
 var slider = {
@@ -301,6 +310,7 @@ var slider = {
 			400, 
 			'easeInOutExpo',
 			function() {
+				fixSvgHeights();
 				if ($(window).scrollTop() > $('.content-item h1').offset().top + ($('.content-item h1').outerHeight() / 2)) {
 
 					$("html:not(:animated),body:not(:animated)").animate({scrollTop: 0}, 400, 'easeInOutExpo', function() {
