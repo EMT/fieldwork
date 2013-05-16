@@ -95,7 +95,7 @@
 					</span>
 				<?php } ?>
 			</label>
-			<?= $this->form->text('city', array(
+			<?= $this->form->text('county', array(
 				'class' => 'text-input',
 				'id' => 'county',
 				'placeholder' => 'Greater Manchester'
