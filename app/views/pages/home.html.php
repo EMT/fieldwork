@@ -77,11 +77,11 @@
 			<div class="col-3-1">
 <!-- 				<h3>Blog</h3> -->
 				<div class="grid-item" id="blog-teaser">
-					<a href="http://madebyfieldwork.com/emt/2013/05/14/tilt-website/">
-						<img src="http://madebyfieldwork.com/emt/wp-content/uploads/2013/05/collection-home-630x472.jpg" alt="" />
+					<a href="http://madebyfieldwork.com/emt/2013/05/16/some-rules-for-making-things-our-manifesto/">
+						<img src="http://madebyfieldwork.com/emt/wp-content/uploads/2013/02/balloons-630x404.jpg" alt="" />
 						<div class="home-grid-details">
 <!-- 							<h3>TILT Website</h3> -->
-							<p>Over the last few months we’ve been working with TILT.</p>
+							<p>When we first decided to team up and form Fieldwork, we sat down together to outline a few ideas about how we want to work.</p>
 							<p class="read-more">Read more</p>
 						</div>
 					</a>
