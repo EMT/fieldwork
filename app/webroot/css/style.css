@@ -42,8 +42,8 @@ body { margin: 0; font-size: 0.9375em; line-height: 1.3077; }
  * Also: hot pink! (or customize the background color to match your design)
  */
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: rgb(233,51,63); color: #fff; text-shadow: none; }
+::selection { background: rgb(233,51,63); color: #fff; text-shadow: none; }
 
 
 /* =============================================================================
@@ -752,6 +752,7 @@ footer .social {
 }
 .work-item figure.hero,
 .work-item .grid figure {
+	background: rgb(233,51,63);
 	background: rgb(220,220,220);
 	position: relative;
 }
