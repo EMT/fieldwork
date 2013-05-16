@@ -976,7 +976,7 @@ h3 {
 	vertical-align: bottom;
 }
 #machine img:nth-child(n+4) {
-	display: none;
+	display: none !important;
 }
 #machine .floating {
 	position: absolute;
@@ -985,7 +985,7 @@ h3 {
 .home-grid {
 	background: rgb(219,220,217);
 	border-top: 1px solid rgb(219,220,217);
-	padding: 2.91262% 0 6%;
+	padding: 4% 0 6%;
 }
 .home-grid h2 {
 	margin-top: 3em;
@@ -1117,6 +1117,7 @@ a:hover .home-grid-details {
 	margin-bottom: 0.2em;
 }
 #latest-tweet h4 {
+	color: rgb(23,77,89);
 	margin: 0 0 1em;
 }
 #latest-tweet .in-reply-to {
@@ -1353,7 +1354,7 @@ input[type="submit"] {
 		max-width: 25%;
 	}
 	#machine img:nth-child(4) {
-		display: inline;
+		display: inline !important;
 	}
 	
 	#index h2 {
@@ -1381,7 +1382,7 @@ input[type="submit"] {
 		max-width: 16.66666666%;
 	}
 	#machine img:nth-child(n+3) {
-		display: inline;
+		display: inline !important;
 	}
 	
 	.grid.work .col-3-1 {
@@ -1396,8 +1397,8 @@ input[type="submit"] {
 	}
 	
 	.home-grid h2 {
-		margin-top: 8%;
-		margin-bottom: 3%;
+		margin-top: 4%;
+		margin-bottom: 4%;
 	}
 
 }
