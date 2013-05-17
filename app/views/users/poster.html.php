@@ -15,7 +15,7 @@
 	<?php } else { ?>
 	
 	
-	<p class="centered-intro runner">Hello world! We finally got around to officially launching Fieldwork, and we’d like to introduce ourselves to you with one of these lovely posters. Leave us your details, and we’ll pop one in the post.</p>
+	<p class="centered-intro runner">Hello world! We finally got around to officially launching Fieldwork, and we’d like to introduce ourselves to you with one of our machine posters. Leave us your details, and we’ll pop one in the post.</p>
 	
 	
 		
