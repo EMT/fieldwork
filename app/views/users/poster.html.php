@@ -139,7 +139,7 @@
 			<?php } ?>
 		</label>
 		
-		<p>The posters come folded to A5 and we have 100 to give away, so get them whilst they’re hot.</p>
+		<p>The posters come folded to A5 and we have 100 to give away, so get them while they’re hot.</p>
 		
 		<input class="btn submit" type="submit" name="sub" value="Submit" />
 		
