@@ -15,7 +15,7 @@ function showPage() {
 
 
 function fadeIn(el) {
-	fixSvgHeight(el);
+/* 	fixSvgHeight(el); */
 	$(el).fadeIn(100);
 }
 
@@ -239,17 +239,22 @@ $(document).ready(function() {
 	}
 	
 	
+/*
 	$('img[src*="svg"]').load(function() {
 		fixSvgHeight(this);
 	});
+*/
 	
 });
 
 
+/*
 window.onload = function() {
 	fixSvgHeights();
 };
+*/
 
+/*
 function fixSvgHeights() {
 	$('img[src*="svg"]').each(function() {
 		fixSvgHeight(this);
@@ -260,7 +265,7 @@ function fixSvgHeight(el) {
 	var settings = {
 		position: $(el).css('position'),
 		top: $(el).css('top'),
-		display: $(el).css('display'),
+		display: $(el).css('display')
 	}
 	$(el).css({position: 'absolute', top: '-999em', display: 'block'});
 	var w = $(el).width(),
@@ -270,6 +275,7 @@ function fixSvgHeight(el) {
 	$(el).css({width: Math.floor(w / ratio) + 'px'});
 	$(el).css({width: Math.floor(w) + 'px'});
 }
+*/
 
 
 var slider = {
@@ -295,7 +301,7 @@ var slider = {
 			400, 
 			'easeInOutExpo',
 			function() {
-				fixSvgHeights();
+/* 				fixSvgHeights(); */
 				if ($(window).scrollTop() > $('.content-item h1').offset().top + ($('.content-item h1').outerHeight() / 2)) {
 
 					$("html:not(:animated),body:not(:animated)").animate({scrollTop: 0}, 400, 'easeInOutExpo', function() {
