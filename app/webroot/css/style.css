@@ -1209,7 +1209,6 @@ input[type="submit"] {
 .std-form label {
 	display: block;
 	margin-bottom: 0.3em;
-	margin-left: 2.5%;
 	clear: both;
 }
 .std-form .text-input {
@@ -1253,6 +1252,7 @@ input[type="submit"] {
 .std-form .radio-lbl input {
 	margin-right: 0.5em;
 }
+
 
 
 
@@ -1456,9 +1456,14 @@ input[type="submit"] {
 		margin-bottom: 4%;
 	}
 	
+	.std-form label,
 	.std-form .text-input {
 		width: 95%;
 		margin-left: 2.5%;
+	}
+	.std-form > p {
+		margin-left: 2.5%;
+		margin-right: 2.5%;
 	}
 	.std-form .btn {
 		width: 95%;

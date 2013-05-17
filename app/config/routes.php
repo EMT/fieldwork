@@ -51,6 +51,7 @@ Router::connect('/us', array('Pages::view', 'args' => array('us')));
 Router::connect('/favourites', array('Pages::view', 'args' => array('favourites')));
 Router::connect('/poster', array('Users::poster'));
 Router::connect('/poster/thanks', array('Users::posterThanks'));
+Router::connect('/poster/howmany', array('Users::posterHowMany'));
 Router::connect('/work', 'Work::index');
 Router::connect('/work/{:args}.{:type}', 'Work::view');
 Router::connect('/work/{:args}', 'Work::view');

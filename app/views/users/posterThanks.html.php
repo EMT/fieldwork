@@ -1,6 +1,6 @@
 
 
-<?php $this->title('Fieldwork – We Love Making Things'); ?>
+<?php $this->title('For you, ' . $name . ', anything!'); ?>
 
 	
 <div class="content-inner">

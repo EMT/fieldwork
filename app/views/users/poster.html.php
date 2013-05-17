@@ -1,6 +1,6 @@
 
 
-<?php $this->title('Fieldwork – We Love Making Things'); ?>
+<?php $this->title('Hey Fieldwork, can I have a poster please?'); ?>
 
 	
 <div class="content-inner">
@@ -8,9 +8,17 @@
 	<h1>Hey Fieldwork, can I have a poster please?</h1>
 	
 	
+	<?php if ($count >= 100) { ?>
+		
+		<p class="centered-intro runner">Wow, that was fast! Sorry, we’re out of posters. You can follow us on <a href="http://twitter.com/madebyfieldwork">Twitter</a>, or <a href="http://eepurl.com/q6U4X">join the mailing list</a> to stay tuned for the next Fieldwork thing (we have no idea what that will be… we’ll think of something).</p>
+		
+	<?php } else { ?>
+	
+	
 	<p class="centered-intro runner">Hello world! We finally got around to officially launching Fieldwork, and we’d like to introduce ourselves to you with one of these lovely posters. Leave us your details, and we’ll pop one in the post.</p>
 	
 	
+		
 	
 	<?= $this->form->create($user, array('class' => 'std-form')); ?>
 		<?= $this->security->requestToken(); ?>
@@ -44,16 +52,6 @@
 			)); ?>
 		</div>
 	
-<!--
-		<div class="form-row-half">
-			<label for="">First Name</label>
-			<input class="text-input" name="fname" placeholder="Loz" />
-		</div>
-		<div class="form-row-half">
-			<label for="">Last Name</label>
-			<input class="text-input" name="lname" placeholder="Ives" />
-		</div>
--->
 
 		<label class="text-lbl" for="fname">Street Address
 			<?php if (count($user->errors('street'))) { ?>
@@ -68,10 +66,6 @@
 			'placeholder' => 'Fieldwork, 22 Lever Street'
 		)); ?>
 		
-<!--
-		<label for="">Street Address</label>
-		<input class="text-input" name="street" placeholder="Fieldwork, 22 Lever Street" />
--->
 
 		<div class="form-row-half<?= (count($user->errors('city'))) ? ' error' : ''; ?>">
 			<label class="text-lbl" for="city">City
@@ -102,16 +96,6 @@
 			)); ?>
 		</div>
 		
-<!--
-		<div class="form-row-half">
-			<label for="">City</label>
-			<input class="text-input" name="city" placeholder="Manchester" />
-		</div>
-		<div class="form-row-half">
-			<label for="">County</label>
-			<input class="text-input" name="county" placeholder="Greater Manchester" />
-		</div>
--->
 
 
 		<div class="form-row-half<?= (count($user->errors('postcode'))) ? ' error' : ''; ?>">
@@ -143,16 +127,6 @@
 			)); ?>
 		</div>
 		
-<!--
-		<div class="form-row-half">
-			<label for="">Postcode</label>
-			<input class="text-input" name="fname" placeholder="M1 1EA" />
-		</div>
-		<div class="form-row-half">
-			<label for="">Email</label>
-			<input class="text-input" name="lname" placeholder="hello@madebyfieldwork.com" />
-		</div>
--->
 
 		<label class="radio-lbl" for="newsletter"><?= $this->form->checkbox('newsletter', array(
 			'id' => 'newsletter',
@@ -165,14 +139,14 @@
 			<?php } ?>
 		</label>
 		
-<!-- 		<label for=""><input type="checkbox" name="" value="1" />Can we send you good, wholesome stuff via email, once a month or so?</label> -->
+		<p>The posters come folded to A5 and we have 100 to give away, so get them whilst they’re hot.</p>
 		
 		<input class="btn submit" type="submit" name="sub" value="Submit" />
 		
 	<?=$this->form->end(); ?>
 	
 	
-	
+	<?php } ?>
 	
 	
 	

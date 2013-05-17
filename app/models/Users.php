@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use lithium\util\Validator;
+
 
 class Users extends \app\extensions\data\Model {
 
@@ -26,7 +28,12 @@ class Users extends \app\extensions\data\Model {
                 'email',
                 'required' => true,
                 'message' => 'Please check this email address.'
-            )
+            ),
+            array(
+				'uniqueEmail',
+				'message' => 'This email address is already registered.',
+				'on' => 'create'
+			)
         ),
         'street' => array(
             array(
@@ -52,6 +59,16 @@ class Users extends \app\extensions\data\Model {
     );
 
 }
+
+
+
+/**
+ * Checks against the users table and validates if the 
+ * email address does not already exist
+ */
+Validator::add('uniqueEmail', function($value, $format, $options){
+   return !Users::first(array('conditions' => array('email' => $value)));
+});
 
 
 

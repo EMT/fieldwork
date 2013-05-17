@@ -21,11 +21,17 @@ class UsersController extends \lithium\action\Controller {
 			}
 		}
 		
-		return compact('user');
+		$count = Users::count();
+		return compact('user', 'count');
 	}
 	
 	public function posterThanks() {
 		return array('name' => $this->request->query['name']);
+	}
+	
+	public function posterHowMany() {
+		$count = Users::count();
+		return compact('count');
 	}
 	
 }
