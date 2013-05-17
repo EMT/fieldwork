@@ -10,7 +10,7 @@ namespace app\controllers;
 
 use app\models\Users;
 
-class UsersController extends \lithium\action\Controller {
+class UsersController extends \app\extensions\action\Controller {
 
 	public function poster() {
 		$user = Users::create();
@@ -26,7 +26,8 @@ class UsersController extends \lithium\action\Controller {
 	}
 	
 	public function posterThanks() {
-		return array('name' => $this->request->query['name']);
+		$name = (isset($this->request->query['name'])) ? $this->request->query['name'] : 'our friend';
+		return compact('name');
 	}
 	
 	public function posterHowMany() {

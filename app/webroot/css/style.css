@@ -322,14 +322,15 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
 
 html {
 	background: rgb(235,235,232);
+	position: relative;
+    min-height: 100%;
 }
 body {
 	font-family: "Neuzeit S LT W01 Book", sans-serif;
 	line-height: 1.4em;
 	color: rgb(102,102,102);
 	background: rgb(235,235,232);
-	position: relative;
-/* 	padding: 0 5%; */
+/* 	position: relative; */
 }
 .js body {
 	display: none;
@@ -1425,6 +1426,16 @@ input[type="submit"] {
 
 
 @media all and (min-width: 600px) {
+
+	body {
+		margin: 0 0 82px;
+	}
+	footer {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
 	
 	h1 {
 		margin: 5.5% 0;
