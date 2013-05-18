@@ -26,7 +26,7 @@
 		<section class="col-3-1">
 			<h3>Our Approach</h3>
 			<p>We build things with you, collaboratively, to support and enhance the work that you do. Combining your knowledge of your organisation and its work, with our experience and design process, we produce things that have real impact.</p>
-			<p>Finally, we develop and deploy final products and assets, and work out how best to launch the project for the most positive impact.</p>
+			<p>The best way to explore possibilities and generate new ideas, is to get started. Less talking, more doing. We start sketching and prototyping at the very beginning.</p>
 		</section>
 		
 		

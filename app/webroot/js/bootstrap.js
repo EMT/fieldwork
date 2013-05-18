@@ -84,7 +84,7 @@ $(document).ready(function() {
 			how_many_parts = 6;
 		}
 		for (i = 0; i < how_many_parts; i ++) {
-			$('<img src="/img/machine/fw-machine-' + rand_arr[i] + '.' + ext + '" style="display: none;" onload="fadeIn(this);" alt="" />').appendTo('#machine');
+			$('<img src="/img/machine/fw-machine-' + rand_arr[i] + '.' + ext + '" style="display: none;" alt="" />').appendTo('#machine').one('load', function() {fadeIn(this); }).load();
 		}
 	}
 
@@ -239,11 +239,12 @@ $(document).ready(function() {
 	}
 	
 	
-/*
-	$('img[src*="svg"]').load(function() {
+	/*
+$('img[src*="svg"]').load(function() {
 		fixSvgHeight(this);
 	});
 */
+	fixSvgHeights();
 	
 });
 
@@ -254,7 +255,6 @@ window.onload = function() {
 };
 */
 
-/*
 function fixSvgHeights() {
 	$('img[src*="svg"]').each(function() {
 		fixSvgHeight(this);
@@ -262,20 +262,26 @@ function fixSvgHeights() {
 }
 
 function fixSvgHeight(el) {
-	var settings = {
-		position: $(el).css('position'),
-		top: $(el).css('top'),
-		display: $(el).css('display')
-	}
-	$(el).css({position: 'absolute', top: '-999em', display: 'block'});
-	var w = $(el).width(),
-		h = $(el).height(),
-		ratio = w / h;
-	$(el).css({position: settings.position, top: settings.top, display: settings.display, width: (w / ratio) + 'px'});
-	$(el).css({width: Math.floor(w / ratio) + 'px'});
-	$(el).css({width: Math.floor(w) + 'px'});
+	$(el).one('load', function() {
+		var settings = {
+			position: $(el).css('position'),
+			top: $(el).css('top'),
+			display: $(el).css('display')
+		}
+		$(el).css({position: 'absolute', top: '-999em', display: 'block'});
+		var w = $(el).width(),
+			h = $(el).height(),
+			ratio = w / h;
+		$(el).css({position: settings.position, top: settings.top, display: settings.display, width: (w / ratio) + 'px'});
+		$(el).css({width: Math.floor(w / ratio) + 'px'});
+		$(el).css({width: Math.floor(w) + 'px'});
+	}).each(function() {
+		if (this.complete) {
+			$(this).load();
+		}
+	});
+	
 }
-*/
 
 
 var slider = {
@@ -301,7 +307,7 @@ var slider = {
 			400, 
 			'easeInOutExpo',
 			function() {
-/* 				fixSvgHeights(); */
+				fixSvgHeights();
 				if ($(window).scrollTop() > $('.content-item h1').offset().top + ($('.content-item h1').outerHeight() / 2)) {
 
 					$("html:not(:animated),body:not(:animated)").animate({scrollTop: 0}, 400, 'easeInOutExpo', function() {
