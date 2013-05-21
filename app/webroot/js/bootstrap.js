@@ -522,6 +522,7 @@ function initializeMap() {
 function flickr() {
 	var url = 'http://api.flickr.com/services/feeds/groups_pool.gne?id=2172335@N24&lang=en-us&format=json&jsoncallback=?';
 	$.getJSON(url, function(data) {
+console.log(data.items[0]);
 		$('<a href="' + data.items[0].link + '"><img src="' + data.items[0].media.m.replace('_m.jpg', '_z.jpg') + '" alt="' + data.items[0].media + '" /><div class="home-grid-details"><h3>' + data.items[0].title + '</h3></div></a>').appendTo('#flickr');
 	});
 }
@@ -532,8 +533,7 @@ function flickr() {
 function latestTweet(username) {
 	var url = 'https://api.twitter.com/1/statuses/user_timeline/' + username + '.json?count=10&include_rts=1&callback=?';
 	$.getJSON(url, function(data) {
-		var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig; 
-		$('#latest-tweet .tweet').html(data[0].text.replace(exp, "<a href='$1'>$1</a>"));
+		$('#latest-tweet .tweet').html(formatTweet(data[0].text));
 		$('#latest-tweet .twitter-handle').html('<a href="http://twitter.com/' + data[0].user.screen_name + '">@' + data[0].user.screen_name + '</a>');
 		showReply(data[0]);
 	});
@@ -542,13 +542,16 @@ function showReply(tweet) {
 	if (tweet.in_reply_to_status_id_str) {
 		var url = 'https://api.twitter.com/1/statuses/show.json?id=' + tweet.in_reply_to_status_id_str + '&callback=?';
 		$.getJSON(url, function(data) {
-console.log(data);
-			var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig; 
-			$('#latest-tweet .irt').html(data.text.replace(exp, "<a href='$1'>$1</a>"));
+			$('#latest-tweet .irt').html(formatTweet(data.text));
 			$('#latest-tweet .irt-handle').html('<a href="http://twitter.com/' + data.user.screen_name + '">@' + data.user.screen_name + '</a>');
 			$('#latest-tweet .in-reply-to').slideDown(300);
 		});
 	}
+}
+function formatTweet(text) {
+	var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig; 
+	return text.replace(exp, "<a href='$1'>$1</a>");
+/* 	return text.replace(/(@\w+)/g, '<a href="http://twitter.com/$&">$&</a>'); */
 }
 
 
