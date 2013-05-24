@@ -77,11 +77,11 @@
 			<div class="col-3-1">
 <!-- 				<h3>Blog</h3> -->
 				<div class="grid-item" id="blog-teaser">
-					<a href="http://madebyfieldwork.com/emt/2013/05/16/some-rules-for-making-things-our-manifesto/">
-						<img src="http://madebyfieldwork.com/emt/wp-content/uploads/2013/05/balloons-630x404.png" alt="" />
+					<a href="http://madebyfieldwork.com/emt/2013/05/24/building-digital-tools-for-social-action/">
+						<img src="http://madebyfieldwork.com/emt/wp-content/uploads/2013/05/IMG_6122-web-630x419.jpg" alt="" />
 						<div class="home-grid-details">
 <!-- 							<h3>TILT Website</h3> -->
-							<p>When we first decided to team up and form Fieldwork, we sat down together to outline a few ideas about how we want to work.</p>
+							<p>We recently started working with Catch22 to design and build a mobile ready web app to provide a digital platform for young people taking social action.</p>
 							<p class="read-more">Read more</p>
 						</div>
 					</a>
