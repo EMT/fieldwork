@@ -26,7 +26,7 @@ extract($this->data());
 		
 		<div class="details">
 			<p>At Fieldwork, we make sure to keep a good balance between client work and in-house projects. We needed a visual identity flexible enough to work across anything from project proposals and invoices, through fun prints and publications, all the way to super geeky stuff like code projects and gadgets.</p>
-			<p>After establishing some guiding principals about how we want to work, who we’d most like to work with, and what we want to work on, we wrote a short and simple <a href="">manifesto</a> for Fieldwork, and collected some visual inspiration based around those ideas.</p>
+			<p>After establishing some guiding principals about how we want to work, who we’d most like to work with, and what we want to work on, we wrote a short and simple <a href="http://madebyfieldwork.com/emt/2013/05/16/some-rules-for-making-things-our-manifesto/">manifesto</a> for Fieldwork, and collected some visual inspiration based around those ideas.</p>
 			<p>Through a process of iteration, we developed the simple identity you see on this page and across the website. Then we worked on a collection of visual materials to bring the character of our company to life. It’s a work-in-progress, and always will be.</p>
 		</div>
 		
