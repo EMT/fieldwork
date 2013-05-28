@@ -1,5 +1,9 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    # Redirect subdomains
+    RewriteCond %{HTTP_HOST} ^(.+)\.madebyfieldwork\.com$ [NC]
+    RewriteRule (.*) http://madebyfieldwork.com/$1 [L,R=301,QSA]
+    
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !favicon.ico$
