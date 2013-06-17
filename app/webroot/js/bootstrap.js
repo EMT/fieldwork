@@ -522,7 +522,7 @@ function initializeMap() {
 function flickr() {
 	var url = 'http://api.flickr.com/services/feeds/groups_pool.gne?id=2172335@N24&lang=en-us&format=json&jsoncallback=?';
 	$.getJSON(url, function(data) {
-console.log(data.items[0]);
+/* console.log(data.items[0]); */
 		$('<a href="' + data.items[0].link + '"><img src="' + data.items[0].media.m.replace('_m.jpg', '_z.jpg') + '" alt="' + data.items[0].media + '" /><div class="home-grid-details"><h3>' + data.items[0].title + '</h3></div></a>').appendTo('#flickr');
 	});
 }
@@ -531,21 +531,31 @@ console.log(data.items[0]);
 //	Twitter
 
 function latestTweet(username) {
-	var url = 'https://api.twitter.com/1/statuses/user_timeline/' + username + '.json?count=10&include_rts=1&callback=?';
-	$.getJSON(url, function(data) {
+	var url = '/twitter/tweets.json';
+	var success = function(data) {
 		$('#latest-tweet .tweet').html(formatTweet(data[0].text));
 		$('#latest-tweet .twitter-handle').html('<a href="http://twitter.com/' + data[0].user.screen_name + '">@' + data[0].user.screen_name + '</a>');
+console.log(data)
 		showReply(data[0]);
+	}
+	var error = function() {
+		$('#latest-tweet .tweet').html('Oh. Twitter has stopped talking to our little tweet fetching robot. Until we have time to fix the poor fella up, you can find our tweets <a href="http://twitter.com/madebyfieldwork">here</a>.');
+	};
+	var complete = function(data) {
+console.log(data)	
+	};
+	$.ajax({
+		dataType: "json",
+		url: url,
+		success: success,
+		error: error
 	});
 }
 function showReply(tweet) {
-	if (tweet.in_reply_to_status_id_str) {
-		var url = 'https://api.twitter.com/1/statuses/show.json?id=' + tweet.in_reply_to_status_id_str + '&callback=?';
-		$.getJSON(url, function(data) {
-			$('#latest-tweet .irt').html(formatTweet(data.text));
-			$('#latest-tweet .irt-handle').html('<a href="http://twitter.com/' + data.user.screen_name + '">@' + data.user.screen_name + '</a>');
-			$('#latest-tweet .in-reply-to').slideDown(300);
-		});
+	if (tweet.in_reply_to) {
+		$('#latest-tweet .irt').html(formatTweet(tweet.text));
+		$('#latest-tweet .irt-handle').html('<a href="http://twitter.com/' + tweet.user.screen_name + '">@' + tweet.user.screen_name + '</a>');
+		$('#latest-tweet .in-reply-to').slideDown(300);
 	}
 }
 function formatTweet(text) {
