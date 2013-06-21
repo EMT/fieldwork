@@ -553,8 +553,8 @@ console.log(data)
 }
 function showReply(tweet) {
 	if (tweet.in_reply_to) {
-		$('#latest-tweet .irt').html(formatTweet(tweet.text));
-		$('#latest-tweet .irt-handle').html('<a href="http://twitter.com/' + tweet.user.screen_name + '">@' + tweet.user.screen_name + '</a>');
+		$('#latest-tweet .irt').html(formatTweet(tweet.in_reply_to.text));
+		$('#latest-tweet .irt-handle').html('<a href="http://twitter.com/' + tweet.in_reply_to.user.screen_name + '">@' + tweet.in_reply_to.user.screen_name + '</a>');
 		$('#latest-tweet .in-reply-to').slideDown(300);
 	}
 }

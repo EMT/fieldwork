@@ -18,6 +18,9 @@ class TwitterController extends \app\extensions\action\Controller {
 		$tweets = Cache::read('default', 'fw_tweets');
 		if (!$tweets) {
 			$tweets = $connection->get('https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=madebyfieldwork&count=1');
+			if (!$tweets) {
+				throw new \Exception('Couldn’t get tweets.', 500);
+			}
 			if ($tweets[0]->in_reply_to_status_id_str) {
 				$tweets[0]->in_reply_to = $connection->get('https://api.twitter.com/1.1/statuses/show.json?id=' . $tweets[0]->in_reply_to_status_id_str);
 			}
