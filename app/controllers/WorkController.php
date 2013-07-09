@@ -30,7 +30,8 @@ class WorkController extends \app\extensions\action\Controller {
 			'fieldwork',
 			'carbon-coop',
 			'sewsew',
-			'mini-bugs'
+			'mini-bugs',
+			'tilt'
 		);
 		foreach($pages as $key => $page) {
 			if ($page === $path) {
