@@ -77,11 +77,11 @@
 			<div class="col-3-1">
 <!-- 				<h3>Blog</h3> -->
 				<div class="grid-item" id="blog-teaser">
-					<a href="http://madebyfieldwork.com/emt/2013/06/17/social-action-app-look-feel-workshop/">
-						<img src="http://madebyfieldwork.com/emt/wp-content/uploads/2013/06/Catch-22-Scribe-final-version-crop-630x489.png" alt="" />
+					<a href="http://madebyfieldwork.com/emt/2013/07/09/prototyping-workshop-social-action-app/">
+						<img src="http://madebyfieldwork.com/emt/wp-content/uploads/2013/07/catch22-paper-prototyping-630x472.jpg" alt="" />
 						<div class="home-grid-details">
 <!-- 							<h3>TILT Website</h3> -->
-							<p>A couple of weeks ago, we were exploring ideas for a social action app, with Catch22 and Young Advisors.</p>
+							<p>We spent a day making prototypes for a social action app, with a team of Young Advisors and Catch22.</p>
 							<p class="read-more">Read more</p>
 						</div>
 					</a>
