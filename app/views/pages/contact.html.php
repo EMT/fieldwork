@@ -70,10 +70,11 @@
 		
 		<h3>Social Media</h3>
 		<ul class="social-media">
-			<li><a class="ss-icon" href="http://twitter.com/madebyfieldwork">twitter</a></li>
-			<li><a class="ss-icon" href="http://facebook.com/madebyfieldwork">facebook</a></li>
-			<li><a class="ss-icon" href="http://flickr.com/photos/madebyfieldwork">flickr</a></li>
-			<li><a class="ss-icon" href="https://github.com/EMT">github</a></li>
+			<li><a class="ss-icon" href="http://twitter.com/madebyfieldwork">Twitter</a></li>
+			<li><a class="ss-icon" href="http://facebook.com/madebyfieldwork">Facebook</a></li>
+			<li><a class="ss-icon" href="http://flickr.com/photos/madebyfieldwork">Flickr</a></li>
+			<li><a class="ss-icon" href="https://github.com/EMT">Github</a></li>
+			<li><a class="ss-icon" href="http://vimeo.com/madebyfieldwork">Vimeo</a></li>
 		</ul>
 		
 		<h3>Extra Curricular</h3>
