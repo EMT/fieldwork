@@ -29,6 +29,16 @@
 	
 			<div class="grid-item col-3-1">
 				<div>
+					<a href="/work/tilt">
+						<img src="/img/work/tilt.jpg" alt="TILT" />
+						<div class="work-details">
+							<h3>TILT</h3>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="grid-item col-3-1">
+				<div>
 					<a href="/work/carbon-coop">
 						<img src="/img/work/carboncoop.jpg" alt="Carbon Coop" />
 						<div class="work-details">
@@ -49,17 +59,18 @@
 					</a>
 				</div>
 			</div>
+<!--
 			<div class="grid-item col-3-1">
 				<div>
 					<a href="/work/clarence-fredericks">
 						<img src="/img/work/cf.jpg" alt="Carbon Coop" />
 						<div class="work-details">
 							<h3>Clarence &amp; Fredericks</h3>
-<!-- 							<p>Say hello to Barry the Budgie</p> -->
 						</div>
 					</a>
 				</div>
 			</div>
+-->
 		</div>
 		
 		
