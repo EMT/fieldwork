@@ -81,9 +81,7 @@
 		<div class="grid">
 			<div class="col-3-1">
 <!-- 				<h3>Flickr</h3> -->
-				<div class="grid-item">
-					<div id="flickr"></div>
-				</div>
+				<div class="grid-item" id="flickr"></div>
 			</div>
 			<div class="col-3-1">
 <!-- 				<h3>Blog</h3> -->
