@@ -2,7 +2,7 @@
 
 <?php 
 $this->title('Clarence & Fredericks – Fieldwork');
-$this->set(array('main_img' => '/img/work/clarence-fredericks/cf-header.jpg'));
+$this->set(array('main_img' => $img_base . '/work/clarence-fredericks/cf-header.jpg'));
 $this->set(array('description' => 'Based in south London, Clarence & Fredericks are a small, family run micro-brewery, producing a range of delicious craft beers.'));
 extract($this->data());
 ?>
@@ -37,82 +37,82 @@ extract($this->data());
 		
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/clarence-fredericks/cf-logo.svg" alt="Clarence &amp; Fredericks logo" />
+					<img src="<?= $img_base ?>/work/clarence-fredericks/cf-logo.svg" alt="Clarence &amp; Fredericks logo" />
 				</figure>
 			</div>
 		
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/clarence-fredericks/cf-21.jpg" alt="Sketching logo concepts" />
+					<img src="<?= $img_base ?>/work/clarence-fredericks/cf-21.jpg" alt="Sketching logo concepts" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/clarence-fredericks/cf-barry.png" alt="Barry the budgie, the Clarence &amp; Fredericks mascot" />
+					<img src="<?= $img_base ?>/work/clarence-fredericks/cf-barry.png" alt="Barry the budgie, the Clarence &amp; Fredericks mascot" />
 				</figure>
 			</div>
 		
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/clarence-fredericks/cf-22.jpg" alt="Hops used for making beer" />
+					<img src="<?= $img_base ?>/work/clarence-fredericks/cf-22.jpg" alt="Hops used for making beer" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/clarence-fredericks/cf-23.jpg" alt="Large stack of beer barrels" />
+					<img src="<?= $img_base ?>/work/clarence-fredericks/cf-23.jpg" alt="Large stack of beer barrels" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/clarence-fredericks/cf-3.jpg" alt="Close-up shot of Clarence &amp; Fredericks business cards" />
+					<img src="<?= $img_base ?>/work/clarence-fredericks/cf-3.jpg" alt="Close-up shot of Clarence &amp; Fredericks business cards" />
 				</figure>
 			</div>
 	
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/clarence-fredericks/cf-2.jpg" alt="Details shot of Baryy the bugie on the back of Clarence &amp; Fredericks business cards" />
+					<img src="<?= $img_base ?>/work/clarence-fredericks/cf-2.jpg" alt="Details shot of Baryy the bugie on the back of Clarence &amp; Fredericks business cards" />
 				</figure>
 			</div>
 	
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/clarence-fredericks/cf-web1.jpg" alt="Screenshot of the Clarence &amp; Fredericks website home page" />
+					<img src="<?= $img_base ?>/work/clarence-fredericks/cf-web1.jpg" alt="Screenshot of the Clarence &amp; Fredericks website home page" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/clarence-fredericks/cf-web2.jpg" alt="Hands using the Clarence &amp; Fredericks website on a smartphone" />
+					<img src="<?= $img_base ?>/work/clarence-fredericks/cf-web2.jpg" alt="Hands using the Clarence &amp; Fredericks website on a smartphone" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/clarence-fredericks/cf-web3.jpg" alt="Screenshots of the Clarence &amp; Fredericks website on mobile devices" />
+					<img src="<?= $img_base ?>/work/clarence-fredericks/cf-web3.jpg" alt="Screenshots of the Clarence &amp; Fredericks website on mobile devices" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/clarence-fredericks/cf-12.jpg" alt="Clarence &amp; Fredericks beer bottles in the Fieldwork studio" />
+					<img src="<?= $img_base ?>/work/clarence-fredericks/cf-12.jpg" alt="Clarence &amp; Fredericks beer bottles in the Fieldwork studio" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/clarence-fredericks/cf-16.jpg" alt="Beer pumps with Clarence &amp; Fredericks branding" />
+					<img src="<?= $img_base ?>/work/clarence-fredericks/cf-16.jpg" alt="Beer pumps with Clarence &amp; Fredericks branding" />
 				</figure>
 			</div>
 			
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/clarence-fredericks/cf-24.jpg" alt="Hand holding a bottle of beer" />
+					<img src="<?= $img_base ?>/work/clarence-fredericks/cf-24.jpg" alt="Hand holding a bottle of beer" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/clarence-fredericks/cf-17.jpg" alt="Clarence &amp; Fredericks t-shirt" />
+					<img src="<?= $img_base ?>/work/clarence-fredericks/cf-17.jpg" alt="Clarence &amp; Fredericks t-shirt" />
 				</figure>
 			</div>
 

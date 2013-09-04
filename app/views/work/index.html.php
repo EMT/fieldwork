@@ -11,7 +11,7 @@
 		
 		<div class="grid-item col-2-1">
 			<a class="fade-transition" href="/work/tilt">
-				<img src="/img/work/tilt.jpg" alt="" />
+				<img src="<?= $img_base ?>/work/tilt.jpg" alt="" />
 				<div class="item-details bottom-right">
 					<div>
 						<h3>TILT</h3>
@@ -23,7 +23,7 @@
 		
 		<div class="grid-item col-2-1">
 			<a class="fade-transition" href="/work/clarence-fredericks">
-				<img src="/img/work/cf.jpg" alt="" />
+				<img src="<?= $img_base ?>/work/cf.jpg" alt="" />
 				<div class="item-details top-right">
 					<div>
 						<h3>Clarence &amp; Fredericks</h3>
@@ -35,7 +35,7 @@
 		
 		<div class="grid-item col-2-1">
 			<a class="fade-transition" href="/work/big-pedal">
-				<img src="/img/work/bigpedal.jpg" alt="" />
+				<img src="<?= $img_base ?>/work/bigpedal.jpg" alt="" />
 				<div class="item-details bottom-left">
 					<div>
 						<h3>Big Pedal</h3>
@@ -47,7 +47,7 @@
 		
 		<div class="grid-item col-2-1">
 			<a class="fade-transition" href="/work/fieldwork">
-				<img src="/img/work/fieldwork.jpg" alt="" />
+				<img src="<?= $img_base ?>/work/fieldwork.jpg" alt="" />
 				<div class="item-details top-left">
 					<div>
 						<h3>Fieldwork</h3>
@@ -59,7 +59,7 @@
 		
 		<div class="grid-item col-2-1">
 			<a class="fade-transition" href="/work/carbon-coop">
-				<img src="/img/work/carboncoop.jpg" alt="" />
+				<img src="<?= $img_base ?>/work/carboncoop.jpg" alt="" />
 				<div class="item-details bottom-right">
 					<div>
 						<h3>Carbon Coop</h3>
@@ -71,7 +71,7 @@
 		
 		<div class="grid-item col-2-1">
 			<a class="fade-transition" href="/work/sewsew">
-				<img src="/img/work/sewsew.jpg" alt="" />
+				<img src="<?= $img_base ?>/work/sewsew.jpg" alt="" />
 				<div class="item-details top-right">
 					<div>
 						<h3>SewSew</h3>
@@ -83,7 +83,7 @@
 		
 		<div class="grid-item col-2-1">
 			<a class="fade-transition" href="/work/mini-bugs">
-				<img src="/img/work/minibugs.jpg" alt="" />
+				<img src="<?= $img_base ?>/work/minibugs.jpg" alt="" />
 				<div class="item-details top-left">
 					<div>
 						<h3>Mini Bugs</h3>

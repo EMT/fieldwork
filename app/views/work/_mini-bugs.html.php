@@ -2,7 +2,7 @@
 
 <?php 
 $this->title('Mini Bugs – Fieldwork');
-$this->set(array('main_img' => '/img/work/mini-bugs/mb-header.jpg'));
+$this->set(array('main_img' => $img_base . '/work/mini-bugs/mb-header.jpg'));
 $this->set(array('description' => 'Mini Bugs is an independent children’s boutique specialising in all kinds of weird and wonderful things to satisfy curious young minds.'));
 extract($this->data());
 ?>
@@ -36,76 +36,76 @@ extract($this->data());
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/mini-bugs/mb-logo.svg" alt="Mini Bugs logo" />
+					<img src="<?= $img_base ?>/work/mini-bugs/mb-logo.svg" alt="Mini Bugs logo" />
 				</figure>
 			</div>
 			
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/mini-bugs/mb-3.jpg" alt="Logo concept sketches" />
+					<img src="<?= $img_base ?>/work/mini-bugs/mb-3.jpg" alt="Logo concept sketches" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/mini-bugs/mb-1.jpg" alt="Plywood rabbit used in the Mini Bugs shop" />
-				</figure>
-			</div>
-			
-			<div class="full-width">
-				<figure>
-					<img src="/img/work/mini-bugs/mb-bugs.svg" alt="Sketched process from the development of the illustrated bugs" />
-				</figure>
-			</div>
-			
-			<div class="col-2-1">
-				<figure>
-					<img src="/img/work/mini-bugs/mb-5.jpg" alt="Collection of different coloured Mini Bugs business cards" />
-				</figure>
-			</div>
-			<div class="col-2-1">
-				<figure>
-					<img src="/img/work/mini-bugs/mb-10.jpg" alt="Detail shot of the front of a Mini Bugs business card" />
+					<img src="<?= $img_base ?>/work/mini-bugs/mb-1.jpg" alt="Plywood rabbit used in the Mini Bugs shop" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/mini-bugs/mb-13.jpg" alt="Cardboard packaging box with Mini Bugs branded address label" />
+					<img src="<?= $img_base ?>/work/mini-bugs/mb-bugs.svg" alt="Sketched process from the development of the illustrated bugs" />
+				</figure>
+			</div>
+			
+			<div class="col-2-1">
+				<figure>
+					<img src="<?= $img_base ?>/work/mini-bugs/mb-5.jpg" alt="Collection of different coloured Mini Bugs business cards" />
+				</figure>
+			</div>
+			<div class="col-2-1">
+				<figure>
+					<img src="<?= $img_base ?>/work/mini-bugs/mb-10.jpg" alt="Detail shot of the front of a Mini Bugs business card" />
+				</figure>
+			</div>
+			
+			<div class="full-width">
+				<figure>
+					<img src="<?= $img_base ?>/work/mini-bugs/mb-13.jpg" alt="Cardboard packaging box with Mini Bugs branded address label" />
 				</figure>
 			</div>
 		
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/mini-bugs/mb-web1.jpg" alt="Screenshot of the Mini Bugs website home page" />
+					<img src="<?= $img_base ?>/work/mini-bugs/mb-web1.jpg" alt="Screenshot of the Mini Bugs website home page" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/mini-bugs/mb-web2.jpg" alt="Screenshot of a product page from the Mini Bugs website" />
+					<img src="<?= $img_base ?>/work/mini-bugs/mb-web2.jpg" alt="Screenshot of a product page from the Mini Bugs website" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/mini-bugs/mb-11.jpg" alt="Collection of screeshots of the Mini Bugs website displayed on smartphones" />
+					<img src="<?= $img_base ?>/work/mini-bugs/mb-11.jpg" alt="Collection of screeshots of the Mini Bugs website displayed on smartphones" />
 				</figure>
 			</div>
 		
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/mini-bugs/mb-9.jpg" alt="Hands using the Mini Bugs website on a smartphone" />
+					<img src="<?= $img_base ?>/work/mini-bugs/mb-9.jpg" alt="Hands using the Mini Bugs website on a smartphone" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/mini-bugs/mb-7.jpg" alt="Photo of kids lying in te grass on a sunny day" />
+					<img src="<?= $img_base ?>/work/mini-bugs/mb-7.jpg" alt="Photo of kids lying in te grass on a sunny day" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/mini-bugs/mb-12.jpg" alt="Mini Bugs branded paper shopping bag" />
+					<img src="<?= $img_base ?>/work/mini-bugs/mb-12.jpg" alt="Mini Bugs branded paper shopping bag" />
 				</figure>
 			</div>
 

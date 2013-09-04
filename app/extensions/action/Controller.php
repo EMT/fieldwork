@@ -17,7 +17,7 @@ class Controller extends \lithium\action\Controller {
 
 	
 
-	public function render($options = array()) {
+	public function render(array $options = array()) {
 		
         
         //	Make some contextual available to the view template
@@ -26,7 +26,8 @@ class Controller extends \lithium\action\Controller {
 	        $this->set(array(
 	        	'env' => Environment::get(),
 	        	'build' => Environment::get('build'),
-	        	'external_js' => (isset($this->external_js)) ? $this->external_js : array()
+	        	'external_js' => (isset($this->external_js)) ? $this->external_js : array(),
+	        	'img_base' => 'http://35c587949a5e6c4ab4cc-fe99d1e1a6eca87157ebc4c97a827cc2.r58.cf2.rackcdn.com/img'
 	        ));
 	        if (!isset($options['data']['body_classes'])) {
 		        $options['data']['body_classes'] = (isset($this->body_classes)) ? $this->body_classes : '';

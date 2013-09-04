@@ -2,7 +2,7 @@
 
 <?php 
 $this->title('The Big Pedal – Fieldwork');
-$this->set(array('main_img' => '/img/work/big-pedal/tbp-header.jpg'));
+$this->set(array('main_img' => $img_base . '/work/big-pedal/tbp-header.jpg'));
 $this->set(array('description' => 'The Big Pedal is a massive cycle-to-school event that takes place over three weeks each year, involving over 1,000 schools and generating over a million journeys to school by bike.'));
 extract($this->data());
 ?>
@@ -35,58 +35,58 @@ extract($this->data());
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/big-pedal/tbp-3.jpg" alt="Screenshot of The Big Pedal website home page" />
+					<img src="<?= $img_base ?>/work/big-pedal/tbp-3.jpg" alt="Screenshot of The Big Pedal website home page" />
 				</figure>
 			</div>
 		
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/big-pedal/tbp-5.jpg" alt="Screenshot of the website on a smartphone" />
+					<img src="<?= $img_base ?>/work/big-pedal/tbp-5.jpg" alt="Screenshot of the website on a smartphone" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/big-pedal/tbp-4.jpg" alt="Screenshot of The Big Pedal website on a smartphone" />
+					<img src="<?= $img_base ?>/work/big-pedal/tbp-4.jpg" alt="Screenshot of The Big Pedal website on a smartphone" />
 				</figure>
 			</div>
 		
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/big-pedal/bp-jerseys.svg" alt="Illustrated prize-winners’ cycling jerseys" />
+					<img src="<?= $img_base ?>/work/big-pedal/bp-jerseys.svg" alt="Illustrated prize-winners’ cycling jerseys" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/big-pedal/tbp-13.jpg" alt="Lots of bikes against a hedge during The Big Pedal" />
+					<img src="<?= $img_base ?>/work/big-pedal/tbp-13.jpg" alt="Lots of bikes against a hedge during The Big Pedal" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/big-pedal/tbp-6.jpg" alt="The Big Pedal website’s map of schools shown on an iPad" />
+					<img src="<?= $img_base ?>/work/big-pedal/tbp-6.jpg" alt="The Big Pedal website’s map of schools shown on an iPad" />
 				</figure>
 			</div>
 			
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/big-pedal/tbp-10.jpg" alt="The route details page, shown on an iPhone" />
+					<img src="<?= $img_base ?>/work/big-pedal/tbp-10.jpg" alt="The route details page, shown on an iPhone" />
 				</figure>
 			</div>
 			
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/big-pedal/tbp-8.jpg" alt="Screenshot of a rankings page for The Big Pedal" />
+					<img src="<?= $img_base ?>/work/big-pedal/tbp-8.jpg" alt="Screenshot of a rankings page for The Big Pedal" />
 				</figure>
 			</div>
 			<div class="col-2-1">
 				<figure>
-					<img src="/img/work/big-pedal/tbp-9.jpg" alt="Screenshot of a school dashboard page for The Big Pedal" />
+					<img src="<?= $img_base ?>/work/big-pedal/tbp-9.jpg" alt="Screenshot of a school dashboard page for The Big Pedal" />
 				</figure>
 			</div>
 		
 			<div class="full-width">
 				<figure>
-					<img src="/img/work/big-pedal/tbp-7.jpg" alt="Screenshots of school statistics page for The Big Pedal" />
+					<img src="<?= $img_base ?>/work/big-pedal/tbp-7.jpg" alt="Screenshots of school statistics page for The Big Pedal" />
 				</figure>
 			</div>
 		
