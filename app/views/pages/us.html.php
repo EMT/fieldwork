@@ -8,7 +8,7 @@
 	<h1>We Make Things</h1>
 	
 	<figure class="hero">
-		<img src="/img/studio/studio<?= rand(1,4); ?>.jpg" al="The Fieldwork studio in Manchester" />
+		<img src="/img/studio/studio<?= rand(1,4); ?>.jpg" alt="The Fieldwork studio in Manchester" />
 	</figure>
 	
 	

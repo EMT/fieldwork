@@ -43,7 +43,6 @@
 						<img src="/img/work/carboncoop.jpg" alt="Carbon Coop" />
 						<div class="work-details">
 							<h3>Carbon Coop</h3>
-<!-- 							<p>A new model for making homes more energy efficient</p> -->
 						</div>
 					</a>
 				</div>
@@ -54,7 +53,6 @@
 						<img src="/img/work/bigpedal.jpg" alt="Carbon Coop" />
 						<div class="work-details">
 							<h3>Big Pedal</h3>
-<!-- 							<p>A nation-wide cycle to school event generating millions of journeys by bike</p> -->
 						</div>
 					</a>
 				</div>

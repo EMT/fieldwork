@@ -63,7 +63,7 @@
 				<div class="item-details bottom-right">
 					<div>
 						<h3>Carbon Coop</h3>
-						<p>A new model for making homes more energy efficient.</p>
+						<p>A new model for making homes more energy efficient.</p>
 					</div>
 				</div>
 			</a>
