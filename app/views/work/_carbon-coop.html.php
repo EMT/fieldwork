@@ -3,7 +3,7 @@
 <?php 
 $this->title('Carbon Coop – Fieldwork');
 $this->set(array('main_img' => $img_base . '/work/carbon-coop/cc-header.jpg'));
-$this->set(array('description' => 'Carbon Co-op are a groundbreaking group of residents and housing experts who are pioneering a new model for making homes in Greater Manchester more energy efficient.'));
+$this->set(array('description' => 'Carbon Co-op are a groundbreaking group of residents and housing experts who are pioneering a new model for making homes in Greater Manchester more energy efficient.'));
 extract($this->data());
 ?>
 
