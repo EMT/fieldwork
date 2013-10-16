@@ -84,11 +84,10 @@
 			<div class="col-3-1">
 <!-- 				<h3>Blog</h3> -->
 				<div class="grid-item" id="blog-teaser">
-					<a href="http://madebyfieldwork.com/emt/2013/07/09/prototyping-workshop-social-action-app/">
-						<img src="http://madebyfieldwork.com/emt/wp-content/uploads/2013/07/catch22-paper-prototyping-630x472.jpg" alt="" />
+					<a href="http://madebyfieldwork.com/emt/2013/10/16/brooklyn-beta-2013-and-nyc/">
+						<img src="http://madebyfieldwork.com/emt/wp-content/uploads/2013/10/nyc-oct-2013-630x425.jpg" alt="Williamsburg Bridge, East River, New York" />
 						<div class="home-grid-details">
-<!-- 							<h3>TILT Website</h3> -->
-							<p>We spent a day making prototypes for a social action app, with a team of Young Advisors and Catch22.</p>
+							<p>We spent last week in New York for Brooklyn Beta, trying to strike a balance between eating, drinking, conferencing, and working.</p>
 							<p class="read-more">Read more</p>
 						</div>
 					</a>
