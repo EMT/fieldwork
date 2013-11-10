@@ -25,6 +25,8 @@ class WorkController extends \app\extensions\action\Controller {
 		$path = join('/', func_get_args());
 	
 		$pages = array(
+			// 'project-wild-thing',
+			'camp-nothing',
 			'tilt',
 			'clarence-fredericks',
 			'big-pedal',
