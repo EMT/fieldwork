@@ -10,6 +10,18 @@
 	<div class="grid grid-tight grid-index">
 		
 		<div class="grid-item col-2-1">
+			<a class="fade-transition" href="/work/camp-nothing">
+				<img src="<?= $img_base ?>/work/cn.jpg" alt="" />
+				<div class="item-details top-left">
+					<div>
+						<h3>Camp Nothing</h3>
+						<p>Kickstarting new communities of makers who do good for nothing.</p>
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="grid-item col-2-1">
 			<a class="fade-transition" href="/work/tilt">
 				<img src="<?= $img_base ?>/work/tilt.jpg" alt="" />
 				<div class="item-details bottom-right">
@@ -72,7 +84,7 @@
 		<div class="grid-item col-2-1">
 			<a class="fade-transition" href="/work/sewsew">
 				<img src="<?= $img_base ?>/work/sewsew.jpg" alt="" />
-				<div class="item-details top-right">
+				<div class="item-details bottom-right">
 					<div>
 						<h3>SewSew</h3>
 						<p>Beautiful unique creations, made by hand.</p>

@@ -29,30 +29,30 @@
 	
 			<div class="grid-item col-3-1">
 				<div>
-					<a href="/work/tilt">
-						<img src="/img/work/tilt.jpg" alt="TILT" />
+					<a href="/work/camp-nothing">
+						<img src="/img/work/cn.jpg" alt="Camp Nothing" />
 						<div class="work-details">
-							<h3>TILT</h3>
+							<h3>Camp Nothing</h3>
 						</div>
 					</a>
 				</div>
 			</div>
 			<div class="grid-item col-3-1">
 				<div>
-					<a href="/work/carbon-coop">
-						<img src="/img/work/carboncoop.jpg" alt="Carbon Coop" />
+					<a href="/work/sewsew">
+						<img src="/img/work/sewsew.jpg" alt="SewSew" />
 						<div class="work-details">
-							<h3>Carbon Coop</h3>
+							<h3>SewSew</h3>
 						</div>
 					</a>
 				</div>
 			</div>
 			<div class="grid-item col-3-1">
 				<div>
-					<a href="/work/big-pedal">
-						<img src="/img/work/bigpedal.jpg" alt="Carbon Coop" />
+					<a href="/work/fieldwork">
+						<img src="/img/work/fieldwork.jpg" alt="Fieldwork" />
 						<div class="work-details">
-							<h3>Big Pedal</h3>
+							<h3>Fieldwork</h3>
 						</div>
 					</a>
 				</div>

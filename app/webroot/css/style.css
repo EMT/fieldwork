@@ -780,8 +780,8 @@ footer .social {
 	float: right;
 }
 .grid > * {
-	margin-left: 2.91262%;
-	margin-bottom: 2.91262%;
+	margin-left: 3%;
+	margin-bottom: 3%;
 }
 .lt-ie9 .grid > * {
 	border-top: 1px solid transparent;
@@ -1455,7 +1455,7 @@ input[type="submit"] {
 	
 	.grid.work .col-3-1 {
 		float: left;
-		width: 30.42071%;
+		width: 30.3333%;
 	}
 	.work.grid-tight .col-3-1 {
 		width: 33.3333%;
@@ -1499,7 +1499,7 @@ input[type="submit"] {
 
 	.grid .col-3-1 {
 		float: left;
-		width: 30.42071%;
+		width: 30.3333%;
 	}
 	.grid-tight .col-3-1 {
 		width: 33.3333%;

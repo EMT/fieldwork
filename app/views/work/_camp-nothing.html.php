@@ -26,7 +26,7 @@ extract($this->data());
 		<div class="details">
 			<p>On the grounds of West Lexham Manor, Norfolk, <a href="http://campnothing.goodfornothing.com/">Camp Nothing</a> combined the great outdoors with purposeful, turbo-charged doing. A lovely brief. It was our job to tie all of this together with a flexible visual identity that would work alongside, yet be distinct from, the existing <a href="http://www.goodfornothing.com/">Good for Nothing</a> brand.</p>
 			<p>In true Good for Nothing fashion, we invited the team to our Manchester studio, and spent two energetic days rapidly developing a concept and initial visuals. This became the basis for the identity.</p>
-			<p>We designed and developed an event website, attendees t-shirts, event signage, badges, and tote bags.</p>
+			<p>We designed and developed an event website, attendee t-shirts, event signage, badges, and tote bags.</p>
 		</div>
 	
 		
@@ -66,6 +66,12 @@ extract($this->data());
 					<img src="<?= $img_base ?>/work/camp-nothing/cn-7.jpg" alt="Good for Nothing tote bag in use" />
 				</figure>
 			</div>
+
+			<div class="full-width">
+				<figure>
+					<img src="<?= $img_base ?>/work/camp-nothing/cn-5.jpg" alt="Laser cut wooden Camp Nothing pin badge" />
+				</figure>
+			</div>
 			
 			<div class="full-width">
 				<figure>
@@ -94,6 +100,28 @@ extract($this->data());
 			<div class="full-width">
 				<figure>
 					<img src="<?= $img_base ?>/work/camp-nothing/cn-10.jpg" alt="Screenshot of the Camp Nothing website adapted for an iPhone screen" />
+				</figure>
+			</div>
+
+			<div class="col-2-1">
+				<figure>
+					<img src="<?= $img_base ?>/work/camp-nothing/cn-17.jpg" alt="A tent in the woods at Camp Nothing" />
+				</figure>
+			</div>
+			<div class="col-2-1">
+				<figure>
+					<img src="<?= $img_base ?>/work/camp-nothing/cn-20.jpg" alt="Camp Nothing attendees breaking bread together at the dinner table" />
+				</figure>
+			</div>
+
+			<div class="col-2-1">
+				<figure>
+					<img src="<?= $img_base ?>/work/camp-nothing/cn-19.jpg" alt="An audience of attendees for a show and tell at Camp Nothing" />
+				</figure>
+			</div>
+			<div class="col-2-1">
+				<figure>
+					<img src="<?= $img_base ?>/work/camp-nothing/cn-18.jpg" alt="Dan walking through the woods at Camp Nothing, smiling, with coffee in hand" />
 				</figure>
 			</div>
 		
