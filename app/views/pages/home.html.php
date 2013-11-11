@@ -30,7 +30,7 @@
 			<div class="grid-item col-3-1">
 				<div>
 					<a href="/work/camp-nothing">
-						<img src="/img/work/cn.jpg" alt="Camp Nothing" />
+						<img src="<?= $img_base ?>/work/cn.jpg" alt="Camp Nothing" />
 						<div class="work-details">
 							<h3>Camp Nothing</h3>
 						</div>
@@ -40,7 +40,7 @@
 			<div class="grid-item col-3-1">
 				<div>
 					<a href="/work/sewsew">
-						<img src="/img/work/sewsew.jpg" alt="SewSew" />
+						<img src="<?= $img_base ?>/work/sewsew.jpg" alt="SewSew" />
 						<div class="work-details">
 							<h3>SewSew</h3>
 						</div>
@@ -50,7 +50,7 @@
 			<div class="grid-item col-3-1">
 				<div>
 					<a href="/work/fieldwork">
-						<img src="/img/work/fieldwork.jpg" alt="Fieldwork" />
+						<img src="<?= $img_base ?>/work/fieldwork.jpg" alt="Fieldwork" />
 						<div class="work-details">
 							<h3>Fieldwork</h3>
 						</div>
@@ -61,7 +61,7 @@
 			<div class="grid-item col-3-1">
 				<div>
 					<a href="/work/clarence-fredericks">
-						<img src="/img/work/cf.jpg" alt="Carbon Coop" />
+						<img src="<?= $img_base ?>/work/cf.jpg" alt="Carbon Coop" />
 						<div class="work-details">
 							<h3>Clarence &amp; Fredericks</h3>
 						</div>
