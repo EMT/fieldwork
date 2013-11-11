@@ -84,11 +84,12 @@
 			<div class="col-3-1">
 <!-- 				<h3>Blog</h3> -->
 				<div class="grid-item" id="blog-teaser">
-					<a href="http://madebyfieldwork.com/emt/2013/10/16/brooklyn-beta-2013-and-nyc/">
-						<img src="http://madebyfieldwork.com/emt/wp-content/uploads/2013/10/nyc-oct-2013-630x425.jpg" alt="Williamsburg Bridge, East River, New York" />
+					<a href="http://volumes.madebyfieldwork.com/making">
+						<img src="http://farm4.staticflickr.com/3694/10739688126_2bb4aceec9.jpg" alt="Volume 1: A Guide to Making Things" />
 						<div class="home-grid-details">
-							<p>We spent last week in New York for Brooklyn Beta, trying to strike a balance between eating, drinking, conferencing, and working.</p>
-							<p class="read-more">Read more</p>
+							<h3>Volume 1: A Guide to Making Things</h3>
+							<p>We just launched a little project to celebrate Fieldwork’s first year.</p>
+							<p class="read-more">See the digital version</p>
 						</div>
 					</a>
 				</div>
