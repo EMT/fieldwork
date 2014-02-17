@@ -1266,6 +1266,9 @@ input[type="submit"] {
 	width: 100%;
 	padding-bottom: 41.66666%;
 }
+#map img{
+	max-width:none;
+}
 .contact-form {
 	margin-bottom: 2em;
 }
