@@ -13,7 +13,7 @@
 	<div class="primary-content">
 	
 		<p class="runner">22 Lever St, Manchester, M1 1EA<br />
-			0161 408 0374<br />
+			0161 235 5318<br />
 			Follow us <a href="http://twitter.com/madebyfieldwork">@madebyfieldwork</a></p>
 		
 		<section>
