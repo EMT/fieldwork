@@ -6,6 +6,9 @@
  * @license       http://opensource.org/licenses/bsd-license.php The BSD License
  */
 
+ini_set('display_errors',1); 
+ error_reporting(E_ALL);
+
 /**
  * Welcome to Lithium! This front-controller file is the gateway to your application. It is
  * responsible for intercepting requests, and handing them off to the `Dispatcher` for processing.
