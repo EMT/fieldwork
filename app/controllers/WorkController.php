@@ -46,6 +46,7 @@ class WorkController extends \app\extensions\action\Controller {
 			$options['data'] = compact('pages', 'this_page');
 		}
 		else {
+			// $options['layout'] = 'project';
 			$options['template'] = 'work_wrapper';
 			$options['data'] = array(
 				'partial' => $path,

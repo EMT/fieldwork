@@ -430,9 +430,14 @@ header {
 .search-open header {
 	border-bottom-color: rgb(0,207,202);
 }
+
 header .marque img {
-	padding-top: 0.85em;
-	height: 20px;
+    margin-top: 0.85em;
+    height: 20px;
+}
+header .red-marque {
+    position: absolute;
+    top: 0;
 }
 .js header .marque {
 /* 	display: none; */
@@ -819,7 +824,7 @@ footer .social {
 
 .details {
 	clear: both;
-	margin-bottom: 10%;
+	/*margin-bottom: 10%;*/
 }
 .details p {
 	margin-top: 0.2em;
@@ -1194,6 +1199,118 @@ a:hover .home-grid-details {
 .process-overview p {
 	padding-bottom: 15%;
 }
+
+
+/* Project pages */
+
+.project-page #search-box {
+    padding-top: 0;
+}
+.project-page header {
+    background: transparent;
+    border-bottom-color: rgb(255,255,255);
+    transition: all .3s ease-out;
+}
+.project-page header .red-marque {
+    opacity: 0;
+    transition: all .3s ease-out;
+}
+.project-page header nav a {
+    color: rgb(255,255,255);
+    transition: all .3s ease-out;
+}
+.project-page header.solid-header {
+    background: rgb(235,235,232);
+    border-bottom-color: rgb(190, 187, 183);
+}
+.project-page header.solid-header .red-marque {
+    opacity: 1;
+}
+.project-page header.solid-header nav a {
+    color: rgb(102, 102, 102);
+}
+
+.project-header {
+    /*padding-bottom: 45%; */
+    background: transparent no-repeat center bottom; 
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.project-page h1 {
+    font-size: 4em;
+    color: rgb(255,255,255);
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    /*margin-top: 17%;*/
+    left: 0;
+    right: 0;
+}
+.project-page .content-section {
+    background: rgb(235,235,232);
+    position: relative;
+    z-index: 1;
+}
+.project-page .content-section.content-intro {
+    background: rgb(255,255,255);
+    /*margin-top: 45%;*/
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+.content-intro .content-inner {
+    overflow: hidden;
+}
+
+
+.project-page .slider {
+    margin: 0 auto;
+    max-width: 900px;
+}
+.project-page .content-section .grid {
+    padding-top: 12%;
+}
+
+
+
+/* slider */
+
+.slider {
+  position: relative;
+  overflow: hidden;
+}
+.slider > ul {
+  list-style: none;
+  overflow: hidden;
+}
+.slider > ul.slides > li {
+  width: 100%;
+  float: left;
+}
+.slider-navigation {
+    list-style: none;
+    text-align: center;
+    padding: 3em 0 0;
+}
+.slider-navigation li {
+    display: inline-block;
+}
+.slider-navigation a {
+    display: block;
+    width: 14px;
+    height: 16px;
+    background: transparent url('/img/hex-nav.svg') no-repeat center center;
+    margin: 0 0.3em;
+    opacity: 0.6;
+    transition: all .3s ease-out;
+}
+.slider-navigation .active-slider-nav-item a {
+    opacity: 1;
+}
+
 
 
 

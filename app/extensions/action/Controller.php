@@ -27,12 +27,12 @@ class Controller extends \lithium\action\Controller {
 	        	'env' => Environment::get(),
 	        	'build' => Environment::get('build'),
 	        	'external_js' => (isset($this->external_js)) ? $this->external_js : array(),
-	        	'img_base' => 'http://35c587949a5e6c4ab4cc-fe99d1e1a6eca87157ebc4c97a827cc2.r58.cf2.rackcdn.com/img'
-	        	// 'img_base' => '/img'
+	        	// 'img_base' => 'http://35c587949a5e6c4ab4cc-fe99d1e1a6eca87157ebc4c97a827cc2.r58.cf2.rackcdn.com/img'
+	        	'img_base' => '/img'
 	        ));
-	        if (!isset($options['data']['body_classes'])) {
-		        $options['data']['body_classes'] = (isset($this->body_classes)) ? $this->body_classes : '';
-	        }
+	        // if (!isset($options['data']['body_classes'])) {
+		       //  $options['data']['body_classes'] = (isset($this->body_classes)) ? $this->body_classes : '';
+	        // }
 	        if (!isset($options['data']['body_data'])) {
 		        $options['data']['body_data'] = (isset($this->body_data)) ? $this->body_data : array();
 	        }
